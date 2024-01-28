@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Livvic:wght@100&family=Lobster&display=swap" rel="stylesheet">
 </head>
-<body onscroll="removeHeader()" onload="btnChecked1();btnChecked2();">
+<body onscroll="removeHeader()" onload="btnOnLoad()">
     <div>
         <header class="header">
             <?php

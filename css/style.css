@@ -671,3 +671,17 @@ article div h1
     font-family: 'Livvic', sans-serif;
     font-weight: 600;
 }
+.info_submit
+{
+    width: 160px;
+    height: 50px;
+    font-family: 'Livvic', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    border-radius: 15px;
+    margin: 10px 0px 20px 40%;
+}
+.info_submit:hover
+{
+    background-color: #aaa;
+}

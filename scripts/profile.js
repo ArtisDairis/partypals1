@@ -1,11 +1,9 @@
-let image_value = document.getElementById('image_value');
-let profile_image = document.getElementById('profile_image');
-
 function loadImage() {
     const image = document.getElementById('profile_image');
     const file = image_value.files[0];
     const fileName = file.name;
-    const uploadUrl = './php/upload_img.php'; // Replace with the actual PHP script URL
+    const uploadUrl = './php/upload_img.php';
+    let photo_Value = document.getElementById('photoValue');
 
     const imageDirectory = "kursa_darbs/css/img/user_img";
     const randomParam = Math.random(); // Random parameter
@@ -25,6 +23,8 @@ function loadImage() {
             image.src = `../${photoValue}`;
             console.log(image.src);
 
+            photo_Value.value = fileName;
+            console.log(photo_Value.value);
         })
         .catch(error => {
             console.error('Error:', error);
@@ -52,9 +52,16 @@ function passwordChecked()
     }
 }
 // Buttons (days)
+let button;
+
+let hiddenValue1;
+let getArray1;
+let hiddenValue2;
+let getArray2;
+
 function changeColor(buttonId) 
 {
-    let button = document.getElementById(buttonId);
+    button = document.getElementById(buttonId);
     if (button.style.backgroundColor == "")
     {
         button.style.backgroundColor = "lightcoral";
@@ -64,48 +71,91 @@ function changeColor(buttonId)
         button.style.backgroundColor = ""; 
     }
 }
-function btnChecked1() 
+
+function btnChecked1(eid) 
 {
-    let hiddenValue = document.getElementById('theme_value').value;
-    let getArray = hiddenValue.split(",");
+    let regexp1 = /[0-9]/g;
+    let button_id = regexp1.exec(eid);
+    hiddenValue1 = document.getElementById('theme_value').value;
 
-    for (let i = 0; i < getArray.length; i++) 
+    if (hiddenValue1 === "") 
     {
-        if (getArray[i] !== '') 
+        hiddenValue1 = button_id;
+    } 
+    else 
+    {
+        if (hiddenValue1.includes(button_id)) 
         {
-            let buttonId = 's' + getArray[i];
-            let buttonElement = document.getElementById(buttonId);
-
-            if (buttonElement) 
-            {
-                buttonElement.style.backgroundColor = "lightcoral";
-            }
+            hiddenValue1 = hiddenValue1.split(',').filter(item => item !== button_id).join(',');
+        } 
+        else 
+        {
+            hiddenValue1 = hiddenValue1 + ',' + button_id;
         }
     }
+
+    console.log(hiddenValue1);
 }
+
 function btnChecked2() 
 {
-    let hiddenValue = document.getElementById('w_days_value').value;
-    let getArray = hiddenValue.split(",");
+    let regexp1 = /[0-9]/g;
+    let button_id = regexp1.exec(button.id);
+    hiddenValue2 = document.getElementById('w_days_value').value;
 
-    for (let i = 0; i < getArray.length; i++) 
+    let buttonDigit = button_id ? button_id[0] : '';
+
+    if (hiddenValue2 === "") 
     {
-        if (getArray[i] !== '') 
+        hiddenValue2 = buttonDigit;
+    } 
+    else 
+    {
+        if (hiddenValue2.includes(buttonDigit)) 
         {
-            let buttonId = 'd' + getArray[i];
-            let buttonElement = document.getElementById(buttonId);
-
-            if (buttonElement) 
-            {
-                buttonElement.style.backgroundColor = "lightcoral";
-            }
+            hiddenValue2 = hiddenValue2.split(',').filter(item => item !== buttonDigit).join(',');
+        } 
+        else 
+        {
+            hiddenValue2 += ',' + buttonDigit;
         }
     }
+
+    console.log(hiddenValue2);
 }
 function btnOnLoad() 
 {
-    console.log(image.src);
+    hiddenValue1 = document.getElementById('theme_value').value;
+    getArray1 = hiddenValue1.split(",");
+    hiddenValue2 = document.getElementById('w_days_value').value;
+    getArray2 = hiddenValue2.split(",");
 
-    btnChecked1();
-    btnChecked2();
+    for (let i = 0; i < getArray1.length; i++) 
+    {
+        if (getArray1[i] !== '') 
+        {
+            let buttonId = 's' + getArray1[i];
+            let buttonElement = document.getElementById(buttonId);
+
+            if (buttonElement) 
+            {
+                buttonElement.style.backgroundColor = "lightcoral";
+                
+            }
+        }
+    }
+    
+    for (let i = 0; i < getArray2.length; i++) 
+    {
+        if (getArray2[i] !== '') 
+        {
+            let buttonId = 'd' + getArray2[i];
+            let buttonElement = document.getElementById(buttonId);
+
+            if (buttonElement) 
+            {
+                buttonElement.style.backgroundColor = "lightcoral";
+            }
+        }
+    }
 }

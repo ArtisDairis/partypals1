@@ -17,7 +17,7 @@ if (isset($_SESSION['username']) && $_SESSION['is_worker'] == 1)
 
         // Output the information upload_info_profile.php
         echo '
-            <form action="php/" method="post">
+            <form action="php/upload_info_profile.php" method="post">
             <div id="profile">
                 <div id="profile_content">
                     <table id="profile_info">
@@ -65,36 +65,36 @@ if (isset($_SESSION['username']) && $_SESSION['is_worker'] == 1)
                                 <input type="hidden" name="theme" value="'.$row['theme'].'" id="theme_value">
                                 <table style="margin-left: auto; margin-right:auto;">
                                 <tr>
-                                    <td><button class="ac_btn_e" type="button" id="s1" onclick="changeColor(\'s1\')">Pilsētas svētki</button></td>
-                                    <td><button class="ac_btn_e" type="button" id="s2" onclick="changeColor(\'s2\')">Pieaugušo dzimšanas diena</button></td>
-                                    <td><button class="ac_btn_e" type="button" id="s3" onclick="changeColor(\'s3\')">Bērna dzimšanas diena</button></td>
-                                    <td><button class="ac_btn_e" type="button" id="s4" onclick="changeColor(\'s4\')">Korporatīvi</button></td>
+                                    <td><button class="ac_btn_e" type="button" id="s1" onclick="changeColor(\'s1\'); btnChecked1(\'s1\');">Pilsētas svētki</button></td>
+                                    <td><button class="ac_btn_e" type="button" id="s2" onclick="changeColor(\'s2\'); btnChecked1(\'s2\');">Pieaugušo dzimšanas diena</button></td>
+                                    <td><button class="ac_btn_e" type="button" id="s3" onclick="changeColor(\'s3\'); btnChecked1(\'s3\');">Bērna dzimšanas diena</button></td>
+                                    <td><button class="ac_btn_e" type="button" id="s4" onclick="changeColor(\'s4\'); btnChecked1(\'s4\');">Korporatīvi</button></td>
                                 </tr>
                                 <tr>
-                                    <td><button class="ac_btn_e" type="button" id="s5" onclick="changeColor(\'s5\')">Kāzas</button></td>
-                                    <td><button class="ac_btn_e" type="button" id="s6" onclick="changeColor(\'s6\')">Pasākumi bērniem</button></td>
-                                    <td><button class="ac_btn_e" type="button" id="s7" onclick="changeColor(\'s7\')">Skolu pasākumi</button></td>
-                                    <td><button class="ac_btn_e" type="button" id="s8" onclick="changeColor(\'s8\')">Jubilejas</button></td>
+                                    <td><button class="ac_btn_e" type="button" id="s5" onclick="changeColor(\'s5\'); btnChecked1(\'s5\');">Kāzas</button></td>
+                                    <td><button class="ac_btn_e" type="button" id="s6" onclick="changeColor(\'s6\'); btnChecked1(\'s6\');">Pasākumi bērniem</button></td>
+                                    <td><button class="ac_btn_e" type="button" id="s7" onclick="changeColor(\'s7\'); btnChecked1(\'s7\');">Skolu pasākumi</button></td>
+                                    <td><button class="ac_btn_e" type="button" id="s8" onclick="changeColor(\'s8\'); btnChecked1(\'s8\');">Jubilejas</button></td>
                                 </tr>
                                 </table>
                                 <br>
                                 <label for="photo">Fotogrāfija:</label>
-                                <input type="file" name="photo" id="image_value" onchange="loadImage()"> 
+                                <input type="file" name="photo1" id="image_value" onchange="loadImage()"> 
                             </td>
                             <td class="p_info_box">
                                 <label for="work_days">Darba dienas:</label><br>
-                                <input type="hidden" value="'.$row['work_days'].'" id="w_days_value">
+                                <input type="hidden" name="work_days" value="'.$row['work_days'].'" id="w_days_value">
                                 <table style="margin-left: auto; margin-right:auto;">
                                 <tr>
-                                    <td><button class="ac_btn_d" type="button" id="d1" onclick="changeColor(\'d1\')">Pirmdiena</button></td>
-                                    <td><button class="ac_btn_d" type="button" id="d2" onclick="changeColor(\'d2\')">Otrdiena</button></td>
-                                    <td><button class="ac_btn_d" type="button" id="d3" onclick="changeColor(\'d3\')">Treštdiena</button></td>
-                                    <td><button class="ac_btn_d" type="button" id="d4" onclick="changeColor(\'d4\')">Ceturtdiena</button></td>
+                                    <td><button class="ac_btn_d" type="button" id="d1" onclick="changeColor(\'d1\'); btnChecked2();">Pirmdiena</button></td>
+                                    <td><button class="ac_btn_d" type="button" id="d2" onclick="changeColor(\'d2\'); btnChecked2();">Otrdiena</button></td>
+                                    <td><button class="ac_btn_d" type="button" id="d3" onclick="changeColor(\'d3\'); btnChecked2();">Treštdiena</button></td>
+                                    <td><button class="ac_btn_d" type="button" id="d4" onclick="changeColor(\'d4\'); btnChecked2();">Ceturtdiena</button></td>
                                 </tr>
                                 <tr>
-                                    <td><button class="ac_btn_d" type="button" id="d5" onclick="changeColor(\'d5\')">Piektdiena</button></td>
-                                    <td><button class="ac_btn_d" type="button" id="d6" onclick="changeColor(\'d6\')">Sestdiena</button></td>
-                                    <td><button class="ac_btn_d" type="button" id="d7" onclick="changeColor(\'d7\')">Svētdiena</button></td>
+                                    <td><button class="ac_btn_d" type="button" id="d5" onclick="changeColor(\'d5\'); btnChecked2();">Piektdiena</button></td>
+                                    <td><button class="ac_btn_d" type="button" id="d6" onclick="changeColor(\'d6\'); btnChecked2();">Sestdiena</button></td>
+                                    <td><button class="ac_btn_d" type="button" id="d7" onclick="changeColor(\'d7\'); btnChecked2();">Svētdiena</button></td>
                                 </tr>
                                 </table>
                                 <br>
@@ -102,11 +102,11 @@ if (isset($_SESSION['username']) && $_SESSION['is_worker'] == 1)
                                 <textarea name="about_me" id="about_me" rows="7" cols="50">'.$row['about_me'].'</textarea>
                                 <br>
                                 <label for="worker">Vai strādāsi?</label>
-                                <input type="checkbox" name="worker" '. ($row['worker'] == 1 ? 'checked' : '') .'>
+                                <input type="checkbox" name="worker" '. ($row['worker'] == 1 ? 'checked' : '') .' value="'. ($row['worker'] == 1 ? '1' : '0') .'">
                             </td>
                         </tr>
                     </table>
-                    <input type="submit" value="Pabeigt">
+                    <input type="submit" class="info_submit" value="Pabeigt">
                 </div>
             </div>
         </form>

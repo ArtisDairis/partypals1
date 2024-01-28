@@ -6,10 +6,8 @@
         $username = $_POST['username'];
         $password = $_POST['password'];
     
-        // Hash the password (use a strong hashing algorithm like bcrypt)
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
     
-        // Retrieve hashed password from the database based on the provided username
         $sql = "SELECT username, password, is_worker FROM auth WHERE username = '$username'";
         $result = $conn->query($sql);
     
