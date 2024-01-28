@@ -72,36 +72,33 @@ function changeColor(buttonId)
     }
 }
 
-function btnChecked1(eid) 
-{
-    let regexp1 = /[0-9]/g;
-    let button_id = regexp1.exec(eid);
-    hiddenValue1 = document.getElementById('theme_value').value;
+function btnChecked1(eid) {
+    let regexp1 = /\d+/g;
+    let button_id = regexp1.exec(eid)[0];
 
-    if (hiddenValue1 === "") 
+    let hiddenValueArray = hiddenValue1.split(',');
+
+    if (hiddenValueArray.includes(button_id)) 
     {
-        hiddenValue1 = button_id;
+        hiddenValueArray = hiddenValueArray.filter(item => item !== button_id);
     } 
     else 
     {
-        if (hiddenValue1.includes(button_id)) 
-        {
-            hiddenValue1 = hiddenValue1.split(',').filter(item => item !== button_id).join(',');
-        } 
-        else 
-        {
-            hiddenValue1 = hiddenValue1 + ',' + button_id;
-        }
+        hiddenValueArray.push(button_id); // Add the new button ID
     }
+
+    hiddenValue1 = hiddenValueArray.join(',');
 
     console.log(hiddenValue1);
 }
+
+
+
 
 function btnChecked2() 
 {
     let regexp1 = /[0-9]/g;
     let button_id = regexp1.exec(button.id);
-    hiddenValue2 = document.getElementById('w_days_value').value;
 
     let buttonDigit = button_id ? button_id[0] : '';
 
