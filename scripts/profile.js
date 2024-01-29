@@ -72,7 +72,8 @@ function changeColor(buttonId)
     }
 }
 
-function btnChecked1(eid) {
+function btnChecked1(eid) 
+{
     let regexp1 = /\d+/g;
     let button_id = regexp1.exec(eid)[0];
 
@@ -87,38 +88,46 @@ function btnChecked1(eid) {
         hiddenValueArray.push(button_id); // Add the new button ID
     }
 
-    hiddenValue1 = hiddenValueArray.join(',');
-
-    console.log(hiddenValue1);
+    if(hiddenValue1 === "")
+    {
+        hiddenValue1 = button_id;
+    }
+    else
+    {
+        hiddenValue1 = hiddenValueArray.join(',');
+    }
+    
+    document.getElementById('theme_value').value = hiddenValue1;
+    console.log(document.getElementById('theme_value').value);
 }
 
-
-
-
-function btnChecked2() 
+function btnChecked2(eid) 
 {
-    let regexp1 = /[0-9]/g;
-    let button_id = regexp1.exec(button.id);
+    let regexp1 = /\d+/g;
+    let button_id = regexp1.exec(eid)[0];
 
-    let buttonDigit = button_id ? button_id[0] : '';
+    let hiddenValueArray = hiddenValue2.split(',');
 
-    if (hiddenValue2 === "") 
+    if (hiddenValueArray.includes(button_id)) 
     {
-        hiddenValue2 = buttonDigit;
+        hiddenValueArray = hiddenValueArray.filter(item => item !== button_id);
     } 
     else 
     {
-        if (hiddenValue2.includes(buttonDigit)) 
-        {
-            hiddenValue2 = hiddenValue2.split(',').filter(item => item !== buttonDigit).join(',');
-        } 
-        else 
-        {
-            hiddenValue2 += ',' + buttonDigit;
-        }
+        hiddenValueArray.push(button_id); // Add the new button ID
     }
 
-    console.log(hiddenValue2);
+    if(hiddenValue2 === "")
+    {
+        hiddenValue2 = button_id;
+    }
+    else
+    {
+        hiddenValue2 = hiddenValueArray.join(',');
+    }
+    
+    document.getElementById('w_days_value').value = hiddenValue2;
+    console.log(document.getElementById('w_days_value').value);
 }
 function btnOnLoad() 
 {

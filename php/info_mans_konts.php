@@ -86,15 +86,15 @@ if (isset($_SESSION['username']) && $_SESSION['is_worker'] == 1)
                                 <input type="hidden" name="work_days" value="'.$row['work_days'].'" id="w_days_value">
                                 <table style="margin-left: auto; margin-right:auto;">
                                 <tr>
-                                    <td><button class="ac_btn_d" type="button" id="d1" onclick="changeColor(\'d1\'); btnChecked2();">Pirmdiena</button></td>
-                                    <td><button class="ac_btn_d" type="button" id="d2" onclick="changeColor(\'d2\'); btnChecked2();">Otrdiena</button></td>
-                                    <td><button class="ac_btn_d" type="button" id="d3" onclick="changeColor(\'d3\'); btnChecked2();">Treštdiena</button></td>
-                                    <td><button class="ac_btn_d" type="button" id="d4" onclick="changeColor(\'d4\'); btnChecked2();">Ceturtdiena</button></td>
+                                    <td><button class="ac_btn_d" type="button" id="d1" onclick="changeColor(\'d1\'); btnChecked2(\'d1\');">Pirmdiena</button></td>
+                                    <td><button class="ac_btn_d" type="button" id="d2" onclick="changeColor(\'d2\'); btnChecked2(\'d2\');">Otrdiena</button></td>
+                                    <td><button class="ac_btn_d" type="button" id="d3" onclick="changeColor(\'d3\'); btnChecked2(\'d3\');">Treštdiena</button></td>
+                                    <td><button class="ac_btn_d" type="button" id="d4" onclick="changeColor(\'d4\'); btnChecked2(\'d4\');">Ceturtdiena</button></td>
                                 </tr>
                                 <tr>
-                                    <td><button class="ac_btn_d" type="button" id="d5" onclick="changeColor(\'d5\'); btnChecked2();">Piektdiena</button></td>
-                                    <td><button class="ac_btn_d" type="button" id="d6" onclick="changeColor(\'d6\'); btnChecked2();">Sestdiena</button></td>
-                                    <td><button class="ac_btn_d" type="button" id="d7" onclick="changeColor(\'d7\'); btnChecked2();">Svētdiena</button></td>
+                                    <td><button class="ac_btn_d" type="button" id="d5" onclick="changeColor(\'d5\'); btnChecked2(\'d5\');">Piektdiena</button></td>
+                                    <td><button class="ac_btn_d" type="button" id="d6" onclick="changeColor(\'d6\'); btnChecked2(\'d6\');">Sestdiena</button></td>
+                                    <td><button class="ac_btn_d" type="button" id="d7" onclick="changeColor(\'d7\'); btnChecked2(\'d7\');">Svētdiena</button></td>
                                 </tr>
                                 </table>
                                 <br>
