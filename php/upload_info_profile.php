@@ -2,6 +2,7 @@
     include "./connection.php";
 
     $usermame = $_SESSION['username'];
+    $is_worker = $_SESSION['is_worker'];
     $theme = $_POST['theme'];
     $work_days = $_POST['work_days'];
     
