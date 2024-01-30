@@ -26,7 +26,7 @@ if (isset($_SESSION['username']) && $_SESSION['is_worker']==1)
             <a class='link1' href='animatori.php?user=$username'><b>Animātori</b></a>
             <a class='link1' href='kalendars.php?user=$username'><b>Kalendārs</b></a>
             <a class='link1' href='piedavajumi.php?user=$username'><b>Piedāvājumi</b></a>
-            <a class='link1' href='las_vairak.php'><b>Pasūtījumi</b></a>
+            <a class='link1' href='pasutijumi.php?user=$username'><b>Pasūtījumi</b></a>
             <a class='link1' href='mans_konts.php?user=$username'><b>Mans konts</b></a>
             <a class='link1' href='par_mums.php?user=$username'><b>Par mums</b></a>
         </div>
@@ -57,7 +57,7 @@ if (isset($_SESSION['username']) && $_SESSION['is_worker']==0)
             <a class='link1' href='animatori.php?user=$username'><b>Animātori</b></a>
             <a class='link1' href='kalendars.php?user=$username'><b>Kalendārs</b></a>
             <a class='link1' href='piedavajumi.php?user=$username'><b>Piedāvājumi</b></a>
-            <a class='link1' href=''><b>Pasūtījumi</b></a>
+            <a class='link1' href='pasutijumi.php?user=$username'><b>Pasūtījumi</b></a>
             <a class='link1' href='par_mums.php?user=$username'><b>Par mums</b></a>
         </div>
 
