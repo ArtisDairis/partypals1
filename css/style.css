@@ -693,5 +693,11 @@ article div h1
 }
 .table_row
 {
-    border: 1px solid black;
+    text-align: center;
+    background-color: lightslategray;
+}
+.table_col
+{
+    font-size: 18px;
+    font-weight: 600;
 }

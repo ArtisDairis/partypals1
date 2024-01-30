@@ -21,6 +21,7 @@
     <article>
         <?php
             include "./php/pasutijumi_info.php";
+            include "php/show_login.php";
         ?>
     </article>
 

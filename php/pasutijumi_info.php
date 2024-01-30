@@ -31,18 +31,18 @@ $result_info = $conn->query($sql_info);
             while ($row_info = $result_info->fetch_assoc()) 
             {
                 echo "<tr class='table_row'>";
-                echo "<td>".$row_info['event_name']."</td>";
-                echo "<td>".$row_info['name']."</td>";
-                echo "<td>".$row_info['surname']."</td>";
-                echo "<td>".$row_info['phone_number']."</td>";
-                echo "<td>".$row_info['e_mail']."</td>";
-                echo "<td>".$row_info['adress']."</td>";
-                echo "<td>".$row_info['event_time_start']."</td>";
-                echo "<td>".$row_info['event_time_end']."</td>";
-                echo "<td>".$row_info['event_date']."</td>";
-                echo "<td>".$row_info['about_event']."</td>";
-                echo "<td>".$row_info['animators_id']."</td>";
-                echo "<td>".$row_info['is_global']."</td>";
+                echo "<td class='table_col'>".$row_info['event_name']."</td>";
+                echo "<td class='table_col'>".$row_info['name']."</td>";
+                echo "<td class='table_col'>".$row_info['surname']."</td>";
+                echo "<td class='table_col'>".$row_info['phone_number']."</td>";
+                echo "<td class='table_col'>".$row_info['e_mail']."</td>";
+                echo "<td class='table_col'>".$row_info['adress']."</td>";
+                echo "<td class='table_col'>".$row_info['event_time_start']."</td>";
+                echo "<td class='table_col'>".$row_info['event_time_end']."</td>";
+                echo "<td class='table_col'>".$row_info['event_date']."</td>";
+                echo "<td class='table_col'>".$row_info['about_event']."</td>";
+                echo "<td class='table_col'>".$row_info['animators_id']."</td>";
+                echo "<td class='table_col'>".$row_info['is_global']."</td>";
                 echo "</tr>";
             }
             echo "</table>";
