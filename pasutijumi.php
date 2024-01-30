@@ -23,23 +23,23 @@
             include "./php/pasutijumi_info.php";
         ?>
     </article>
+
+        <br>
         
-        
-        <footer id="end_box">
-            <div id="end_text">
-                <p class="end_t"><b>Autors: Artis Dairis Kroičs</b></p>
-                <p class="end_t"><b>Tālrunis: +37129120520</b></p>
-                <p class="end_t"><b>E-pasts: partypals@gmail.com</b></p>
-            </div>
-            <div id="icon_div">
-                <img src="css/img/header/instagram.png" class="ico2" alt="Instagram">
-                <img src="css/img/header/facebook.png" class="ico2" alt="Facebook">
-            </div>
-        </footer>
+    <footer id="end_box">
+        <div id="end_text">
+            <p class="end_t"><b>Autors: Artis Dairis Kroičs</b></p>
+            <p class="end_t"><b>Tālrunis: +37129120520</b></p>
+            <p class="end_t"><b>E-pasts: partypals@gmail.com</b></p>
+        </div>
+        <div id="icon_div">
+            <img src="css/img/header/instagram.png" class="ico2" alt="Instagram">
+            <img src="css/img/header/facebook.png" class="ico2" alt="Facebook">
+        </div>
+    </footer>
     
-        <script src="scripts/size.js"></script>
-        <script src="scripts/sign_in.js"></script>
-        <script src="scripts/galery.js"></script>
-        <script src="scripts/chat.js"></script>
-    </body>
-    </html>
+    <script src="scripts/size.js"></script>
+    <script src="scripts/sign_in.js"></script>
+    <script src="scripts/chat.js"></script>
+</body>
+</html>

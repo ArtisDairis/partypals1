@@ -685,3 +685,13 @@ article div h1
 {
     background-color: #aaa;
 }
+/* pasutijumi */
+.pasutijumi_table
+{
+    border: 1px solid black;
+
+}
+.table_row
+{
+    border: 1px solid black;
+}
