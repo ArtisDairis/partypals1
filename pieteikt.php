@@ -65,12 +65,12 @@
         ?>
 
         <div id="navigation_line">
-            <button class="navigation_line_btn" id="btn1" onclick="btn1Click()">1 Tēma</button>
-            <button class="navigation_line_btn" id="btn2" onclick="btn2Click()">2</button>
-            <button class="navigation_line_btn" id="btn3" onclick="btn3Click()">3</button>
+            <button type="button" class="navigation_line_btn" id="btn1" onclick="btn1Click()">1 Tēma</button>
+            <button type="button" class="navigation_line_btn" id="btn2" onclick="btn2Click()">2</button>
+            <button type="button" class="navigation_line_btn" id="btn3" onclick="btn3Click()">3</button>
         </div>
 
-        <form action="" method="Post">
+        <form action="" method="post">
             <div id="bloks1">
                 <br>
                 <table>
@@ -116,7 +116,7 @@
                     <tr>
                         <td></td>
                         <td>
-                            <button class="inp_talak" onclick="btn2Click()">Turpināt</button>
+                            <button type="button" class="inp_talak" onclick="btn2Click()">Turpināt</button>
                         </td>
                         <td></td>
                     </tr>
@@ -131,8 +131,8 @@
                 ?>
 
                 <br>
-                <button class="inp_talak" onclick="btn1Click()">Atpakaļ</button>
-                <button class="inp_talak" onclick="btn3Click()">Turpināt</button>
+                <button type="button" class="inp_talak" onclick="btn1Click()">Atpakaļ</button>
+                <button type="button" class="inp_talak" onclick="btn3Click()">Turpināt</button>
                 <br><br>
             </div>
             <div id="bloks3" hidden>
@@ -178,7 +178,7 @@
                     
                 </table>
                 <br>
-                <button class="inp_talak" onclick="btn2Click()">Atpakaļ</button>
+                <button type="button" class="inp_talak" onclick="btn2Click()">Atpakaļ</button>
                 <input type="submit" class="inp_talak" value="Pabeigt">
                 <br><br>
             </div>
