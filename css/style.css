@@ -701,3 +701,14 @@ article div h1
     font-size: 18px;
     font-weight: 600;
 }
+#pas_content
+{
+    width: 100%;
+    text-align: center;
+}
+#pas_content div
+{
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}

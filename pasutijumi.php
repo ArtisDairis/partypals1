@@ -19,10 +19,21 @@
         <br><br><br><br><br>
 
     <article>
+        <div id="pas_content">
+            <div>
+                <?php
+                    include "./php/pasutijumi_info.php";
+                ?>
+            </div>
+        </div>
         <?php
-            include "./php/pasutijumi_info.php";
             include "php/show_login.php";
         ?>
+        <div id='pasutijumi_modal' class='modal'>
+            <div class='modal-content'>
+                
+            </div>
+        </div>
     </article>
 
         <br>
@@ -42,5 +53,33 @@
     <script src="scripts/size.js"></script>
     <script src="scripts/sign_in.js"></script>
     <script src="scripts/chat.js"></script>
+    <script src="scripts/pasutijumi_edit.js"></script>
+    <script src="scripts/jquery-3.7.1.min.js"></script>
 </body>
+<script>
+    $('.pasutModal').click(function(e) 
+    {
+        e.preventDefault();
+        let m = $(this).attr('id');
+        console.log(m);
+
+        $.ajax({
+            type: "post",
+            url: "php/pasutijumi_modal_info.php",
+            data: {
+                selID: m,
+            },
+            dataType: "text",
+            success: function(response) 
+            {
+                $('.modal-content').html(response);
+            },
+            error: function(xhr, status, error) 
+            {
+                console.error(xhr.responseText);
+            }
+        });
+    });
+</script>
+
 </html>
