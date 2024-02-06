@@ -6,10 +6,10 @@ $username = "";
 // Start the session (assuming you're using sessions for user authentication)
 
 // Check if the user is logged in (you might have your own logic for this)
-if (isset($_SESSION['username']) && $_SESSION['is_worker']==1)
+if (isset($_COOKIE['username']) && isset($_COOKIE['is_worker']) && $_COOKIE['is_worker'] == 1) 
 {
     // User is logged in and he is worker
-    $username = $_SESSION['username'];
+    $username = $_COOKIE['username'];
     $sql = "SELECT photo FROM animatori WHERE username = '$username'";
     $result = $conn->query($sql);
     $row = $result->fetch_assoc();
@@ -42,9 +42,9 @@ if (isset($_SESSION['username']) && $_SESSION['is_worker']==1)
     ";
 } 
 else 
-if (isset($_SESSION['username']) && $_SESSION['is_worker']==0) 
+if (isset($_COOKIE['username']) && isset($_COOKIE['is_worker']) && $_COOKIE['is_worker'] == 0)
 {
-    $username = $_SESSION['username'];
+    $username = $_COOKIE['username'];
 
     // User is logged in and he is not worker
     echo "

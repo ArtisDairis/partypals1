@@ -1,15 +1,15 @@
 <?php
 include "connection.php";
 
+// Start the session if not started already
+session_start();
+
 $username = "";
 
-// Start the session (assuming you're using sessions for user authentication)
-
 // Check if the user is logged in (you might have your own logic for this)
-if (isset($_SESSION['username']) && $_SESSION['is_worker']==1) 
-{
-    // User is logged in and he is worker
-    $username = $_SESSION['username'];
+if (isset($_COOKIE['username']) && isset($_COOKIE['is_worker']) && $_COOKIE['is_worker'] == 1) {
+    // User is logged in and is a worker
+    $username = $_COOKIE['username'];
 
     echo "
         <div class='block1'>
@@ -30,18 +30,15 @@ if (isset($_SESSION['username']) && $_SESSION['is_worker']==1)
             <img src='../css/img/header/user.png' class='ico1' alt='User'>
             <span class='username'><b>$username</b></span>
 
-            <form methot='post' action='../php\log_out.php'>
+            <form method='post' action='../php/log_out.php'>
                 <input type='submit' class='btn1' name='logout' value='Log Out'>
-            </form
+            </form>
         </div>
     ";
-} 
-else 
-if (isset($_SESSION['username']) && $_SESSION['is_worker']==0) 
-{
-    $username = $_SESSION['username'];
+} elseif (isset($_COOKIE['username']) && isset($_COOKIE['is_worker']) && $_COOKIE['is_worker'] == 0) {
+    // User is logged in and is not a worker
+    $username = $_COOKIE['username'];
 
-    // User is logged in and he is not worker
     echo "
         <div class='block1'>
             <a href='../index.php'><h1 class='h1text'>PartyPaLs</h1></a>
@@ -60,14 +57,12 @@ if (isset($_SESSION['username']) && $_SESSION['is_worker']==0)
             <img src='../css/img/header/user.png' class='ico1' alt='User'>
             <span class='username'><b>$username</b></span>
 
-            <form methot='post' action='../php\log_out.php'>
+            <form method='post' action='../php/log_out.php'>
                 <input type='submit' class='btn1' name='logout' value='Log Out'>
-            </form
+            </form>
         </div>
     ";
-}
-else
-{
+} else {
     // User is not logged in
     echo "
         <div class='block1'>

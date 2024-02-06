@@ -1,9 +1,9 @@
 <?php
-    include "connection.php";
+include "connection.php";
 
-    session_unset();
+setcookie("username", "", time() - 3600, "/");
+setcookie("is_worker", "", time() - 3600, "/");
 
-    session_destroy();
-
-    header("location:http://localhost/kursa_darbs/index.php")
+header("Location: http://localhost/kursa_darbs/index.php");
+exit(); 
 ?>

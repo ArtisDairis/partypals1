@@ -1,7 +1,7 @@
 <?php
 include "./php/connection.php";
 
-$searchValue = $_SESSION['username'];
+$searchValue = $_COOKIE['username'];
 
 $sql_info = "SELECT * FROM `events` WHERE FIND_IN_SET('$searchValue', `animators_id`)";
 $result_info = $conn->query($sql_info);

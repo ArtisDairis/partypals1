@@ -17,7 +17,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         {
             $row_info = $result_info->fetch_assoc();
             
-            echo "
+            ?>
+
             <span class='close' onclick='closePasutijumiModal()'>&times;</span>
             <h2>Pasākuma informācija</h2>
                 <table>
@@ -30,15 +31,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <th class=''>Apraksts</th>
                     </tr>
                     <tr>
-                        <td class='table_col'>".$row_info['name']."</td>
-                        <td class='table_col'>".$row_info['surname']."</td>
-                        <td class='table_col'>".$row_info['phone_number']."</td>
-                        <td class='table_col'>".$row_info['e_mail']."</td>
-                        <td class='table_col'>".$row_info['adress']."</td>
-                        <td class='table_col'>".$row_info['about_event']."</td>
+                        <?php
+                        echo "<td class='table_col'>".$row_info['name']."</td>";
+                        echo "<td class='table_col'>".$row_info['surname']."</td>";
+                        echo "<td class='table_col'>".$row_info['phone_number']."</td>";
+                        echo "<td class='table_col'>".$row_info['e_mail']."</td>";
+                        echo "<td class='table_col'>".$row_info['adress']."</td>";
+                        echo "<td class='table_col'>".$row_info['about_event']."</td>";
+                        ?>
                     </tr>
                 </table>
-            ";
+                <?php
         }
     }
 }

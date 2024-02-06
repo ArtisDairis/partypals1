@@ -8,12 +8,12 @@
             <h2>Sign In</h2>
             <form method="post" action="php/auth.php">
                 <label for="username"><b>Username:</b></label><br>
-                <input type="text" id="username_login" class="auth_inputs" name="username" required>
+                <input type="text" id="username_login" class="auth_inputs" name="username" value="agrispro" required>
 
                 <br>
 
                 <label for="password"><b>Password:</b></label><br>
-                <input type="password" id="password_login" class="auth_inputs" name="password" required>
+                <input type="password" id="password_login" class="auth_inputs" name="password" value="Agris2004" required>
         
                 <br>
 

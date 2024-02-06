@@ -1,8 +1,8 @@
 <?php
-if (isset($_SESSION['username']) && $_SESSION['is_worker'] == 1) 
+if (isset($_COOKIE['username']) && $_COOKIE['is_worker'] == 1) 
 {
     // User is logged in and is a worker
-    $username = $_SESSION['username'];
+    $username = $_COOKIE['username'];
     
     // Use prepared statements to prevent SQL injection
     $sql = "SELECT * FROM animatori WHERE username = ?";
