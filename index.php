@@ -9,12 +9,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Livvic:wght@100&family=Lobster&display=swap" rel="stylesheet">
 </head>
-<body onscroll="removeHeader()" id="body_id">
-    <header class="header">
+<header class="header">
         <?php
             include "php/show_header.php";
         ?>
     </header>
+<body onscroll="removeHeader()" id="body_id">
+
                     
         <br><br><br><br><br>
 
@@ -89,21 +90,35 @@
     </article>
         
         
-    <footer id="end_box">
-        <div id="end_text">
-            <p class="end_t"><b>Autors: Artis Dairis Kroičs</b></p>
-            <p class="end_t"><b>Tālrunis: +37129120520</b></p>
-            <p class="end_t"><b>E-pasts: partypals@gmail.com</b></p>
-        </div>
-        <div id="icon_div">
-            <img src="css/img/header/instagram.png" class="ico2" alt="Instagram">
-            <img src="css/img/header/facebook.png" class="ico2" alt="Facebook">
-        </div>
-    </footer>
+
 
     <script src="scripts/size.js"></script>
     <script src="scripts/sign_in.js"></script>
     <script src="scripts/galery.js"></script>
     <script src="scripts/chat.js"></script>
 </body>
+
+    <footer>
+<div class="wrapper"> 
+    <div class="contact_block">
+            <div class="footer_title">
+                <h2>Kontaktinformācija</h2>
+            </div>
+            <div class="footer_cntnt">
+                    <p>Autors: Artis Dairis Kroičs</p> 
+                    <p>Tālrunis: +37129120520</p> 
+                    <p>E-pasts: partypals@gmail.com</p>
+            </div>
+    </div>
+    <div class="social_media_block">
+            <div class="footer_title">
+            <h2>Seko mums</h2>
+            </div>
+            <div class="footer_cntnt">
+                <a href="#"> <img  class = "ico_footer" src="css/img/header/instagram.png" alt="Oooops...."></a>
+                <a href="#"> <img class = "ico_footer" src="css/img/header/facebook.png" alt="Oooops...."></a>
+                </div>
+    </div>
+
+    </footer>
 </html>

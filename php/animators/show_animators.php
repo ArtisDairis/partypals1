@@ -29,7 +29,7 @@ if ($result->num_rows > 0)
                 echo "<th>";
                 echo "<div class='box'>";
                 echo "<h2>" . $row["character"] . "</h2>";
-                echo "<img src='php/animators/Photo/" . $row["photo"] . "' alt='No img!' class='card_img'>";
+                echo "<img src='css/img/user_img/" . $row["photo"] . "' alt='No img!' class='card_img'>";
                 echo "<br>";
                 echo "<a href='anim_apraksts.php?id=" . $row["id"] . "' class='btn_darb'>Lasīt vairāk!</a>";
                 echo "</div>";

@@ -32,7 +32,7 @@ if (isset($_GET['id']))
                 <p>$apraksts</p>
             </div>
             <div class='right_apr'>
-                <img src='php/animators/Photo/$photo' alt='No img!' class='animator_img'>
+                <img src='css/img/user_img/$photo' alt='No img!' class='animator_img'>
             </div>
         </div>
         ";

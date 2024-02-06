@@ -24,24 +24,64 @@
 
     <article>
         <div>
-            <h1 class="card_text">Pieaugušo dzimšanas diena</h1>
+            <h1 class="card_h1_text">Pieaugušo dzimšanas diena</h1>
+
+            <div>
+                <table id="las_v_content">
+                    <tr>
+                        <td id="left_content">
+                            <p>PartyPals animācijas komanda ir šeit, lai jūsu pieaugušo dzimšanas dienu padarītu par neaizmirstamu notikumu! Mēs nodrošinām radošu un aizraujošu izklaides pieredzi visiem jūsu viesiem. Aiciniet mūs uz savu dzimšanas dienas svinību, un mēs nodrošināsim, ka katrs dalībnieks atstās ar smaidu sejā un labām atmiņām sirdī.</p>
+                            <ul>
+                                <li><b>Tematiskas ballītes:</b> Mēs spējam radīt un ieviest jebkuru tematu jūsu dzimšanas dienas svinībām. Vai jūs vēlaties retro ballīti vai eleganto ballīti šī gada tendencēs? Mūsu animatori ir gatavi pārvērst jūsu idejas par realitāti.</li>
+                                <li><b>Interaktīvas aktivitātes:</b> Mūsu komanda piedāvā dažādas interaktīvas aktivitātes un spēles, kas jūsu viesiem garantēs neaizmirstamu izklaidi. Spēļu konkursi, burvju uzvedumi un daudz kas cits – mēs esam šeit, lai padarītu jūsu dzimšanas dienas svinības patiesi īpašas.</li>
+                                <li><b>Profesionālisms un kvalitāte:</b> Mūsu animatori ir pieredzējuši profesionāļi, kuri rūpēsies par katru detalizēto svinību elementu. Mēs garantējam ne tikai izklaidi, bet arī izcilu pakalpojumu kvalitāti un uzmanību pret jūsu vēlmēm.</li>
+                            </ul>
+                            <p>Uzņemiet PartyPals uz savu pieaugušo dzimšanas dienu un pārliecinieties, ka jūsu svētki kļūst par neaizmirstamu notikumu, ko visi jūsu viesi novērtēs. Sazinieties ar mums, lai sāktu plānot jūsu dzimšanas dienas svinības un atklātu jaunas iespējas un idejas!</p>
+                        </td>
+
+                        <td id="right_content">
+                            <img src="photo/1.jpg" alt="Nav foto!" class="las_v_img">
+                            <img src="photo/1.jpg" alt="Nav foto!" class="las_v_img">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button id="pieteikt"><a href="../pieteikt.php">Pieteikt</a></button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
         </div>
     </article>
+
         
-    <footer id="end_box">
-        <div id="end_text">
-            <p class="end_t"><b>Autors: Artis Dairis Kroičs</b></p>
-            <p class="end_t"><b>Tālrunis: +37129120520</b></p>
-            <p class="end_t"><b>E-pasts: partypals@gmail.com</b></p>
-        </div>
-        <div id="icon_div">
-            <img src="../css/img/header/instagram.png" class="ico2" alt="Instagram">
-            <img src="../css/img/header/facebook.png" class="ico2" alt="Facebook">
-        </div>
-    </footer>
+
 
     <script src="../scripts/size.js"></script>
     <script src="../scripts/sign_in.js"></script>
 
 </body>
+<footer>
+<div class="wrapper"> 
+    <div class="contact_block">
+            <div class="footer_title">
+                <h2>Kontaktinformācija</h2>
+            </div>
+            <div class="footer_cntnt">
+                    <p>Autors: Artis Dairis Kroičs</p> 
+                    <p>Tālrunis: +37129120520</p> 
+                    <p>E-pasts: partypals@gmail.com</p>
+            </div>
+    </div>
+    <div class="social_media_block">
+            <div class="footer_title">
+            <h2>Seko mums</h2>
+            </div>
+            <div class="footer_cntnt">
+                <a href="#"> <img  class = "ico_footer" src="css/img/header/instagram.png" alt="Oooops...."></a>
+                <a href="#"> <img class = "ico_footer" src="css/img/header/facebook.png" alt="Oooops...."></a>
+                </div>
+    </div>
+
+    </footer>
 </html>
