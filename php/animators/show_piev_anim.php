@@ -1,7 +1,8 @@
 <?php
 include "php/connection.php";
 
-if (isset($_GET['tema'])) {
+if (isset($_GET['tema'])) 
+{
     // Fetch data from the database
     $selectedTheme = $_GET['tema'];
     $sql = "SELECT * FROM animatori WHERE `theme` = $selectedTheme";
@@ -14,19 +15,23 @@ if (isset($_GET['tema'])) {
 
     echo "<table>";
 
-    if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-            if ($row['worker']) {
+    if ($result->num_rows > 0) 
+    {
+        while ($row = $result->fetch_assoc()) 
+        {
+            if ($row['worker']) 
+            {
                 $col_max++;
 
-                if ($col_max % 5 == 1) {
+                if ($col_max % 5 == 1) 
+                {
                     echo "<tr>";
                 }
 
                 echo "<th>";
                 echo "<div class='box'>";
                 echo "<h2>" . $row["character"] . "</h2>";
-                echo "<img src='php/animators/Photo/" . $row["photo"] . "' alt='No img!' class='card_img'>";
+                echo "<img src='css/img/user_img/" . $row["photo"] . "' alt='No img!' class='card_img'>";
                 echo "<br>";
                 echo "<a href='anim_apraksts.php?id=" . $row["id"] . "' class='btn_darb'>Lasīt vairāk!</a>";
                 echo "<br>";
@@ -35,7 +40,8 @@ if (isset($_GET['tema'])) {
                 echo "</div>";
                 echo "</th>";
 
-                if ($col_max % 5 == 0 || $col_max == $result->num_rows) {
+                if ($col_max % 5 == 0 || $col_max == $result->num_rows) 
+                {
                     echo "</tr>";
                 }
             }
@@ -43,14 +49,18 @@ if (isset($_GET['tema'])) {
 
         // Add a hidden input field
         echo "<input type='hidden' name='selected_animators' id='selectedAnimators' value=''>";
-    } else {
+    } 
+    else 
+    {
         echo "<tr><td colspan='5'>No animators found for the selected theme.</td></tr>";
     }
 
     echo "</table>";
 
     echo "</form>";
-} else {
+} 
+else 
+{
     echo "Error: No tema parameter received";
 }
 

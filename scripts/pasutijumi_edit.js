@@ -1,21 +1,22 @@
-// Pasutijumi Modal
+// Get references to the modal and the element that opens it
 const openModulePas = document.getElementById('open_pas_modal');
 const pasutijumiModal = document.getElementById('pasutijumi_modal');
 
-openModulePas.addEventListener('click', openPasutijumiModal);
-
+// Function to open the modal
 function openPasutijumiModal() 
 {
     pasutijumiModal.style.display = 'block';
-    pasutijumiModal.style.zIndex = '700';
-    document.body.style.overflowY = 'auto';
+    document.body.style.overflowY = 'hidden';
 }
 
+// Function to close the modal
 function closePasutijumiModal() 
 {
     pasutijumiModal.style.display = 'none';
     document.body.style.overflowY = 'auto';
 }
+
+openModulePas.addEventListener('click', openPasutijumiModal);
 
 window.addEventListener('click', function (event) 
 {

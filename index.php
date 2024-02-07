@@ -47,7 +47,7 @@
             </ul>
             <p><b>Izvēloties 'PartyPals', jūs iegūsiet ne tikai animātorus, bet arī garantiju uz jautrību, smiekliem un neaizmirstamām atmiņām jūsu pasākumā!</b></p>
 
-            <button id="pieteikt"><a href="pieteikt.php">Pieteikt</a></button>
+            <button id="pieteikt"><a href="pieteikt.php?tema=1">Pieteikt</a></button>
         </div>
 
         <!-- <div id="chat_div">

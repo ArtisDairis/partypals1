@@ -30,7 +30,7 @@
             include "php/show_login.php";
         ?>
         <div id='pasutijumi_modal' class='modal'>
-            <div class='modal-content'>
+            <div class='modal-content3'>
                 
             </div>
         </div>
@@ -85,7 +85,7 @@
             dataType: "text",
             success: function(response) 
             {
-                $('.modal-content').html(response);
+                $('.modal-content3').html(response);
             },
             error: function(xhr, status, error) 
             {

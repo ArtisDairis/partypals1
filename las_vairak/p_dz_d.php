@@ -46,7 +46,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <button id="pieteikt"><a href="../pieteikt.php">Pieteikt</a></button>
+                            <button id="pieteikt"><a href="../pieteikt.php?tema=2">Pieteikt</a></button>
                         </td>
                     </tr>
                 </table>
