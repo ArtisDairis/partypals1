@@ -71,7 +71,20 @@ function register()
         console.log("Registration failed. Please check your input.");
     }
 }
+// register buttons
+let userReg = document.getElementById("userReg");
+let animReg = document.getElementById("animReg");
 
+function registerAnimators()
+{
+    userReg.hidden = true;
+    animReg.hidden = false;
+}
+function registerUser()
+{
+    userReg.hidden = false;
+    animReg.hidden = true;
+}
 // check each input (register)
 function checkUsername() 
 {
