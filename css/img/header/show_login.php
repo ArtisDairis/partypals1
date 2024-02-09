@@ -65,9 +65,9 @@
 
 <div id="forgotPassModal" class="modal">
     <div class="modal-content2">
-        <span class="close" onclick="closeForgotPassModal(); chageHidden();">&times;</span>
+        <span class="close" onclick="closeForgotPassModal()">&times;</span>
         <div class="sign_in_box">
-            <div id="fp_user_info">
+            <div id="fp_user_info" hidden>
                 <h2>Aizmirsu paroli</h2>
                 <form method="post" id="fp_user_info1">
                     <label for="username1"><b>Lietotājvārds:</b></label><br>
@@ -77,38 +77,27 @@
 
                     <label for="e_mail1"><b>E-pasts:</b></label><br>
                     <input type="text" id="e_mail1" class="auth_inputs" name="e_mail1" required>
-
+            
                     <br>
 
-                    <input type="button" id="send_code" value="Apstiprināt" class="modal_btn">
+                    <input type="submit" onclick="forgotPass()" value="Apstiprināt" class="modal_btn">
                 </form>
             </div>
-            <div id="fp_pas_code" hidden>
-            <br>
+            <div id="fp_pas_code">
                 <h2>Atjaunošanas kods</h2>
                 <form method="post" id="fp_pas_code1">
-                    <input type="text" id="n1" class="code_input" name="n1" required>
-                    <input type="text" id="n2" class="code_input" name="n2" required>
-                    <input type="text" id="n3" class="code_input" name="n3" required>
-                    <input type="text" id="n4" class="code_input" name="n4" required>
+                    <label for="username1"><b>Lietotājvārds:</b></label><br>
+
+                    <table>
+                        <tr>
+                            <td><input type="text" id="" class="code_input" name="n1" required></td>
+                            <td><input type="text" id="" class="code_input" name="n2" required></td>
+                            <td><input type="text" id="" class="code_input" name="n3" required></td>
+                            <td><input type="text" id="" class="code_input" name="n4" required></td>
+                        </tr>
+                    </table>
                     <br>
-                    <input type="button" id="accept_code" value="Apstiprināt" class="modal_btn">
-                </form>
-            </div>
-            <div id="fp_new_pass" hidden>
-                <h2>Ierakstiet jauno paroli</h2>
-                <form method="post" id="fp_new_pass1">
-                    <label for="newPass1"><b>Parole:</b></label><br>
-                    <input type="text" id="newPass1" class="auth_inputs" name="newPass1" required>
-
-                    <br>
-
-                    <label for="newPass2"><b>Paroles apstiprinājums:</b></label><br>
-                    <input type="text" id="newPass2" class="auth_inputs" name="newPass2" required>
-
-                    <br>
-
-                    <input type="button" id="accept_pass" value="Apstiprināt" class="modal_btn">
+                    <input type="submit" onclick="" value="Apstiprināt" class="modal_btn">
                 </form>
             </div>
         </div>

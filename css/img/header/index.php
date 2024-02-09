@@ -92,13 +92,36 @@
         
 
     <script src="scripts/jquery-3.7.1.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
     <script src="scripts/size.js"></script>
     <script src="scripts/sign_in.js"></script>
     <script src="scripts/galery.js"></script>
     <script src="scripts/chat.js"></script>
-    <script src="scripts/forgot_pas.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+        emailjs.init({
+            publicKey: "EOzJ7zTKUk_je9AQj",
+        });
+        })();
+    </script>
+    <script>
+        function sendMail()
+        {
+            let parms = 
+            {
+                username : "Laureitisj",
+                e_mail : "lauriszunda62@gmail.com",
+                subject : "Paroles maiņa",
+                message : "123454321"
+            }
+
+            emailjs.send("service_8col8pl","template_qxarzuq",parms).then(
+                {
+
+                })
+        }
+    </script>
+
 
 </body>
 
