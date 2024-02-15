@@ -15,9 +15,6 @@
         ?>
     </header>
 <body onscroll="removeHeader()" id="body_id">
-
-
-
     <article>
         <div id="pas_content">
             <div>
@@ -36,7 +33,7 @@
         </div>
     </article>
 
-        <br>
+        <br><br><br>
         
 
     
@@ -72,31 +69,6 @@
     
     <script src="scripts/jquery-3.7.1.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
-<script>
-    $('.pasutModal').click(function(e) 
-    {
-        e.preventDefault();
-        let m = $(this).attr('id');
-        console.log(m);
-
-        $.ajax({
-            type: "post",
-            url: "php/pasutijumi_modal_info.php",
-            data: {
-                selID: m,
-            },
-            dataType: "text",
-            success: function(response) 
-            {
-                $('.modal-content3').html(response);
-            },
-            error: function(xhr, status, error) 
-            {
-                console.error(xhr.responseText);
-            }
-        });
-    });
-</script>
+    <script src="scripts/pasutijumi.js"></script>
 
 </html>

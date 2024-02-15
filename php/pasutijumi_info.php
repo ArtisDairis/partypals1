@@ -24,7 +24,8 @@ $result_info = $conn->query($sql_info);
         }
         if ($result_info->num_rows > 0) 
         {
-            echo "<table class='pasutijumi_table'>";
+            echo "<div id='table_scrool_bar'>";
+            echo "<table id='pasutijumi_table'>";
             echo "<tr class='table_row'>";
             echo "<th class=''>Pasākuma nosaukums</th>";
             echo "<th class=''>Pasākuma laika sākums</th>";
@@ -32,6 +33,7 @@ $result_info = $conn->query($sql_info);
             echo "<th class=''>Pasākuma datums</th>";
             echo "<th class=''>Animatori</th>";
             echo "<th class=''>Lasīt vairāk!</th>";
+            echo "<th class=''>Statuss</th>";
             echo "</tr>";
             while ($row_info = $result_info->fetch_assoc()) 
             {
@@ -40,14 +42,24 @@ $result_info = $conn->query($sql_info);
                 echo "<td class='table_col'>" . formatTime($row_info['event_time_start']) . "</td>";
                 echo "<td class='table_col'>" . formatTime($row_info['event_time_end']) . "</td>";
                 echo "<td class='table_col'>".formatDate($row_info['event_date'])."</td>";
-                // echo "";
                 echo "<td class='table_col'>".$row_info['animators_id']."</td>";
-                // echo "<td class='table_col'>".$row_info['is_global']."</td>";
                 echo "<td class='table_col'><button type='button' class='pasutModal' id='".$row_info['id']."' onclick='openPasutijumiModal()'>Info</button></td>";
+                echo "<td class='table_col'>";
+                if($row_info['status'] == "Saņemts") {
+                    echo "<button type='button' onclick='accessEvent(".$row_info['id'].")' class='pasutModal'>Apstiprināt</button>";
+                    echo "<button type='button' onclick='deniedEvent(".$row_info['id'].")' class='pasutModal'>Noraidīt</button>";
+                } elseif($row_info['status'] == "Apstiprināts") {
+                    echo "<span style='color: lightgreen;'>Apstiprināts</span>";
+                } elseif($row_info['status'] == "Noraidīts") {
+                    echo "<span style='color: #FF7F7F;'>Noraidīts</span>";
+                }
+                echo "</td>";
                 echo "</tr>";
             }
             echo "</table>";
+            echo "</div>";
         }
+        
     }
 
 $conn->close();

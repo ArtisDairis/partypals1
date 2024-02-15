@@ -753,10 +753,11 @@ footer {
     max-height: 400px;
     border-radius: 15px;
 }
-.pasutijumi_table
+#pasutijumi_table
 {
+    margin-left: 14%;
     border: 1px solid black;
-
+    width: 80%;
 }
 .table_row
 {
@@ -791,7 +792,6 @@ footer {
 }
 .modal_apr
 {
-    margin-left: 10%;
     background-color: #aaa;
     width: 600px;
     height: 150px;
@@ -811,9 +811,7 @@ footer {
 }
 #pas_content
 {
-    margin-top: 10%;
-    width: 80%;
-    padding: 50px;
+    margin-top: 8%;
     height: 450px;
     text-align: center;
     margin-left: auto;
@@ -821,7 +819,27 @@ footer {
 }
 #pas_content div
 {
-    width: 60%;
+    width: 80%;
     margin-left: auto;
     margin-right: auto;
 }
+.pasutModal
+{
+    font-family: 'Livvic', sans-serif;
+    font-weight: 600;
+    padding: 3px 5px 3px 5px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+.pasutModal:hover
+{
+    background-color:#aaa;
+}
+#table_scrool_bar 
+{
+    max-height: 500px; /* Set maximum height */
+    overflow-y: auto; /* Enable vertical scrollbar if content overflows */
+    overflow-x: hidden;
+    margin: 0 auto; /* Center the table horizontally */
+}
+
