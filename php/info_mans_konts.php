@@ -5,7 +5,7 @@ if (isset($_COOKIE['username']) && $_COOKIE['is_worker'] == 1)
     $username = $_COOKIE['username'];
     
     // Use prepared statements to prevent SQL injection
-    $sql = "SELECT * FROM animatori WHERE username = ?";
+    $sql = "SELECT * FROM animators WHERE username = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("s", $username);
     $stmt->execute();

@@ -6,7 +6,7 @@
     $theme = $_POST['theme'];
     $work_days = $_POST['work_days'];
     
-    $sql = "UPDATE `animatori` SET `username`='".$_POST['username']."',`password`='".$_POST['password']."',`name`='".$_POST['name']."',`surname`='".$_POST['surname']."',`gender`='".$_POST['gender']."',`age`='".$_POST['age']."',`adress`='".$_POST['adress']."',`phone_number`='".$_POST['phone_num']."',`e_mail`='".$_POST['e_mail']."',`work_days`='".$work_days."',`about_me`='".$_POST['about_me']."',`character`='".$_POST['character']."',`theme`='".$theme."',`photo`='".$_POST['photo']."',`worker`='".$_POST['worker']."' WHERE `username`= '$usermame'";
+    $sql = "UPDATE `animators` SET `username`='".$_POST['username']."',`password`='".$_POST['password']."',`name`='".$_POST['name']."',`surname`='".$_POST['surname']."',`gender`='".$_POST['gender']."',`age`='".$_POST['age']."',`adress`='".$_POST['adress']."',`phone_number`='".$_POST['phone_num']."',`e_mail`='".$_POST['e_mail']."',`work_days`='".$work_days."',`about_me`='".$_POST['about_me']."',`character`='".$_POST['character']."',`theme`='".$theme."',`photo`='".$_POST['photo']."',`worker`='".$_POST['worker']."' WHERE `username`= '$usermame'";
 
     if ($conn->query($sql) === TRUE) 
     {

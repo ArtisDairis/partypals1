@@ -5,7 +5,7 @@ if (isset($_GET['tema']))
 {
     // Fetch data from the database
     $selectedTheme = $_GET['tema'];
-    $sql = "SELECT * FROM animatori WHERE `theme` = $selectedTheme";
+    $sql = "SELECT * FROM animators WHERE `theme` = $selectedTheme";
     $result = $conn->query($sql);
 
     $data = array();

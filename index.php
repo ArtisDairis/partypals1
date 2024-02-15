@@ -102,27 +102,27 @@
 
 </body>
 
-    <footer>
-<div class="wrapper"> 
-    <div class="contact_block">
-            <div class="footer_title">
-                <h2>Kontaktinformācija</h2>
-            </div>
-            <div class="footer_cntnt">
-                    <p>Autors: Artis Dairis Kroičs</p> 
-                    <p>Tālrunis: +37129120520</p> 
-                    <p>E-pasts: partypals@gmail.com</p>
-            </div>
-    </div>
-    <div class="social_media_block">
-            <div class="footer_title">
-            <h2>Seko mums</h2>
-            </div>
-            <div class="footer_cntnt">
-                <a href="#"> <img  class = "ico_footer" src="css/img/header/instagram.png" alt="Oooops...."></a>
-                <a href="#"> <img class = "ico_footer" src="css/img/header/facebook.png" alt="Oooops...."></a>
+<footer>
+    <div class="wrapper"> 
+        <div class="contact_block">
+                <div class="footer_title">
+                    <h2>Kontaktinformācija</h2>
                 </div>
+                <div class="footer_cntnt">
+                        <p>Autors: Artis Dairis Kroičs</p> 
+                        <p>Tālrunis: +37129120520</p> 
+                        <p>E-pasts: partypals@gmail.com</p>
+                </div>
+        </div>
+        <div class="social_media_block">
+                <div class="footer_title">
+                <h2>Seko mums</h2>
+                </div>
+                <div class="footer_cntnt">
+                    <a href="#"> <img  class = "ico_footer" src="css/img/header/instagram.png" alt="Oooops...."></a>
+                    <a href="#"> <img class = "ico_footer" src="css/img/header/facebook.png" alt="Oooops...."></a>
+                </div>
+        </div>
     </div>
-
-    </footer>
+</footer>
 </html>

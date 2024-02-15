@@ -3,7 +3,7 @@
 include "php/connection.php";
 
 // Fetch data from the database
-$sql = "SELECT * FROM animatori";
+$sql = "SELECT * FROM animators";
 $result = $conn->query($sql);
 
 $data = array();

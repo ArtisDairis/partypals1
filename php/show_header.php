@@ -10,7 +10,7 @@ if (isset($_COOKIE['username']) && isset($_COOKIE['is_worker']) && $_COOKIE['is_
 {
     // User is logged in and he is worker
     $username = $_COOKIE['username'];
-    $sql = "SELECT photo FROM animatori WHERE username = '$username'";
+    $sql = "SELECT photo FROM animators WHERE username = '$username'";
     $result = $conn->query($sql);
     $row = $result->fetch_assoc();
 

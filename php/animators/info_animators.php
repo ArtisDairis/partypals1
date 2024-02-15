@@ -8,7 +8,7 @@ if (isset($_GET['id']))
     $id = $_GET['id'];
 
     // Fetch data for the specified id from the database
-    $sql = "SELECT * FROM animatori WHERE id = $id";
+    $sql = "SELECT * FROM animators WHERE id = $id";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) 
