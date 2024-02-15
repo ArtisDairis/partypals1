@@ -83,6 +83,7 @@ $conn->close();
                     .map(checkbox => checkbox.value);
 
                 hiddenInput.value = selectedAnimators.join(',');
+                console.log(hiddenInput.value);
                 // showvalue(selectedAnimators);
             });
         });

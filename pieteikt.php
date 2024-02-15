@@ -71,7 +71,7 @@
             <button type="button" class="navigation_line_btn" id="btn3" onclick="btn3Click()">3</button>
         </div>
 
-        <form action="" method="post">
+        <form method="post">
             <div id="bloks1">
                 <br>
                 <table>
@@ -180,17 +180,19 @@
                 </table>
                 <br>
                 <button type="button" class="inp_talak" onclick="btn2Click()">Atpakaļ</button>
-                <input type="submit" class="inp_talak" value="Pabeigt">
+                <input type="button" id="add_to_events" class="inp_talak" value="Pabeigt">
                 <br><br>
             </div>
         </form> 
     </article>
         
+    <script src="scripts/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
-    
     <script src="scripts/sign_in.js"></script>
     <script src="scripts/chat.js"></script>
     <script src="scripts/pieteikt.js"></script>
+    <script src="scripts/events_add.js"></script>
 </body>
 <footer>
 <div class="wrapper"> 
