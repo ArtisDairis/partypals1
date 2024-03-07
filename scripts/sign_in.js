@@ -48,7 +48,7 @@ $('#auth_btn').click(function(event)
         dataType: "text",
         success: function (response) 
         {
-            window.location.replace("http://localhost/Bootstrap5/kursa_darbs_backup/kursa_darbs/index.php");
+            window.location.replace("home");
         },
         error: function(xhr, status, error) 
         {

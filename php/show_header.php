@@ -15,7 +15,7 @@ if (isset($_COOKIE['e_mail']) && isset($_COOKIE['is_worker']) && $_COOKIE['is_wo
     echo '
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
-                <a href="#" class="navbar-brand mb-0 h1">
+                <a href="home" class="navbar-brand mb-0 h1">
                     <img class="d-inline-block align-center" src="css/img/header/PartyPalsIco.png" alt="Oooops.." width="30" height="30">
                     PartyPals
                 </a>
@@ -25,19 +25,19 @@ if (isset($_COOKIE['e_mail']) && isset($_COOKIE['is_worker']) && $_COOKIE['is_wo
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item active">
-                            <a href="index.php" class="nav-link active">Mājaslapa</a>
+                            <a href="home" class="nav-link active">Mājaslapa</a>
                         </li>
                         <li class="nav-item active">
-                            <a href="animators.php" class="nav-link disable">Animatori</a>
+                            <a href="animators" class="nav-link disable">Animatori</a>
                         </li>
                         <li class="nav-item active">
                             <a href="#" class="nav-link disable">Kalendārs</a>
                         </li>
                         <li class="nav-item active">
-                            <a href="events.php" class="nav-link disable">Pasākumi</a>
+                            <a href="events" class="nav-link disable">Pasākumi</a>
                         </li>
                         <li class="nav-item active">
-                            <a href="about_us.php" class="nav-link disable">Par mums</a>
+                            <a href="about_us" class="nav-link disable">Par mums</a>
                         </li>
                     </ul>
                 </div>
@@ -48,10 +48,10 @@ if (isset($_COOKIE['e_mail']) && isset($_COOKIE['is_worker']) && $_COOKIE['is_wo
                     </a>
                     <ul class="dropdown-menu text-small bg-dark text-light" style="">
                         <li>
-                            <a class="dropdown-item bg-dark text-light" href="my_profile.php">Mans konts</a>
+                            <a class="dropdown-item bg-dark text-light" href="my_profile">Mans konts</a>
                         </li>
                         <li>
-                            <a class="dropdown-item bg-dark text-light" href="orders.php">Mani pasūtījumi</a>
+                            <a class="dropdown-item bg-dark text-light" href="orders">Mani pasūtījumi</a>
                         </li>
                         <li>
                             <a class="dropdown-item bg-dark text-light" href="#">Pasūtījumu vēsture</a>
@@ -60,7 +60,7 @@ if (isset($_COOKIE['e_mail']) && isset($_COOKIE['is_worker']) && $_COOKIE['is_wo
                             <hr class="dropdown-divider bg-dark text-light">
                         </li>
                         <li>
-                            <a class="dropdown-item bg-dark text-light" id="log_out" href="index.php">Iziet</a>
+                            <a class="dropdown-item bg-dark text-light" id="log_out" href="home">Iziet</a>
                         </li>
                     </ul>
                 </div>
@@ -77,7 +77,7 @@ if (isset($_COOKIE['e_mail']) && isset($_COOKIE['is_worker']) && $_COOKIE['is_wo
     echo '
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
-                <a href="#" class="navbar-brand mb-0 h1">
+                <a href="home" class="navbar-brand mb-0 h1">
                     <img class="d-inline-block align-center" src="css/img/header/PartyPalsIco.png" alt="Oooops.." width="30" height="30">
                     PartyPals
                 </a>
@@ -87,24 +87,24 @@ if (isset($_COOKIE['e_mail']) && isset($_COOKIE['is_worker']) && $_COOKIE['is_wo
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item active">
-                            <a href="index.php" class="nav-link active">Mājaslapa</a>
+                            <a href="home" class="nav-link active">Mājaslapa</a>
                         </li>
                         <li class="nav-item active">
-                            <a href="animators.php" class="nav-link disable">Animatori</a>
+                            <a href="animators" class="nav-link disable">Animatori</a>
                         </li>
                         <li class="nav-item active">
                             <a href="#" class="nav-link disable">Kalendārs</a>
                         </li>
                         <li class="nav-item active">
-                            <a href="events.php" class="nav-link disable">Pasākumi</a>
+                            <a href="events" class="nav-link disable">Pasākumi</a>
                         </li>
                         <li class="nav-item active">
-                            <a href="about_us.php" class="nav-link disable">Par mums</a>
+                            <a href="about_us" class="nav-link disable">Par mums</a>
                         </li>
                     </ul>
                 </div>
                 <div class="dropdown">
-                    <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle text-light" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a href="home" class="d-block link-body-emphasis text-decoration-none dropdown-toggle text-light" data-bs-toggle="dropdown" aria-expanded="false">
                         <img src="css/img/user_img/'.$userPhoto.'" alt="mdo" width="32" height="32" class="rounded-circle">
                         '.$row['username'].'
                     </a>
@@ -119,7 +119,7 @@ if (isset($_COOKIE['e_mail']) && isset($_COOKIE['is_worker']) && $_COOKIE['is_wo
                             <hr class="dropdown-divider bg-dark text-light">
                         </li>
                         <li>
-                            <a class="dropdown-item bg-dark text-light" id="log_out" href="index.php">Iziet</a>
+                            <a class="dropdown-item bg-dark text-light" id="log_out" href="home">Iziet</a>
                         </li>
                     </ul>
                 </div>
@@ -133,7 +133,7 @@ else
     echo '
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
-                <a href="#" class="navbar-brand mb-0 h1">
+                <a href="home" class="navbar-brand mb-0 h1">
                     <img class="d-inline-block align-center" src="css/img/header/PartyPalsIco.png" alt="Oooops.." width="30" height="30">
                     PartyPals
                 </a>
@@ -143,19 +143,19 @@ else
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item active">
-                            <a href="index.php" class="nav-link active">Mājaslapa</a>
+                            <a href="home" class="nav-link active">Mājaslapa</a>
                         </li>
                         <li class="nav-item active">
-                            <a href="animators.php" class="nav-link disable">Animatori</a>
+                            <a href="animators" class="nav-link disable">Animatori</a>
                         </li>
                         <li class="nav-item active">
                             <a href="#" class="nav-link disable">Kalendārs</a>
                         </li>
                         <li class="nav-item active">
-                            <a href="events.php" class="nav-link disable">Pasākumi</a>
+                            <a href="events" class="nav-link disable">Pasākumi</a>
                         </li>
                         <li class="nav-item active">
-                            <a href="about_us.php" class="nav-link disable">Par mums</a>
+                            <a href="about_us" class="nav-link disable">Par mums</a>
                         </li>
                     </ul>
                 </div>
