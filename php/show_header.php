@@ -1,96 +1,170 @@
 <?php
 include "connection.php";
 
-$username = "";
+$e_mail = "";
 
-// Start the session (assuming you're using sessions for user authentication)
-
-// Check if the user is logged in (you might have your own logic for this)
-if (isset($_COOKIE['username']) && isset($_COOKIE['is_worker']) && $_COOKIE['is_worker'] == 1) 
+if (isset($_COOKIE['e_mail']) && isset($_COOKIE['is_worker']) && $_COOKIE['is_worker'] == 1) 
 {
     // User is logged in and he is worker
-    $username = $_COOKIE['username'];
-    $sql = "SELECT photo FROM animators WHERE username = '$username'";
+    $e_mail = $_COOKIE['e_mail'];
+    $sql = "SELECT photo, username FROM animators WHERE e_mail = '$e_mail'";
     $result = $conn->query($sql);
     $row = $result->fetch_assoc();
 
     $userPhoto = isset($row['photo']) ? $row['photo'] : '';
-
-    echo "
-        <div class='block1'>
-            <a href='index.php?user=$username'><h1 class='h1text'>PartyPaLs</h1></a>
-        </div>
-
-        <div class='block2'>
-            <a class='link1' href='index.php?user=$username'><b>Mājas lapa</b></a>
-            <a class='link1' href='animatori.php?user=$username'><b>Animātori</b></a>
-            <a class='link1' href='kalendars.php?user=$username'><b>Kalendārs</b></a>
-            <a class='link1' href='piedavajumi.php?user=$username'><b>Piedāvājumi</b></a>
-            <a class='link1' href='pasutijumi.php?user=$username'><b>Pasūtījumi</b></a>
-            <a class='link1' href='mans_konts.php?user=$username'><b>Mans konts</b></a>
-            <a class='link1' href='par_mums.php?user=$username'><b>Par mums</b></a>
-        </div>
-
-        <div class='block3'>
-            <img src='".($userPhoto ? 'css/img/user_img/' . $userPhoto : "css/img/header/user.png")."' class='ico1' alt='User'>
-            <span class='username'><b>$username</b></span>
-
-            <form methot='post' action='php\log_out.php'>
-                <input type='submit' class='btn1' name='logout' value='Log Out'>
-            </form
-        </div>
-    ";
+    echo '
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a href="#" class="navbar-brand mb-0 h1">
+                    <img class="d-inline-block align-center" src="css/img/header/PartyPalsIco.png" alt="Oooops.." width="30" height="30">
+                    PartyPals
+                </a>
+                <button type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" class="navbar-toggler" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a href="index.php" class="nav-link active">Mājaslapa</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a href="animators.php" class="nav-link disable">Animatori</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a href="#" class="nav-link disable">Kalendārs</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a href="events.php" class="nav-link disable">Pasākumi</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a href="about_us.php" class="nav-link disable">Par mums</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="dropdown">
+                    <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle text-light" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="css/img/user_img/'.$userPhoto.'" alt="mdo" width="32" height="32" class="rounded-circle">
+                        '.$row['username'].'
+                    </a>
+                    <ul class="dropdown-menu text-small bg-dark text-light" style="">
+                        <li>
+                            <a class="dropdown-item bg-dark text-light" href="my_profile.php">Mans konts</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item bg-dark text-light" href="orders.php">Mani pasūtījumi</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item bg-dark text-light" href="#">Pasūtījumu vēsture</a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider bg-dark text-light">
+                        </li>
+                        <li>
+                            <a class="dropdown-item bg-dark text-light" id="log_out" href="index.php">Iziet</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    ';
 } 
 else 
-if (isset($_COOKIE['username']) && isset($_COOKIE['is_worker']) && $_COOKIE['is_worker'] == 0)
+if (isset($_COOKIE['e_mail']) && isset($_COOKIE['is_worker']) && $_COOKIE['is_worker'] == 0)
 {
-    $username = $_COOKIE['username'];
+    $username = $_COOKIE['e_mail'];
 
     // User is logged in and he is not worker
-    echo "
-        <div class='block1'>
-            <a href='index.php'><h1 class='h1text'>PartyPaLs</h1></a>
-        </div>
-
-        <div class='block2'>
-            <a class='link1' href='index.php?user=$username'><b>Mājas lapa</b></a>
-            <a class='link1' href='animatori.php?user=$username'><b>Animātori</b></a>
-            <a class='link1' href='kalendars.php?user=$username'><b>Kalendārs</b></a>
-            <a class='link1' href='piedavajumi.php?user=$username'><b>Piedāvājumi</b></a>
-            <a class='link1' href='pasutijumi.php?user=$username'><b>Pasūtījumi</b></a>
-            <a class='link1' href='par_mums.php?user=$username'><b>Par mums</b></a>
-        </div>
-
-        <div class='block3'>
-            <img src='css/img/header/user.png' class='ico1' alt='User'>
-            <span class='username'><b>$username</b></span>
-
-            <form methot='post' action='php\log_out.php'>
-                <input type='submit' class='btn1' name='logout' value='Log Out'>
-            </form
-        </div>
-    ";
+    echo '
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a href="#" class="navbar-brand mb-0 h1">
+                    <img class="d-inline-block align-center" src="css/img/header/PartyPalsIco.png" alt="Oooops.." width="30" height="30">
+                    PartyPals
+                </a>
+                <button type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" class="navbar-toggler" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a href="index.php" class="nav-link active">Mājaslapa</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a href="animators.php" class="nav-link disable">Animatori</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a href="#" class="nav-link disable">Kalendārs</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a href="events.php" class="nav-link disable">Pasākumi</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a href="about_us.php" class="nav-link disable">Par mums</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="dropdown">
+                    <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle text-light" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="css/img/user_img/'.$userPhoto.'" alt="mdo" width="32" height="32" class="rounded-circle">
+                        '.$row['username'].'
+                    </a>
+                    <ul class="dropdown-menu text-small bg-dark text-light" style="">
+                        <li>
+                            <a class="dropdown-item bg-dark text-light" href="my_profile.php">Mans konts</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item bg-dark text-light" href="#">Pasūtījumu vēsture</a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider bg-dark text-light">
+                        </li>
+                        <li>
+                            <a class="dropdown-item bg-dark text-light" id="log_out" href="index.php">Iziet</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        ';
 }
 else
 {
     // User is not logged in
-    echo "
-        <div class='block1'>
-            <a href='index.php'><h1 class='h1text'>PartyPaLs</h1></a>
-        </div>
-
-        <div class='block2'>
-            <a class='link1' href='index.php'><b>Mājas lapa</b></a>
-            <a class='link1' href='animatori.php'><b>Animātori</b></a>
-            <a class='link1' href='kalendars.php'><b>Kalendārs</b></a>
-            <a class='link1' href='piedavajumi.php'><b>Piedāvājumi</b></a>
-            <a class='link1' href='par_mums.php'><b>Par mums</b></a>
-        </div>
-
-        <div class='block3'>
-            <img src='css/img/header/user.png' class='ico1' alt='User'>
-            <button class='btn1' id='openSignIn' onclick='openSignInModal()'><b>Log In</b></button>
-        </div>
-    ";
+    echo '
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a href="#" class="navbar-brand mb-0 h1">
+                    <img class="d-inline-block align-center" src="css/img/header/PartyPalsIco.png" alt="Oooops.." width="30" height="30">
+                    PartyPals
+                </a>
+                <button type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" class="navbar-toggler" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a href="index.php" class="nav-link active">Mājaslapa</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a href="animators.php" class="nav-link disable">Animatori</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a href="#" class="nav-link disable">Kalendārs</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a href="events.php" class="nav-link disable">Pasākumi</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a href="about_us.php" class="nav-link disable">Par mums</a>
+                        </li>
+                    </ul>
+                </div>
+                <form class="d-flex">
+                    <button type="button" class="btn" style="color: whitesmoke; border: 1px solid #A36E9E"><a href="auth_reg.php?bool=true" class="text-reset text-decoration-none">Autorizēties</a></button>
+                    <button type="button" class="btn btn-black ms-2" style="background-color: #A36E9E; color: whitesmoke;"><a href="auth_reg.php?bool=false" class="text-reset text-decoration-none">Reģistrēties</a></button>
+                </form>
+            </div>
+        </nav>
+    ';
 }
 ?>
