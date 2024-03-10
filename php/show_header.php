@@ -25,13 +25,7 @@ if (isset($_COOKIE['e_mail']) && isset($_COOKIE['is_worker']) && $_COOKIE['is_wo
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item active">
-                            <a href="home" class="nav-link active">Mājaslapa</a>
-                        </li>
-                        <li class="nav-item active">
                             <a href="animators" class="nav-link disable">Animatori</a>
-                        </li>
-                        <li class="nav-item active">
-                            <a href="#" class="nav-link disable">Kalendārs</a>
                         </li>
                         <li class="nav-item active">
                             <a href="events" class="nav-link disable">Pasākumi</a>
@@ -87,13 +81,7 @@ if (isset($_COOKIE['e_mail']) && isset($_COOKIE['is_worker']) && $_COOKIE['is_wo
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item active">
-                            <a href="home" class="nav-link active">Mājaslapa</a>
-                        </li>
-                        <li class="nav-item active">
                             <a href="animators" class="nav-link disable">Animatori</a>
-                        </li>
-                        <li class="nav-item active">
-                            <a href="#" class="nav-link disable">Kalendārs</a>
                         </li>
                         <li class="nav-item active">
                             <a href="events" class="nav-link disable">Pasākumi</a>
@@ -143,13 +131,7 @@ else
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item active">
-                            <a href="home" class="nav-link active">Mājaslapa</a>
-                        </li>
-                        <li class="nav-item active">
                             <a href="animators" class="nav-link disable">Animatori</a>
-                        </li>
-                        <li class="nav-item active">
-                            <a href="#" class="nav-link disable">Kalendārs</a>
                         </li>
                         <li class="nav-item active">
                             <a href="events" class="nav-link disable">Pasākumi</a>
@@ -160,8 +142,8 @@ else
                     </ul>
                 </div>
                 <form class="d-flex">
-                    <button type="button" class="btn" style="color: whitesmoke; border: 1px solid #A36E9E"><a href="auth_reg.php?bool=true" class="text-reset text-decoration-none">Autorizēties</a></button>
-                    <button type="button" class="btn btn-black ms-2" style="background-color: #A36E9E; color: whitesmoke;"><a href="auth_reg.php?bool=false" class="text-reset text-decoration-none">Reģistrēties</a></button>
+                    <button type="button" class="btn" style="color: whitesmoke; border: 1px solid #A36E9E"><a href="auth_reg?bool=true" class="text-reset text-decoration-none">Autorizēties</a></button>
+                    <button type="button" class="btn btn-black ms-2" style="background-color: #A36E9E; color: whitesmoke;"><a href="auth_reg?bool=false" class="text-reset text-decoration-none">Reģistrēties</a></button>
                 </form>
             </div>
         </nav>

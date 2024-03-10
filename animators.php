@@ -112,121 +112,103 @@
 <br><br>
     <div class="container-fluid mt-2">
         <div class="row">
-        <div class="col-2 text-light rounded-3 me-3 ms-4">
-            <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white rounded-4">
-                <div class="position-sticky">
-                    <div class="list-group list-group-flush mx-3 mt-4">
-                        <div class="container">
-                            <div class="row text-black pt-3">
-                                <div class="col-1">
-                                    <button type="button" class="btn btn-success"><i class="fas fa-search"></i></button>
+            <div class="col-2 text-light rounded-3 me-3 ms-4">
+                <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white rounded-4">
+                    <div class="position-sticky">
+                        <div class="list-group list-group-flush mx-3 mt-4">
+                            <div class="container">
+                                <div class="row text-black pt-3">
+                                    <div class="col-1">
+                                        <button type="button" class="btn btn-success"><i class="fas fa-search"></i></button>
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" name="" id="" class="ms-4 mt-1 ms-2" placeholder="Meklēt">
+                                    </div>
                                 </div>
+                            </div>
+                            <div class="row mt-3">
                                 <div class="col">
-                                    <input type="text" name="" id="" class="ms-4 mt-1 ms-2" placeholder="Meklēt">
+                                    <button class="accordion">
+                                        <i class="fas fa-calendar fa-fw me-3"></i>
+                                        Dienas
+                                    </button>
+                                    <div class="panel">
+                                    <ul class="list-group">
+                                        <li class="list-group-item">
+                                            <input class="form-check-input me-1" type="checkbox" value="" id="firstCheckbox">
+                                            <label class="form-check-label" for="firstCheckbox">Pirmdiena</label>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <input class="form-check-input me-1" type="checkbox" value="" id="secondCheckbox">
+                                            <label class="form-check-label" for="secondCheckbox">Otrdiena</label>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <input class="form-check-input me-1" type="checkbox" value="" id="thirdCheckbox">
+                                            <label class="form-check-label" for="thirdCheckbox">Trešdiena</label>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <input class="form-check-input me-1" type="checkbox" value="" id="thirdCheckbox">
+                                            <label class="form-check-label" for="thirdCheckbox">Ceturtdiena</label>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <input class="form-check-input me-1" type="checkbox" value="" id="thirdCheckbox">
+                                            <label class="form-check-label" for="thirdCheckbox">Piektdiena</label>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <input class="form-check-input me-1" type="checkbox" value="" id="thirdCheckbox">
+                                            <label class="form-check-label" for="thirdCheckbox">Sestdiena</label>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <input class="form-check-input me-1" type="checkbox" value="" id="thirdCheckbox">
+                                            <label class="form-check-label" for="thirdCheckbox">Svētdiena</label>
+                                        </li>
+                                    </ul>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row mt-3">
-                            <div class="col">
-                                <button class="accordion">
-                                    <i class="fas fa-calendar fa-fw me-3"></i>
-                                    Dienas
-                                </button>
-                                <div class="panel">
-                                <ul class="list-group">
-                                    <li class="list-group-item">
-                                        <input class="form-check-input me-1" type="checkbox" value="" id="firstCheckbox">
-                                        <label class="form-check-label" for="firstCheckbox">Pirmdiena</label>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <input class="form-check-input me-1" type="checkbox" value="" id="secondCheckbox">
-                                        <label class="form-check-label" for="secondCheckbox">Otrdiena</label>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <input class="form-check-input me-1" type="checkbox" value="" id="thirdCheckbox">
-                                        <label class="form-check-label" for="thirdCheckbox">Trešdiena</label>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <input class="form-check-input me-1" type="checkbox" value="" id="thirdCheckbox">
-                                        <label class="form-check-label" for="thirdCheckbox">Ceturtdiena</label>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <input class="form-check-input me-1" type="checkbox" value="" id="thirdCheckbox">
-                                        <label class="form-check-label" for="thirdCheckbox">Piektdiena</label>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <input class="form-check-input me-1" type="checkbox" value="" id="thirdCheckbox">
-                                        <label class="form-check-label" for="thirdCheckbox">Sestdiena</label>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <input class="form-check-input me-1" type="checkbox" value="" id="thirdCheckbox">
-                                        <label class="form-check-label" for="thirdCheckbox">Svētdiena</label>
-                                    </li>
-                                </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row pb-5">
-                            <div class="col">
-                                <button class="accordion">
-                                    <i class="fas fa-masks-theater fa-fw me-3"></i>
-                                    Lomas
-                                </button>
-                                <div class="panel">
-                                <ul class="list-group">
-                                    <li class="list-group-item">
-                                        <input class="form-check-input me-1" type="checkbox" value="" id="firstCheckbox">
-                                        <label class="form-check-label" for="firstCheckbox">Klauns</label>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <input class="form-check-input me-1" type="checkbox" value="" id="secondCheckbox">
-                                        <label class="form-check-label" for="secondCheckbox">Spider-Man</label>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <input class="form-check-input me-1" type="checkbox" value="" id="thirdCheckbox">
-                                        <label class="form-check-label" for="thirdCheckbox">Super-Man</label>
-                                    </li>
-                                </ul>
+                            <div class="row pb-5">
+                                <div class="col">
+                                    <button class="accordion">
+                                        <i class="fas fa-masks-theater fa-fw me-3"></i>
+                                        Lomas
+                                    </button>
+                                    <div class="panel">
+                                    <ul class="list-group">
+                                        <li class="list-group-item">
+                                            <input class="form-check-input me-1" type="checkbox" value="" id="firstCheckbox">
+                                            <label class="form-check-label" for="firstCheckbox">Klauns</label>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <input class="form-check-input me-1" type="checkbox" value="" id="secondCheckbox">
+                                            <label class="form-check-label" for="secondCheckbox">Spider-Man</label>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <input class="form-check-input me-1" type="checkbox" value="" id="thirdCheckbox">
+                                            <label class="form-check-label" for="thirdCheckbox">Super-Man</label>
+                                        </li>
+                                    </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </nav>
-        </div>
-
-
-        <div class="col align-end text-light rounded-3 me-5">
-            <div class="container" style="overflow-y: auto; height: 650px;">
-                <?php
-                    include "php/animators/show_animators.php";
-                ?>
+                </nav>
             </div>
-        </div>
+
+
+            <div class="col align-end text-light rounded-3 me-5">
+                <div class="container" style="overflow-y: auto; height: 650px;">
+                    <?php
+                        include "php/animators/show_animators.php";
+                    ?>
+                </div>
+            </div>
         </div>
     </div>
     
-    <footer>
-        <div class="footer container-fluid bg-dark text-light mt-5">
-            <div class="row">
-            <div class="col-2"></div>
-                <div class="col pt-2 pb-2">
-                    <p class="h2">Kontaktinformācija</p>
-                    <p class="h6">Autors: Artis Dairis Kroičs</p>
-                    <p class="h6">Tālrunis: +37129120520</p>
-                    <p class="h6">E-pasts: partypals@gmail.com</p>
-                </div>
-                <div class="col pt-2 pb-2">
-                    <p class="h2">Seko mums</p>
-                    <div class="footer_cntnt">
-                        <a href="#" class="ms-4"><i style="font-size: 24px;" class="fa-brands fa-square-instagram text-light"></i></a>
-                        <a href="#" class="ms-4"><i style="font-size: 24px;" class="fa-brands fa-facebook text-light"></i></a>
-                    </div>
-                </div>
-                <div class="col-2"></div>
-            </div>
-        </div>
-    </footer>
+    <?php
+        include "./php/show_footer.php";
+    ?>
 </div>
 
 </body>

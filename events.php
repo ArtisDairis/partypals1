@@ -167,30 +167,10 @@
             </div>
         </div>
     </div>
-    
-<br><br><br><br><br><br>
 
-    <footer class="">
-        <div class="footer container-fluid bg-dark text-light mt-5">
-            <div class="row">
-                <div class="col-2"></div>
-                <div class="col pt-2 pb-2">
-                    <p class="h2">Kontaktinformācija</p>
-                    <p class="h6">Autors: Artis Dairis Kroičs</p>
-                    <p class="h6">Tālrunis: +37129120520</p>
-                    <p class="h6">E-pasts: partypals@gmail.com</p>
-                </div>
-                <div class="col pt-2 pb-2">
-                    <p class="h2">Seko mums</p>
-                    <div class="footer_cntnt">
-                        <a href="#" class="ms-4"><i style="font-size: 24px;" class="fa-brands fa-square-instagram text-light"></i></a>
-                        <a href="#" class="ms-4"><i style="font-size: 24px;" class="fa-brands fa-facebook text-light"></i></a>
-                    </div>
-                </div>
-                <div class="col-2"></div>
-            </div>
-        </div>
-    </footer>
+    <?php
+        include "./php/show_footer.php";
+    ?>
 
 
 </body>

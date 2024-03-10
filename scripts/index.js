@@ -14,31 +14,53 @@ video1.addEventListener('ended', function()
     this.play();
 });
 
+window.onload = function() 
+{
+    $.ajax(
+    {
+        type: "GET",
+        url: "./php/order_numbers.php",
+        dataType: "text",
+        success: function(response) 
+        {
+            var orderNumbers = response.split(',');
+            
+            for (var i = 0; i < orderNumbers.length && i < 8; i++) 
+            {
+                var elementId = 'p' + (i + 1);
+                var element = document.getElementById(elementId);
+                if (element) 
+                {
+                    console.log(orderNumbers[i]);
+                    element.setAttribute('data-val', orderNumbers[i].trim());
+                    
+                    animateNumber(element);
+                }
+            }
+        },
+        error: function(xhr, status, error) 
+        {
+            console.error('Error:', error);
+        }
+    });
+};
 
-document.getElementById('p1').setAttribute('data-val', '200');
-document.getElementById('p2').setAttribute('data-val', '165');
-document.getElementById('p3').setAttribute('data-val', '123');
-document.getElementById('p4').setAttribute('data-val', '189');
-document.getElementById('p5').setAttribute('data-val', '1001');
-document.getElementById('p6').setAttribute('data-val', '124');
-document.getElementById('p7').setAttribute('data-val', '111');
-document.getElementById('p8').setAttribute('data-val', '234');
-
-
-let valueDisplays = document.querySelectorAll(".num");
-let interval = 5000;
-valueDisplays.forEach((valueDisplay) => 
+function animateNumber(element) 
 {
     let startValue = 0;
-    let endValue = parseInt(valueDisplay.getAttribute("data-val"));
-    let duration = Math.floor(interval / endValue);
-    let counter = setInterval(function () 
-    {
-        startValue += 1;
-        valueDisplay.textContent = startValue;
-        if (startValue == endValue) 
-        {
+    let endValue = parseInt(element.getAttribute("data-val"));
+    let duration = 5000;
+    let interval = 50;
+    let steps = Math.ceil(duration / interval);
+    let stepValue = Math.ceil(endValue / steps);
+    
+    let counter = setInterval(function () {
+        startValue += stepValue;
+        if (startValue >= endValue) {
+            startValue = endValue;
             clearInterval(counter);
         }
-    }, duration);
-});
+        element.textContent = startValue;
+    }, interval);
+}
+

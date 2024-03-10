@@ -281,9 +281,9 @@ body
                 <h1>Izveidot kontu</h1>
 
                 <p>izmanto savu e-pastu un paroli</p>
-                <input type="text" id="username" placeholder="Lietotājvārds">
-                <input type="email" id="e_mail" placeholder="E-pasts">
-                <input type="password" id="pass" placeholder="Parole">
+                <input type="text" id="username_reg" placeholder="Lietotājvārds">
+                <input type="email" id="e_mail_reg" placeholder="E-pasts">
+                <input type="password" id="pass_reg" placeholder="Parole">
                 <button id="register_btn">Reģistrēties</button>
             </form>
         </div>
@@ -315,26 +315,9 @@ body
     </div>
 </div>
 
-    <div class="footer container-fluid bg-dark text-light">
-        <div class="row">
-            <div class="col-2"></div>
-                <div class="col pt-2 pb-2">
-                    <p class="h2">Kontaktinformācija</p>
-                    <p class="h6">Autors: Artis Dairis Kroičs</p>
-                    <p class="h6">Tālrunis: +37129120520</p>
-                    <p class="h6">E-pasts: partypals@gmail.com</p>
-                </div>
-                <div class="col pt-2 pb-2">
-                    <p class="h2">Seko mums</p>
-                    <div class="footer_cntnt">
-                        <a href="#" class="ms-4"><i style="font-size: 24px;" class="fa-brands fa-square-instagram text-light"></i></a>
-                        <a href="#" class="ms-4"><i style="font-size: 24px;" class="fa-brands fa-facebook text-light"></i></a>
-                    </div>
-                </div>
-                <div class="col-2"></div>
-            </div>
-        </div>
-    </div>
+    <?php
+        include "./php/show_footer.php";
+    ?>
 </body>
 <script src="scripts/jquery-3.7.1.min.js"></script>
 <script src="scripts/sign_in.js"></script>

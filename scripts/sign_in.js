@@ -38,7 +38,8 @@ $('#auth_btn').click(function(event)
     let e_mail = $('#e_mail_auth').val();
     let pass = $('#pass_auth').val();
     
-    $.ajax({
+    $.ajax(
+    {
         type: "post",
         url: "php/auth.php",
         data: {
@@ -54,5 +55,35 @@ $('#auth_btn').click(function(event)
         {
             console.error('Error logging out:', error);
         }
-        });
     });
+});
+
+$('#register_btn').click(function(event) 
+{
+    event.preventDefault();
+        
+    let username = $('#username_reg').val();
+    let e_mail = $('#e_mail_reg').val();
+    let pass = $('#pass_reg').val();
+    
+    $.ajax(
+    {
+        type: "post",
+        url: "php/register.php",
+        data: {
+            username: username,
+            e_mail: e_mail,
+            pass: pass
+        },
+        dataType: "text",
+        success: function (response) 
+        {
+            window.location.replace("home");
+            console.log(response);
+        },
+        error: function(xhr, status, error) 
+        {
+            console.error('Error logging out:', error);
+        }
+    });
+});
