@@ -142,6 +142,11 @@
     <span></span>
 </div>
 <br><br>
+
+    <?php
+        include "./php/show_anim_reg.php";
+    ?>
+
 <?php
     include "php/connection.php";
 
@@ -617,4 +622,5 @@
 <script src="scripts/jquery-3.7.1.min.js"></script>
 <script src='scripts/log_out.js'></script>
 <script src="scripts/changecon.js"></script>
+<script src="scripts/anim_register.js"></script>
 </html>

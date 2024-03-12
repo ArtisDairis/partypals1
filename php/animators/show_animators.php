@@ -87,7 +87,7 @@ if ($result->num_rows > 0)
                                                             if($exp_char_theme[$i] == $t)
                                                             {
                                                                 ?>
-                                                                    <i class="fa-solid <?php echo $theme_ico[$t];?> border rounded ps-1 pt-1 pe-1 pb-1 me-2" title="<?php echo $theme[$t];?>"></i>
+                                                                    <i class="fa-solid <?php echo $theme_ico[$t];?> border rounded ps-1 pt-1 pe-1 pb-1 me-2" style="color: #CCCCFF;" title="<?php echo $theme[$t];?>"></i>
                                                                 <?php
                                                             }
                                                         }

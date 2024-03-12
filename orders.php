@@ -77,6 +77,9 @@
     <br><br>
 </div>
 <br><br>
+    <?php
+        include "./php/show_anim_reg.php";
+    ?>
     <div class="container-fluid text-white mt-4">
         <div class="row">
             <div class="col-1"></div>
@@ -183,4 +186,5 @@
 <script src="scripts/show_events.js"></script>
 <script src="scripts/jquery-3.7.1.min.js"></script>
 <script src='scripts/log_out.js'></script>
+<script src="scripts/anim_register.js"></script>
 </html>

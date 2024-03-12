@@ -154,6 +154,10 @@ body
     <span></span>
     <br><br>
 
+    <?php
+        include "./php/show_anim_reg.php";
+    ?>
+
     <div class="container-fluid position-relative p-0 mt-3">
         <div class="row m-0">
             <div class="col p-0">
@@ -175,15 +179,6 @@ body
             </div>
         </div>
     </div>
-
-    <!-- <div class="container mt-5">
-        <div class="row">
-            <div class="col bg-light rounded-3">
-                <p class="h1 text-center mt-2">Apraksts</p>
-                <p class="text-center mt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim quaerat minima exercitationem, laboriosam ipsa vel tenetur obcaecati sit cupiditate laudantium, ex doloribus atque neque ratione libero reiciendis numquam repudiandae tempore?</p>
-            </div> 
-        </div>
-    </div> -->
     <div class="container mt-3">
         <p class="h1 text-center text-light">Kāpēc tieši mēs</p>
         <div class="row">
@@ -230,7 +225,7 @@ body
         </div>
     </div>
     <div class="container">
-        <p class="h1 mt-5 text-center text-light">Mūsu animatoru novadītie svētķi</p>
+        <p class="h1 mt-5 text-center text-light">Mūsu animatoru novadītie svētki</p>
         <div class="row mt-5 text-center">
             <div class="col">
                 <div class="p_n_apr rounded-3">
@@ -297,7 +292,7 @@ body
                         <p class="sub_text h1 text-start text-light">Vai vēlaties pieteikt pasākumu?</p>
                     </div>
                     <div class="col">
-                        <button type="button" class="sub_btn btn btn-success"><a href="#" class="text-reset text-decoration-none">Pieteikt</a></button>
+                        <button type="button" class="sub_btn btn btn-success"><a href="order" class="text-reset text-decoration-none">Pieteikt</a></button>
                     </div>
                 </div>
             </div>
@@ -309,7 +304,8 @@ body
 </div>
 
 </body>
-<script src="scripts/index.js"></script>
 <script src="scripts/jquery-3.7.1.min.js"></script>
+<script src="scripts/index.js"></script>
 <script src='scripts/log_out.js'></script>
+<script src="scripts/anim_register.js"></script>
 </html>

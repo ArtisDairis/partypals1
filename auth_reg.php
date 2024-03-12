@@ -275,6 +275,11 @@ body
     <span></span>
     <span></span>
     <br><br>
+
+    <?php
+        include "./php/show_anim_reg.php";
+    ?>
+
     <div class="container container1" id="container">
         <div class="form-container sign-up">
             <form method="post">
@@ -321,4 +326,5 @@ body
 </body>
 <script src="scripts/jquery-3.7.1.min.js"></script>
 <script src="scripts/sign_in.js"></script>
+<script src="scripts/anim_register.js"></script>
 </html>

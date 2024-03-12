@@ -14,7 +14,7 @@ video1.addEventListener('ended', function()
     this.play();
 });
 
-window.onload = function() 
+$(document).ready(function (e)
 {
     $.ajax(
     {
@@ -31,7 +31,6 @@ window.onload = function()
                 var element = document.getElementById(elementId);
                 if (element) 
                 {
-                    console.log(orderNumbers[i]);
                     element.setAttribute('data-val', orderNumbers[i].trim());
                     
                     animateNumber(element);
@@ -43,9 +42,9 @@ window.onload = function()
             console.error('Error:', error);
         }
     });
-};
+});
 
-function animateNumber(element) 
+function animateNumber(element)
 {
     let startValue = 0;
     let endValue = parseInt(element.getAttribute("data-val"));
@@ -54,9 +53,11 @@ function animateNumber(element)
     let steps = Math.ceil(duration / interval);
     let stepValue = Math.ceil(endValue / steps);
     
-    let counter = setInterval(function () {
+    let counter = setInterval(function () 
+    {
         startValue += stepValue;
-        if (startValue >= endValue) {
+        if (startValue >= endValue) 
+        {
             startValue = endValue;
             clearInterval(counter);
         }

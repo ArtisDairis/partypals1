@@ -93,6 +93,10 @@
     <span></span>
     <br><br>
 
+    <?php
+        include "./php/show_anim_reg.php";
+    ?>
+
     <div class="container mt-5">
     <p class="h1 text-center text-light"><b>PartyPals kompānija</b></p>
         <div class="row mt-5 pe-5">
@@ -142,4 +146,7 @@
 </div>
 
 </body>
+<script src="scripts/jquery-3.7.1.min.js"></script>
+<script src='scripts/log_out.js'></script>
+<script src="scripts/anim_register.js"></script>
 </html>

@@ -17,7 +17,7 @@
                 </div>
                 <div class="col pt-2 pb-2 text-center">
                     <p class="h4">Pieteikties mūsu komandai!</p>
-                    <button class="btn text-light bg-success">Pievienoties</button>
+                    <button class="btn text-light bg-success" onclick="show_reg_form()">Pievienoties</button>
                 </div>
             </div>
         </div>

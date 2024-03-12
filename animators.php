@@ -110,6 +110,11 @@
     <span></span>
 </div>
 <br><br>
+
+    <?php
+        include "./php/show_anim_reg.php";
+    ?>
+
     <div class="container-fluid mt-2">
         <div class="row">
             <div class="col-2 text-light rounded-3 me-3 ms-4">
@@ -215,4 +220,5 @@
 <script src="scripts/jquery-3.7.1.min.js"></script>
 <script src='scripts/log_out.js'></script>
 <script src="scripts/animators_section.js"></script>
+<script src="scripts/anim_register.js"></script>
 </html>
