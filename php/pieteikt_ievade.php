@@ -55,20 +55,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
             echo "No animator found with ID: " . $selectedAnimators;
         }
     }
-
-    if ($success) 
-    {
-        if (isset($_COOKIE['username'])) 
-        {
-            // header("Location: http://localhost/kursa_darbs/index.php?user=" . $_COOKIE['username']);
-            // exit();
-        } 
-        else 
-        {
-            // header("Location: http://localhost/kursa_darbs/index.php");
-            // exit();
-        }
-    }
 }
 
 $conn->close();
