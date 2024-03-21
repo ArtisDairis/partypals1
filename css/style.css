@@ -1,4 +1,5 @@
 /* All css */
+@import url('font_family.scss');
 .container
 {
     font-family: 'Livvic',sans-serif;

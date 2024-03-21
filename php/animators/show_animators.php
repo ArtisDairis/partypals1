@@ -1,10 +1,46 @@
 <?php
-// Include the database connection file
-include "php/connection.php";
+include "../connection.php";
 
-// Fetch data from the database
-$sql = "SELECT * FROM animators";
-$result = $conn->query($sql);
+$anims_full_name = $_POST['s_value'] ?? null;
+$days = $_POST['days'] ?? null;
+$theme = $_POST['theme'] ?? null;
+
+$sql = "SELECT * FROM animators WHERE 1";
+
+if (!empty($anims_full_name)) {
+    $searched_value = $_POST['s_value'];
+    $split_value = explode(" ", $searched_value);
+    $first_name = $split_value[0];
+    $last_name = $split_value[count($split_value) - 1];
+
+    $sql .= " AND (find_in_set(?, `name`) OR find_in_set(?, `surname`))";
+}
+
+if (!empty($days)) {
+    $sql .= " AND find_in_set(?, work_days)";
+}
+
+if (!empty($theme)) {
+    $sql .= " AND EXISTS (SELECT `worker_id` FROM characters WHERE animators.id = characters.worker_id AND find_in_set(?, theme))";
+}
+
+$stmt = $conn->prepare($sql);
+
+// Bind parameters
+if (!empty($anims_full_name)) {
+    $stmt->bind_param("ss", $first_name, $last_name);
+}
+
+if (!empty($days)) {
+    $stmt->bind_param("s", $days);
+}
+
+if (!empty($theme)) {
+    $stmt->bind_param("s", $theme);
+}
+
+$stmt->execute();
+$result = $stmt->get_result();
 
 $data = array();
 
@@ -121,6 +157,10 @@ if ($result->num_rows > 0)
         }
     }
 }
-
+else 
+{
+    echo "No animators found.";
+}
+$stmt->close();
 $conn->close();
 ?>

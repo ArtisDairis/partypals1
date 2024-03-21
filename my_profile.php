@@ -16,6 +16,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 </head>
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Livvic&display=swap');
 .background 
 {
     position: fixed;

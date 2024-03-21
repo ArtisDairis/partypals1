@@ -16,6 +16,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 </head>
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Livvic&display=swap');
 .accordion 
 {
   background-color: #eee;
@@ -124,53 +125,16 @@
                             <div class="container">
                                 <div class="row text-black pt-3">
                                     <div class="col-1">
-                                        <button type="button" class="btn btn-success"><i class="fas fa-search"></i></button>
+                                        <button type="button" class="btn btn-success" id="search_btn" onclick="search_anims()"><i class="fas fa-search"></i></button>
                                     </div>
                                     <div class="col">
-                                        <input type="text" name="" id="" class="ms-4 mt-1 ms-2" placeholder="Meklēt">
+                                        <input type="text" id="search_val" class="ms-4 mt-1 ms-2" placeholder="Meklēt">
                                     </div>
                                 </div>
                             </div>
-                            <div class="row mt-3">
-                                <div class="col">
-                                    <button class="accordion">
-                                        <i class="fas fa-calendar fa-fw me-3"></i>
-                                        Dienas
-                                    </button>
-                                    <div class="panel">
-                                    <ul class="list-group">
-                                        <li class="list-group-item">
-                                            <input class="form-check-input me-1" type="checkbox" value="" id="firstCheckbox">
-                                            <label class="form-check-label" for="firstCheckbox">Pirmdiena</label>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <input class="form-check-input me-1" type="checkbox" value="" id="secondCheckbox">
-                                            <label class="form-check-label" for="secondCheckbox">Otrdiena</label>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <input class="form-check-input me-1" type="checkbox" value="" id="thirdCheckbox">
-                                            <label class="form-check-label" for="thirdCheckbox">Trešdiena</label>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <input class="form-check-input me-1" type="checkbox" value="" id="thirdCheckbox">
-                                            <label class="form-check-label" for="thirdCheckbox">Ceturtdiena</label>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <input class="form-check-input me-1" type="checkbox" value="" id="thirdCheckbox">
-                                            <label class="form-check-label" for="thirdCheckbox">Piektdiena</label>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <input class="form-check-input me-1" type="checkbox" value="" id="thirdCheckbox">
-                                            <label class="form-check-label" for="thirdCheckbox">Sestdiena</label>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <input class="form-check-input me-1" type="checkbox" value="" id="thirdCheckbox">
-                                            <label class="form-check-label" for="thirdCheckbox">Svētdiena</label>
-                                        </li>
-                                    </ul>
-                                    </div>
-                                </div>
-                            </div>
+                            <?php
+                                include "php/filter_anim.php";
+                            ?>
                             <div class="row pb-5">
                                 <div class="col">
                                     <button class="accordion">
@@ -202,10 +166,8 @@
 
 
             <div class="col align-end text-light rounded-3 me-5">
-                <div class="container" style="overflow-y: auto; height: 650px;">
-                    <?php
-                        include "php/animators/show_animators.php";
-                    ?>
+                <div class="container" id="anim_list_show" style="overflow-y: auto; height: 650px;">
+                    
                 </div>
             </div>
         </div>
@@ -221,4 +183,5 @@
 <script src='scripts/log_out.js'></script>
 <script src="scripts/animators_section.js"></script>
 <script src="scripts/anim_register.js"></script>
+<script src="scripts/search_anim.js"></script>
 </html>
