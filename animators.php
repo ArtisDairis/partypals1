@@ -118,11 +118,11 @@
 
     <div class="container-fluid mt-2">
         <div class="row">
-            <div class="col-2 text-light rounded-3 me-3 ms-4">
+            <div class="col-2 text-light rounded-3 me-3 ms-4" style="width: 370px; overflow-y: auto; max-height: 680px;">
                 <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white rounded-4">
                     <div class="position-sticky">
                         <div class="list-group list-group-flush mx-3 mt-4">
-                            <div class="container">
+                            <div class="container-fluid">
                                 <div class="row text-black pt-3">
                                     <div class="col-1">
                                         <button type="button" class="btn btn-success" id="search_btn" onclick="search_anims()"><i class="fas fa-search"></i></button>
@@ -135,30 +135,6 @@
                             <?php
                                 include "php/filter_anim.php";
                             ?>
-                            <div class="row pb-5">
-                                <div class="col">
-                                    <button class="accordion">
-                                        <i class="fas fa-masks-theater fa-fw me-3"></i>
-                                        Lomas
-                                    </button>
-                                    <div class="panel">
-                                    <ul class="list-group">
-                                        <li class="list-group-item">
-                                            <input class="form-check-input me-1" type="checkbox" value="" id="firstCheckbox">
-                                            <label class="form-check-label" for="firstCheckbox">Klauns</label>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <input class="form-check-input me-1" type="checkbox" value="" id="secondCheckbox">
-                                            <label class="form-check-label" for="secondCheckbox">Spider-Man</label>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <input class="form-check-input me-1" type="checkbox" value="" id="thirdCheckbox">
-                                            <label class="form-check-label" for="thirdCheckbox">Super-Man</label>
-                                        </li>
-                                    </ul>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </nav>
@@ -166,7 +142,7 @@
 
 
             <div class="col align-end text-light rounded-3 me-5">
-                <div class="container" id="anim_list_show" style="overflow-y: auto; height: 650px;">
+                <div class="container" id="anim_list_show" style="overflow-y: auto; height: 680px;">
                     
                 </div>
             </div>

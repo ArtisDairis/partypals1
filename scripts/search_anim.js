@@ -22,6 +22,28 @@ function search_anims()
     });
 }
 
+function search_days(elem)
+{
+    $.ajax(
+    {
+        type: "post",
+        url: "./php/animators/show_animators.php",
+        data: 
+        {
+            days: elem
+        },
+        dataType: "text",
+        success: function (response) 
+        {
+            $('#anim_list_show').html(response);
+        },
+        error: function (xhr)
+        {
+            console.error(xhr);
+        }
+    });
+}
+
 $(document).ready(function ()
 {
     $.ajax(

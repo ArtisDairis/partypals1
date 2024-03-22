@@ -7,7 +7,8 @@ $theme = $_POST['theme'] ?? null;
 
 $sql = "SELECT * FROM animators WHERE 1";
 
-if (!empty($anims_full_name)) {
+if (!empty($anims_full_name)) 
+{
     $searched_value = $_POST['s_value'];
     $split_value = explode(" ", $searched_value);
     $first_name = $split_value[0];
@@ -16,26 +17,35 @@ if (!empty($anims_full_name)) {
     $sql .= " AND (find_in_set(?, `name`) OR find_in_set(?, `surname`))";
 }
 
-if (!empty($days)) {
+$days_value = "";
+
+if (!empty($days)) 
+{
+    $days_value = $days_value . ',' . $days; // 1,3,5 and i take 5
+
     $sql .= " AND find_in_set(?, work_days)";
 }
 
-if (!empty($theme)) {
+if (!empty($theme)) 
+{
     $sql .= " AND EXISTS (SELECT `worker_id` FROM characters WHERE animators.id = characters.worker_id AND find_in_set(?, theme))";
 }
 
 $stmt = $conn->prepare($sql);
 
 // Bind parameters
-if (!empty($anims_full_name)) {
+if (!empty($anims_full_name)) 
+{
     $stmt->bind_param("ss", $first_name, $last_name);
 }
 
-if (!empty($days)) {
+if (!empty($days)) 
+{
     $stmt->bind_param("s", $days);
 }
 
-if (!empty($theme)) {
+if (!empty($theme)) 
+{
     $stmt->bind_param("s", $theme);
 }
 
@@ -112,6 +122,7 @@ if ($result->num_rows > 0)
                                         <div class="row">
                                             <div class="col-3">
                                                 <span class="h5"><?php echo $row_char['char_name'];?></span>
+                                                <i class="fa-solid fa-chevron-down"></i>
                                             </div>
                                             <div class="col">
                                                 <?php

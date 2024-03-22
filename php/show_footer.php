@@ -1,12 +1,12 @@
     <footer>
         <div class="footer container-fluid bg-dark text-light mt-5">
             <div class="row">
-            <div class="col-2"></div>
+            <div class="col-1"></div>
                 <div class="col pt-2 pb-2">
                     <p class="h4">Kontaktinformācija</p>
-                    <p class="">Autors: Artis Dairis Kroičs</p>
-                    <p class="">Tālrunis: +37129120520</p>
-                    <p class="h7">E-pasts: partypals@gmail.com</p>
+                    <b class="">Autors: Artis Dairis Kroičs</b>
+                    <b class="ps-3">Tālrunis: +37129120520</b><br>
+                    <b class="h7">E-pasts: partypals@gmail.com</b>
                 </div>
                 <div class="col pt-2 pb-2">
                     <p class="h4">Seko mums</p>
@@ -16,8 +16,7 @@
                     </div>
                 </div>
                 <div class="col pt-2 pb-2 text-center">
-                    <p class="h4">Pieteikties mūsu komandai!</p>
-                    <button class="btn text-light bg-success" onclick="show_reg_form()">Pievienoties</button>
+                    <button class="btn text-light bg-success mt-3" onclick="show_reg_form()">Pieteikties mūsu komandai!</button>
                 </div>
             </div>
         </div>
