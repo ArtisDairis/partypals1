@@ -30,11 +30,16 @@
 {
     background: radial-gradient(50% 417.98% at 50% 50%, #7C18FB 0%, #9644FF 100%);
 }
-
-
-
-
-
+.footer
+{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+}
 #show_data {
     background-color: #4F4F4F; 
     height: 500px; 

@@ -3,13 +3,10 @@ var i;
 
 for (i = 0; i < acc.length; i++) 
 {
-  acc[i].addEventListener("click", function() 
-  {
-      /* Toggle between adding and removing the "active" class,
-      to highlight the button that controls the panel */
+    acc[i].addEventListener("click", function() 
+    {
       this.classList.toggle("active");
 
-    /* Toggle between hiding and showing the active panel */
       var panel = this.nextElementSibling;
       if (panel.style.display === "block") 
       {
@@ -19,27 +16,27 @@ for (i = 0; i < acc.length; i++)
       {
         panel.style.display = "block";
       }
-  });
+    });
 }
 
-function openCharInfo(this_elem, elem) 
-{
-    let element = document.getElementById("c"+elem);
+function openCharInfo(this_elem, elem) {
+  let element = document.getElementById("c" + elem);
+  let chevron = document.getElementById("ch_down_" + elem);
+  let tabcontent = document.getElementsByClassName("tabcontent");
+  for (let j = 0; j < tabcontent.length; j++) {
+      tabcontent[j].hidden = true;
+      document.getElementById("ch_down_" + (j+1)).classList.replace("fa-chevron-up", "fa-chevron-down");
 
-    let tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) 
-    {
-      tabcontent[i].hidden = true;
-    }
+  }
 
-    if(this_elem.classList.contains("none"))
-    {
-        this_elem.classList.replace("none", "show");
-        element.hidden = false;
-    }
-    else
-    {
-        this_elem.classList.replace("show", "none");
-        element.hidden = true;
-    }
+  if (this_elem.classList.contains("none")) {
+      this_elem.classList.replace("none", "show");
+      chevron.classList.replace("fa-chevron-down", "fa-chevron-up");
+      element.hidden = false;
+  } else {
+      this_elem.classList.replace("show", "none");
+      chevron.classList.replace("fa-chevron-up", "fa-chevron-down");
+      element.hidden = true;
+  }
 }
+

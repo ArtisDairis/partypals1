@@ -44,6 +44,28 @@ function search_days(elem)
     });
 }
 
+function search_theme(elem) 
+{
+    $.ajax(
+    {
+        type: "post",
+        url: "./php/animators/show_animators.php",
+        data: 
+        {
+            theme_id: elem
+        },
+        dataType: "text",
+        success: function (response) 
+        {
+            $('#anim_list_show').html(response);
+        },
+        error: function (xhr) 
+        {
+            console.error(xhr);
+        }
+    });
+}
+
 $(document).ready(function ()
 {
     $.ajax(

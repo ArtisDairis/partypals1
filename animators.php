@@ -124,7 +124,7 @@
                         <div class="list-group list-group-flush mx-3 mt-4">
                             <div class="container-fluid">
                                 <div class="row text-black pt-3">
-                                    <div class="col-1">
+                                    <div class="col-2">
                                         <button type="button" class="btn btn-success" id="search_btn" onclick="search_anims()"><i class="fas fa-search"></i></button>
                                     </div>
                                     <div class="col">

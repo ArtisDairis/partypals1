@@ -3,7 +3,7 @@ include "../connection.php";
 
 $anims_full_name = $_POST['s_value'] ?? null;
 $days = $_POST['days'] ?? null;
-$theme = $_POST['theme'] ?? null;
+$theme = $_POST['theme_id'] ?? null;
 
 $sql = "SELECT * FROM animators WHERE 1";
 
@@ -13,23 +13,27 @@ if (!empty($anims_full_name))
     $split_value = explode(" ", $searched_value);
     $first_name = $split_value[0];
     $last_name = $split_value[count($split_value) - 1];
-
-    $sql .= " AND (find_in_set(?, `name`) OR find_in_set(?, `surname`))";
+    if(count($split_value)>1)
+        $sql .= " AND (find_in_set(?, `name`) AND find_in_set(?, `surname`))";
+    else
+        $sql .= " AND (find_in_set(?, `name`) OR find_in_set(?, `surname`))";
 }
 
-$days_value = "";
+$days_value;
 
 if (!empty($days)) 
 {
-    $days_value = $days_value . ',' . $days; // 1,3,5 and i take 5
+    $days_value = $days_value . ',' . $days;
 
     $sql .= " AND find_in_set(?, work_days)";
 }
 
 if (!empty($theme)) 
 {
-    $sql .= " AND EXISTS (SELECT `worker_id` FROM characters WHERE animators.id = characters.worker_id AND find_in_set(?, theme))";
+    $placeholders = implode(',', array_fill(0, count($theme), '?'));
+    $sql .= " AND EXISTS (SELECT `worker_id` FROM characters WHERE animators.id = characters.worker_id AND theme_id IN ($placeholders))";
 }
+
 
 $stmt = $conn->prepare($sql);
 
@@ -46,7 +50,8 @@ if (!empty($days))
 
 if (!empty($theme)) 
 {
-    $stmt->bind_param("s", $theme);
+    $types = str_repeat('i', count($theme));
+    $stmt->bind_param($types, ...$theme);
 }
 
 $stmt->execute();
@@ -122,7 +127,7 @@ if ($result->num_rows > 0)
                                         <div class="row">
                                             <div class="col-3">
                                                 <span class="h5"><?php echo $row_char['char_name'];?></span>
-                                                <i class="fa-solid fa-chevron-down"></i>
+                                                <i class="fa-solid fa-chevron-down" id="ch_down_<?php echo $row_char['id'] ?>"></i>
                                             </div>
                                             <div class="col">
                                                 <?php
