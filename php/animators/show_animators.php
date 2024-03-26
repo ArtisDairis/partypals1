@@ -4,7 +4,7 @@ include "../connection.php";
 // Retrieve user inputs
 $anims_full_name = $_POST['s_value'] ?? null;
 $days = $_POST['days'] ?? null;
-$theme = $_POST['theme_id'] ?? null;
+$theme = $_POST['theme_id'] ?? null; // 1
 
 // Initialize SQL query and parameters
 $sql = "SELECT * FROM animators WHERE 1";
@@ -12,17 +12,21 @@ $params = array();
 $types = '';
 
 // Add conditions based on user inputs
-if (!empty($anims_full_name)) {
+if (!empty($anims_full_name)) 
+{
     $searched_value = $_POST['s_value'];
     $split_value = explode(" ", $searched_value);
     $first_name = $split_value[0];
     $last_name = end($split_value);
-    if (count($split_value) > 1) {
+    if (count($split_value) > 1) 
+    {
         $sql .= " AND (FIND_IN_SET(?, `name`) AND FIND_IN_SET(?, `surname`))";
         $types .= 'ss';
         $params[] = &$first_name;
         $params[] = &$last_name;
-    } else {
+    } 
+    else 
+    {
         $sql .= " AND (FIND_IN_SET(?, `name`) OR FIND_IN_SET(?, `surname`))";
         $types .= 'ss';
         $params[] = &$first_name;
@@ -30,41 +34,45 @@ if (!empty($anims_full_name)) {
     }
 }
 
-if (!empty($days)) {
+if (!empty($days)) 
+{
     $sql .= " AND FIND_IN_SET(?, work_days)";
     $types .= 's';
     $params[] = &$days;
 }
 
-if (!empty($theme)) {
-    // Explode the theme string into an array
-    $theme_array = explode(',', $theme);
+$split_theme = "";
 
-    // Remove theme number 5 from the array if it exists
-    $key = array_search('5', $theme_array);
-    if ($key !== false) {
-        unset($theme_array[$key]);
+if (!empty($theme)) //true
+{
+    $split_theme = explode(",", $theme);
+
+    if(!empty($split_theme)) //false
+    {
+        for ($i=0; $i < count($split_theme); $i++) 
+        { 
+            $sql .= " AND EXISTS (
+                SELECT `worker_id` 
+                FROM `characters` 
+                WHERE `theme` LIKE %?%
+            )";
+
+            $types .= 's';
+            $params[] = &$split_theme[$i];
+        }
+    }
+    else
+    {
+        $sql .= " AND EXISTS (
+            SELECT `worker_id` 
+            FROM `characters` 
+            WHERE `theme` LIKE %?%
+        )";
+
+        $types .= 's';
+        $params[] = &$theme;
     }
 
-    // Re-index the array after removal
-    $theme_array = array_values($theme_array);
-
-    // Convert the modified array back to a string
-    $theme = implode(',', $theme_array);
-
-    $placeholders = implode(',', array_fill(0, count($theme_array), '?'));
-
-    $sql .= " AND EXISTS (
-        SELECT `worker_id` 
-        FROM `characters` 
-        WHERE animators.id = characters.worker_id 
-        AND CONCAT(',', `theme`, ',') LIKE CONCAT('%,', $placeholders, ',%')
-    )";
-
-    $types .= str_repeat('i', count($theme_array));
-    foreach ($theme_array as $value) {
-        $params[] = &$value;
-    }
 }
 
 // Prepare and bind parameters

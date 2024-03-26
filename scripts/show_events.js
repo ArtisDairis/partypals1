@@ -6,7 +6,7 @@ window.onload = function()
         dataType: "text",
         success: function(response) 
         {
-            $("#show_data").append(response);
+            $("#show_data").html(response);
         }
     });
 }

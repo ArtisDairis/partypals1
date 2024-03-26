@@ -1,24 +1,27 @@
-function loadImage() {
+function loadImage() 
+{
     const image = document.getElementById('profile_image');
     const file = image_value.files[0];
     const fileName = file.name;
     const uploadUrl = './php/upload_img.php';
     let photo_Value = document.getElementById('photoValue');
 
-    const imageDirectory = "kursa_darbs/css/img/user_img";
-    const randomParam = Math.random(); // Random parameter
+    const imageDirectory = "../css/img/user_img";
+    const randomParam = Math.random();
 
-    if (file) {
+    if (file) 
+    {
         const formData = new FormData();
         formData.append('photo', file);
 
-        fetch(uploadUrl, {
+        fetch(uploadUrl, 
+        {
             method: 'POST',
             body: formData
         })
         .then(response => response.text())
         .then(data => {
-            console.log(data); // Log the server response
+            console.log(data);
             const photoValue = `${imageDirectory}/${fileName}?${randomParam}`;
             image.src = `../${photoValue}`;
             console.log(image.src);
@@ -85,7 +88,7 @@ function btnChecked1(eid)
     } 
     else 
     {
-        hiddenValueArray.push(button_id); // Add the new button ID
+        hiddenValueArray.push(button_id);
     }
 
     if(hiddenValue1 === "")
@@ -114,7 +117,7 @@ function btnChecked2(eid)
     } 
     else 
     {
-        hiddenValueArray.push(button_id); // Add the new button ID
+        hiddenValueArray.push(button_id);
     }
 
     if(hiddenValue2 === "")

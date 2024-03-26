@@ -1,17 +1,28 @@
 <?php
 include "../connection.php";
 
+
 $sql_sel_username = "SELECT `username` FROM animators WHERE `e_mail` = ?";
+
 $stmt = $conn->prepare($sql_sel_username);
 $stmt->bind_param("s", $_COOKIE['e_mail']);
 $stmt->execute();
 $result_username = $stmt->get_result();
 
+$column = "";
+
 if($result_username->num_rows > 0)
 {
     $row = $result_username->fetch_assoc();
 
+    $column = $_POST['column'];
+
     $sql_sel_events = "SELECT * FROM `events` WHERE `animators_id` = ?";
+
+    if(isset($column))
+        $sql_sel_events .= " ORDER BY ". $column ." ASC";
+        
+
     $stmt_events = $conn->prepare($sql_sel_events);
     $stmt_events->bind_param("s", $row['username']);
 
@@ -42,7 +53,7 @@ if($result_username->num_rows > 0)
                         <div class="col mt-2">
                             <select id="status_change_'.$row_events['id'].'" class="rounded bg-dark text-light ps-1 pe-1" onchange="statChange(\''.$row_events['id'].'\', this)">
                             ';
-                            $enum_values = ['Saņemts','Apstiprināts','Noraidīts'];
+                            $enum_values = ['Saņemts','Apstiprināts','Noraidīts','Atcelts','Pabeigts'];
                             foreach ($enum_values as $value) {
                                 $selected = ($value == $row_events['status']) ? 'selected' : '';
                                 echo '<option value="'.$value.'" '.$selected.'>'.$value.'</option>';

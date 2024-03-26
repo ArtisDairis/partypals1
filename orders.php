@@ -40,8 +40,8 @@
     color: #fff;
     padding: 20px;
 }
-#show_data {
-    background-color: #4F4F4F; 
+#show_data 
+{ 
     height: 500px; 
     overflow-y: auto;
     z-index: 9998;
@@ -49,6 +49,10 @@
 ::-webkit-scrollbar
 {
     width: 10px;
+}
+.table_col
+{
+    cursor: pointer;
 }
 </style>
 
@@ -135,7 +139,7 @@
                         <div class="col">
                             <div class="container ms-5">
                                 <div class="row">
-                                    <div class="col-3">
+                                    <div class="col-4">
                                         <div class="input-group mb-3">
                                             <input type="text" class="form-control" placeholder="Datums" aria-label="Search" aria-describedby="basic-addon1" value="01.01.2024.">
                                             <i class="btn text-light active input-group-text fa-solid fa-calendar-days nav_bg" style="padding-top: 10px;"></i>
@@ -153,32 +157,34 @@
         </div>
         <div class="row mt-4">
             <div class="col-1"></div>
-            <div id="show_data" class="col rounded">
+            <div class="col rounded" style="background-color: #4F4F4F;">
                 <div class="container-fluid align-center mt-3 pt-2 pb-2 bg-dark" style="border-radius: 25px;">
                     <div class="row">
                         <div class="col">
-                            <span class="">Pasākuma nosaukums</span>
+                            <span class="table_col" onclick="sortDataBy('event_name')">Pasākuma nosaukums  <i class="fa-solid fa-caret-down"></i></span>
                         </div>
                         <div class="col">
-                            <span class="">Pasākuma sākums</span>
+                            <span class="table_col" onclick="sortDataBy('event_time_start')">Pasākuma sākums  <i class="fa-solid fa-caret-down"></i></span>
                         </div>
                         <div class="col">
-                            <span class="">Pasākuma beigas</span>
+                            <span class="table_col" onclick="sortDataBy('event_time_end')">Pasākuma beigas  <i class="fa-solid fa-caret-down"></i></span>
                         </div>
                         <div class="col">
-                            <span class="">Pasākuma datums</span>
+                            <span class="table_col" onclick="sortDataBy('event_date')">Pasākuma datums  <i class="fa-solid fa-caret-down"></i></span>
                         </div>
                         <div class="col">
-                            <span class="">Pasākuma adrese</span>
+                            <span class="table_col" onclick="sortDataBy('adress')">Pasākuma adrese  <i class="fa-solid fa-caret-down"></i></span>
                         </div>
                         <div class="col"></div>
                         <div class="col">
-                            <span class="ms-4">Statuss</span>
+                            <span class="ms-3 table_col" onclick="sortDataBy('status')">Statuss  <i class="fa-solid fa-caret-down"></i></span>
                         </div>
                         <div class="col"></div>
                     </div>
                 </div>
+                <div id="show_data">
 
+                </div>
             </div>
             <div class="col-1"></div>
         </div>
@@ -193,4 +199,5 @@
 <script src="scripts/jquery-3.7.1.min.js"></script>
 <script src='scripts/log_out.js'></script>
 <script src="scripts/anim_register.js"></script>
+<script src="scripts/filter_events.js"></script>
 </html>
