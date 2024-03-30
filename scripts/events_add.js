@@ -83,7 +83,7 @@ $(document).ready(function()
 
 function goTo() 
 {
-    window.location.replace("http://localhost/kursa_darbs/index.php");
+    window.location.replace("http://partypals.webexteam.eu/home");
 }
 
 function sendMail(name, surname, event_name, e_mail, address, phone_number) 

@@ -1,7 +1,6 @@
 <?php
 include "../connection.php";
 
-
 $sql_sel_username = "SELECT `username` FROM animators WHERE `e_mail` = ?";
 
 $stmt = $conn->prepare($sql_sel_username);
@@ -9,19 +8,38 @@ $stmt->bind_param("s", $_COOKIE['e_mail']);
 $stmt->execute();
 $result_username = $stmt->get_result();
 
-$column = "";
+$column = isset($_POST['column']) ? $_POST['column'] : '';
+$asc_desc = isset($_POST['asc_desc']) ? $_POST['asc_desc'] : '';
+$event_name = isset($_POST['event_name']) ? $_POST['event_name'] : '';
+$event_date = isset($_POST['event_date']) ? $_POST['event_date'] : '';
+$event_status = isset($_POST['event_status']) ? $_POST['event_status'] : '';
 
 if($result_username->num_rows > 0)
 {
     $row = $result_username->fetch_assoc();
-
-    $column = $_POST['column'];
-
+ 
     $sql_sel_events = "SELECT * FROM `events` WHERE `animators_id` = ?";
+ 
+    // Add ORDER BY clause if column and asc_desc are provided
+    if (!empty($column) && !empty($asc_desc)) 
+    {
+        $sql_sel_events .= " ORDER BY `$column` $asc_desc";
+    }
+ 
+    if (!empty($event_name)) 
+    {
+        $sql_sel_events .= " AND `event_name` LIKE '%" . $conn->real_escape_string($event_name) . "%'";
+    }
 
-    if(isset($column))
-        $sql_sel_events .= " ORDER BY ". $column ." ASC";
-        
+    if (!empty($event_date)) 
+    {
+        $sql_sel_events .= " AND `event_date` = '" . $conn->real_escape_string($event_date) . "'";
+    }
+
+    if (!empty($event_status)) 
+    {
+        $sql_sel_events .= " AND `status` = '" . $conn->real_escape_string($event_status) . "'";
+    }
 
     $stmt_events = $conn->prepare($sql_sel_events);
     $stmt_events->bind_param("s", $row['username']);

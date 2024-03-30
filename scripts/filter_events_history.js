@@ -17,7 +17,7 @@ function sortDataBy(data_name, btn_id)
     $.ajax(
     {
         type: "post",
-        url: "./php/animators/show_events_info.php",
+        url: "./php/show_events.php",
         data: 
         {
             column: data_name,
@@ -26,7 +26,7 @@ function sortDataBy(data_name, btn_id)
         dataType: "text",
         success: function (response) 
         {
-            $("#show_data").html(response);
+            $("#show_data1").html(response);
         },
         error: function (xhr)
         {
@@ -40,7 +40,7 @@ function searchName()
     $.ajax(
     {
         type: "post",
-        url: "./php/animators/show_events_info.php",
+        url: "./php/show_events.php",
         data:
         {
             event_name: $("#name_value").val()
@@ -48,7 +48,7 @@ function searchName()
         dataType: "text",
         success: function (response) 
         {
-            $("#show_data").html(response);
+            $("#show_data1").html(response);
         },
         error: function (xhr)
         {
@@ -62,7 +62,7 @@ function searchDate()
     $.ajax(
     {
         type: "post",
-        url: "./php/animators/show_events_info.php",
+        url: "./php/show_events.php",
         data:
         {
             event_date: $("#date_value").val()
@@ -70,7 +70,7 @@ function searchDate()
         dataType: "text",
         success: function (response) 
         {
-            $("#show_data").html(response);
+            $("#show_data1").html(response);
         },
         error: function (xhr)
         {
@@ -86,7 +86,7 @@ function filter_status()
     $.ajax(
     {
         type: "post",
-        url: "./php/animators/show_events_info.php",
+        url: "./php/show_events.php",
         data:
         {
             event_status: $("#filter_status").val()
@@ -94,7 +94,7 @@ function filter_status()
         dataType: "text",
         success: function (response) 
         {
-            $("#show_data").html(response);
+            $("#show_data1").html(response);
         },
         error: function (xhr)
         {

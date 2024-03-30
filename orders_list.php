@@ -94,7 +94,7 @@
         <div class="row">
             <div class="col-1"></div>
             <div class="col">
-                <span class="h1 ms-3">Pasūtjumi</span>
+                <span class="h1 ms-3">Pasūtījumu vēsture</span>
                 <div class="container-fluid mt-4">
                     <div class="row">
                         <div class="col-2">
@@ -179,7 +179,7 @@
                         <div class="col"></div>
                     </div>
                 </div>
-                <div id="show_data">
+                <div id="show_data1">
 
                 </div>
             </div>
@@ -192,9 +192,9 @@
     ?>
 </body>
 <script src="scripts/accordion_btn.js"></script>
-<script src="scripts/show_events.js"></script>
+<script src="scripts/show_events_list.js"></script>
 <script src="scripts/jquery-3.7.1.min.js"></script>
 <script src='scripts/log_out.js'></script>
 <script src="scripts/anim_register.js"></script>
-<script src="scripts/filter_events.js"></script>
+<script src="scripts/filter_events_history.js"></script>
 </html>

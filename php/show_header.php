@@ -48,7 +48,7 @@ if (isset($_COOKIE['e_mail']) && isset($_COOKIE['is_worker']) && $_COOKIE['is_wo
                             <a class="dropdown-item bg-dark text-light" href="orders">Mani pasūtījumi</a>
                         </li>
                         <li>
-                            <a class="dropdown-item bg-dark text-light" href="#">Pasūtījumu vēsture</a>
+                            <a class="dropdown-item bg-dark text-light" href="orders_list">Pasūtījumu vēsture</a>
                         </li>
                         <li>
                             <hr class="dropdown-divider bg-dark text-light">
@@ -101,7 +101,7 @@ if (isset($_COOKIE['e_mail']) && isset($_COOKIE['is_worker']) && $_COOKIE['is_wo
                             <a class="dropdown-item bg-dark text-light" href="my_profile.php">Mans konts</a>
                         </li>
                         <li>
-                            <a class="dropdown-item bg-dark text-light" href="#">Pasūtījumu vēsture</a>
+                            <a class="dropdown-item bg-dark text-light" href="orders_list">Pasūtījumu vēsture</a>
                         </li>
                         <li>
                             <hr class="dropdown-divider bg-dark text-light">
