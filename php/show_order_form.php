@@ -59,20 +59,92 @@
                         <input class="mb-2 form-control is-" placeholder="Pasākuma nosaukums" type="text" id="event_name">
                     </div>
                     <div class="col">
-                        <div class="input-group">
-                            <input class="mb-2 form-control rounded" placeholder="Norises datums" type="text" id="event_date">
-                            <div class="input-group-append">
-                                <i class="input-group-text bg-dark text-light border-0 fa-solid fa-calendar-days" style="font-size: 24px;"></i>
+                        <div class="">
+                            <div class="datepicker-container input-group" style="width: 100%;">
+                            <input type="text" class="date-input form-control is-" placeholder="Norises datums" id="event_date">
+                            <i class="input-group-text bg-dark text-light border-0 fa-solid fa-calendar-days" style="font-size: 24px; margin-left: -3px;"></i>
+                            <div class="datepicker" hidden>
+                                <!-- .datepicker-header -->
+                                <div class="datepicker-header">
+                                <button type="button" class="prev ms-2 btn"><i class="fa-solid fa-caret-left"></i></button>
+
+                                <div>
+                                    <select class="month-input">
+                                    <option>Janvāris</option>
+                                    <option>Februāris</option>
+                                    <option>Marts</option>
+                                    <option>Aprīlis</option>
+                                    <option>Majs</option>
+                                    <option>Jūnijs</option>
+                                    <option>Jūlijs</option>
+                                    <option>Augusts</option>
+                                    <option>Septembris</option>
+                                    <option>Oktobris</option>
+                                    <option>Novembris</option>
+                                    <option>Decembris</option>
+                                    </select>
+                                    <input type="number" class="year-input" />
+                                </div>
+
+                                <button type="button" class="next me-2 btn"><i class="fa-solid fa-caret-right"></i></button>
+                                </div>
+
+                                <div class="days">
+                                <span class="text-dark">Sv</span>
+                                <span class="text-dark">P</span>
+                                <span class="text-dark">O</span>
+                                <span class="text-dark">T</span>
+                                <span class="text-dark">C</span>
+                                <span class="text-dark">Pk</span>
+                                <span class="text-dark">S</span>
+                                </div>
+                                
+                                <div class="dates"></div>
+                                
+                                <div class="datepicker-footer">
+                                    <button type="button" class="cancel">Atcelt</button>
+                                    <button type="button" class="apply">Pieteikt</button>
+                                </div>
                             </div>
                         </div>
+
+                        </div>
                         <br>
-                        <div class="input-group">
-                            <input class="mb-2 form-control rounded is-" placeholder="Pasākuma sākums" type="text" id="event_time_start">
+                        <div class="input-group" style="margin-top: 7px;">
+                            <div class="form-control">
+                                <select name="" id="" class="rounded text-center" style="width: 60px; border: 0;">
+                                    <?php
+                                        for($i=1; $i<=24;$i++)
+                                        {
+                                            if($i<10)
+                                                echo "<option value=".$i.">0".$i."</option>";
+                                            else
+                                                echo "<option value=".$i.">".$i."</option>";
+                                        }
+                                    ?>
+                                </select>
+                                <span>:</span>
+                                <select name="" id="" class="rounded text-center" style="width: 60px; border: 0;">
+                                    <?php
+                                        for($i=1; $i<=24;$i++)
+                                        {
+                                            if($i<10)
+                                                echo "<option value=".$i.">0".$i."</option>";
+                                            else
+                                                echo "<option value=".$i.">".$i."</option>";
+                                        }
+                                    ?>
+                                </select>
+                                <input type="time" name="" id="">
+                            </div>
+                            
                             <div class="input-group-append">
                                 <i class="input-group-text bg-dark text-light border-0 fa-solid fa-clock" style="font-size: 24px;"></i>
                             </div>
                         </div>
                         <br>
+                        <input class="mb-2  rounded is-" placeholder="Pasākuma sākums" type="text" id="event_time_start">
+
                         <div class="input-group">
                             <input class="mb-2 form-control rounded is-" placeholder="Pasākuma beigas" type="text" id="event_time_end">
                             <div class="input-group-append">

@@ -79,15 +79,18 @@ function goTo(elem, this_elem)
     if(elem == "order_anim")
     {
         move(parseInt(width_proc[0]), 50);
+        document.getElementById("anim").hidden = false;
         loadActiveAnim();
     }
     if(elem == "order_private_info")
     {
         move(parseInt(width_proc[0]), 80);
+        document.getElementById("private_info").hidden = false;
     }
     if(elem == "order_info")
     {
         move(parseInt(width_proc[0]), 100);
+        document.getElementById("all_info").hidden = false;
     }
 
     document.getElementById(this_elem).hidden = true;
@@ -116,3 +119,143 @@ function loadActiveAnim()
         } 
     });
 }
+
+const datepicker = document.querySelector(".datepicker");
+const dateInput = document.querySelector(".date-input");
+const yearInput = datepicker.querySelector(".year-input");
+const monthInput = datepicker.querySelector(".month-input");
+const cancelBtn = datepicker.querySelector(".cancel");
+const applyBtn = datepicker.querySelector(".apply");
+const nextBtn = datepicker.querySelector(".next");
+const prevBtn = datepicker.querySelector(".prev");
+const dates = datepicker.querySelector(".dates");
+
+let selectedDate = new Date();
+let year = selectedDate.getFullYear();
+let month = selectedDate.getMonth();
+
+dateInput.addEventListener("click", () => 
+{
+    datepicker.hidden = false;
+});
+
+cancelBtn.addEventListener("click", () => 
+{
+    datepicker.hidden = true;
+});
+
+applyBtn.addEventListener("click", () => 
+{
+    dateInput.value = selectedDate.toLocaleDateString("lv-LV", 
+    {
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+    });
+
+    datepicker.hidden = true;
+});
+
+nextBtn.addEventListener("click", () => 
+{
+    if (month === 11) year++;
+    month = (month + 1) % 12;
+    displayDates();
+});
+
+prevBtn.addEventListener("click", () => 
+{
+    if (month === 0) year--;
+    month = (month - 1 + 12) % 12;
+    displayDates();
+});
+
+monthInput.addEventListener("change", () => 
+{
+    month = monthInput.selectedIndex;
+    displayDates();
+});
+
+yearInput.addEventListener("change", () => 
+{
+    year = yearInput.value;
+    displayDates();
+});
+
+const updateYearMonth = () => 
+{
+    monthInput.selectedIndex = month;
+    yearInput.value = year;
+};
+
+const handleDateClick = (e) => 
+{
+    const button = e.target;
+
+    const selected = dates.querySelector(".selected");
+    selected && selected.classList.remove("selected");
+
+    button.classList.add("selected");
+
+    selectedDate = new Date(year, month, parseInt(button.textContent));
+};
+
+const displayDates = () => 
+{
+    updateYearMonth();
+
+    dates.innerHTML = "";
+
+    const lastOfPrevMonth = new Date(year, month, 0);
+
+    for (let i = 0; i <= lastOfPrevMonth.getDay(); i++) 
+    {
+        const text = lastOfPrevMonth.getDate() - lastOfPrevMonth.getDay() + i;
+        const button = createButton(text, true, -1);
+        dates.appendChild(button);
+    }
+
+    const lastOfMOnth = new Date(year, month + 1, 0);
+
+    for (let i = 1; i <= lastOfMOnth.getDate(); i++) 
+    {
+        const button = createButton(i, false);
+        button.addEventListener("click", handleDateClick);
+        dates.appendChild(button);
+    }
+
+    const firstOfNextMonth = new Date(year, month + 1, 1);
+
+    for (let i = firstOfNextMonth.getDay(); i < 7; i++) 
+    {
+        const text = firstOfNextMonth.getDate() - firstOfNextMonth.getDay() + i;
+
+        const button = createButton(text, true, 1);
+        dates.appendChild(button);
+    }
+};
+
+const createButton = (text, isDisabled = false, type = 0) => 
+{
+    const currentDate = new Date();
+
+    let comparisonDate = new Date(year, month + type, text);
+
+    const isToday =
+        currentDate.getDate() === text &&
+        currentDate.getFullYear() === year &&
+        currentDate.getMonth() === month;
+
+    const selected = selectedDate.getTime() === comparisonDate.getTime();
+
+    const button = document.createElement("button");
+    button.textContent = text;
+    button.disabled = isDisabled;
+    button.type = "button";
+    button.classList.toggle("today", isToday);
+    button.classList.toggle("selected", selected);
+    return button;
+};
+
+displayDates();
+
