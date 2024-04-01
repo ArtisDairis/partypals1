@@ -25,7 +25,7 @@ function search_anims()
 let days_value = "";
 let days_array;
 
-function search_days(elem) 
+function search_days(elem) //2
 {
     if (days_value.length >= 2) 
     {
@@ -61,7 +61,7 @@ function search_days(elem)
         url: "./php/animators/show_animators.php",
         data: 
         {
-            days: days_value
+            days: days_value //1,2
         },
         dataType: "text",
         success: function (response) 
@@ -76,37 +76,37 @@ function search_days(elem)
     console.log(days_value);
 }
 
-let theme_value = "";
-let theme_array;
+let themeValue = "";
+let themeArray;
 
 function search_theme(elem) 
 {
-    if (theme_value.length >= 2) 
+    if (themeValue.length >= 2) 
     {
-        theme_array = theme_value.split(',');
-        if (theme_array.includes(elem)) 
+        themeArray = themeValue.split(',');
+        if (themeArray.includes(elem)) 
         {
-            theme_array = theme_array.filter(item => item !== elem);
+            themeArray = themeArray.filter(item => item !== elem);
         } 
         else 
         {
-            theme_array.push(elem);
+            themeArray.push(elem);
         }
-        theme_value = theme_array.join(',');
+        themeValue = themeArray.join(',');
     } 
     else 
     {
-        if (theme_value == "") 
+        if (themeValue === "") 
         {
-            theme_value = elem;
+            themeValue = elem;
         } 
-        else if(theme_value == elem)
+        else if (themeValue == elem) 
         {
-            theme_value = "";
-        }
-        else
+            themeValue = "";
+        } 
+        else 
         {
-            theme_value += ',' + elem;
+            themeValue += ',' + elem;
         }
     }
     $.ajax(
@@ -115,7 +115,7 @@ function search_theme(elem)
         url: "./php/animators/show_animators.php",
         data: 
         {
-            theme_id: theme_value
+            theme_id: themeValue
         },
         dataType: "text",
         success: function (response) 
@@ -127,7 +127,7 @@ function search_theme(elem)
             console.error(xhr);
         }
     });
-    console.log(theme_value);
+    console.log(themeValue);
 }
 
 $(document).ready(function ()

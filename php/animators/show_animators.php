@@ -12,68 +12,90 @@ $params = array();
 $types = '';
 
 // Add conditions based on user inputs
-if (!empty($anims_full_name)) 
-{
+if (!empty($anims_full_name)) {
     $searched_value = $_POST['s_value'];
     $split_value = explode(" ", $searched_value);
     $first_name = $split_value[0];
     $last_name = end($split_value);
-    if (count($split_value) > 1) 
-    {
-        $sql .= " AND (FIND_IN_SET(?, `name`) AND FIND_IN_SET(?, `surname`))";
+    if (count($split_value) > 1) {
+        $sql .= " AND (INSTR(`name`, ?) AND INSTR(`surname`, ?))";
         $types .= 'ss';
         $params[] = &$first_name;
         $params[] = &$last_name;
-    } 
-    else 
-    {
-        $sql .= " AND (FIND_IN_SET(?, `name`) OR FIND_IN_SET(?, `surname`))";
+    } else {
+        $sql .= " AND (INSTR(`name`, ?) OR INSTR(`surname`, ?))";
         $types .= 'ss';
         $params[] = &$first_name;
         $params[] = &$last_name;
     }
 }
+
 
 if (!empty($days)) 
 {
-    $sql .= " AND FIND_IN_SET(?, work_days)";
-    $types .= 's';
-    $params[] = &$days;
+    if (strpos($days, ',') !== false) 
+    {
+        $selected_days = explode(",", $days);
+        $placeholders = array_fill(0, count($selected_days), '?');
+        $sql .= " AND (";
+        $sql .= implode(" AND ", array_map(function ($placeholder) 
+        {
+            return "FIND_IN_SET($placeholder, work_days)";
+        }, $placeholders));
+
+        $sql .= ")";
+        $types .= str_repeat('s', count($selected_days));
+
+        foreach ($selected_days as &$day) 
+        {
+            $params[] = &$day;
+        }
+    } 
+    else 
+    {
+        $sql .= " AND FIND_IN_SET(?, work_days)";
+        $types .= 's';
+        $params[] = &$days;
+    }
 }
 
-$split_theme = "";
+if (!empty($theme)) {
+    if(strlen($theme) > 2) {
+        $split_theme = explode(",", $theme);
+        $worker_ids = array(); // Store worker_ids in an array
 
-if (!empty($theme)) //true
-{
-    $split_theme = explode(",", $theme);
+        for ($i = 0; $i < count($split_theme); $i++) {
+            $sql_theme = "SELECT `worker_id` FROM `characters` WHERE FIND_IN_SET(".$conn->real_escape_string($split_theme[$i]).", theme)";
+            $result_theme = $conn->query($sql_theme);
 
-    if(!empty($split_theme)) //false
-    {
-        for ($i=0; $i < count($split_theme); $i++) 
-        { 
-            $sql .= " AND EXISTS (
-                SELECT `worker_id` 
-                FROM `characters` 
-                WHERE `theme` LIKE %?%
-            )";
+            // Fetch worker_ids and add them to the array
+            while ($row_theme = $result_theme->fetch_assoc()) {
+                $worker_ids[] = $row_theme['worker_id'];
+            }
+        }
 
-            $types .= 's';
-            $params[] = &$split_theme[$i];
+        // If there are worker_ids, construct the SQL query
+        if (!empty($worker_ids)) {
+            $sql .= " AND `id` IN (" . implode(",", $worker_ids) . ")";
+        }
+    } else {
+        // For single theme, directly construct the SQL query
+        $sql_theme = "SELECT `worker_id` FROM `characters` WHERE FIND_IN_SET(".$conn->real_escape_string($theme).", theme)";
+        $result_theme = $conn->query($sql_theme);
+
+        // Fetch worker_ids and construct the SQL query
+        $worker_ids = array();
+        while ($row_theme = $result_theme->fetch_assoc()) {
+            $worker_ids[] = $row_theme['worker_id'];
+        }
+
+        // If there are worker_ids, construct the SQL query
+        if (!empty($worker_ids)) {
+            $sql .= " AND `id` IN (" . implode(",", $worker_ids) . ")";
         }
     }
-    else
-    {
-        $sql .= " AND EXISTS (
-            SELECT `worker_id` 
-            FROM `characters` 
-            WHERE `theme` LIKE %?%
-        )";
-
-        $types .= 's';
-        $params[] = &$theme;
-    }
-
 }
+
 
 // Prepare and bind parameters
 $stmt = $conn->prepare($sql);
@@ -147,8 +169,8 @@ if ($result->num_rows > 0)
                 $sql_char = "SELECT * FROM characters WHERE `worker_id` = ".$row['id'];
                 $result_char = $conn->query($sql_char);
 
-                $theme = ['Pilsētas svētki','Pieaugušo dzimšanas diena','Bērna dzimšanas diena','Korporatīvi','Kāzas','Pasākumi bērniem','Skolu pasākumi','Jubilejas'];
-                $theme_ico = ['fa-city','fa-martini-glass-citrus','fa-democrat','fa-champagne-glasses','fa-children','fa-masks-theater','fa-school','fa-cake-candles'];
+                $theme = ['','Pilsētas svētki','Pieaugušo dzimšanas diena','Bērna dzimšanas diena','Korporatīvi','Kāzas','Pasākumi bērniem','Skolu pasākumi','Jubilejas'];
+                $theme_ico = ['','fa-city','fa-martini-glass-citrus','fa-democrat','fa-champagne-glasses','fa-children','fa-masks-theater','fa-school','fa-cake-candles'];
 
                 if ($result_char->num_rows > 0) 
                 {

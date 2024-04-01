@@ -124,11 +124,11 @@
                         <div class="list-group list-group-flush mx-3 mt-4">
                             <div class="container-fluid">
                                 <div class="row text-black pt-3">
-                                    <div class="col-2">
-                                        <button type="button" class="btn btn-success" id="search_btn" onclick="search_anims()"><i class="fas fa-search"></i></button>
+                                    <div class="ms-4 col-8">
+                                        <input type="text" id="search_val" class="ms-2 mt-1 ms-2 rounded" placeholder="Meklēt">
                                     </div>
-                                    <div class="col">
-                                        <input type="text" id="search_val" class="ms-4 mt-1 ms-2" placeholder="Meklēt">
+                                    <div class="col-1">
+                                        <button type="button" class="btn btn-success" id="search_btn" onclick="search_anims()"><i class="fas fa-search"></i></button>
                                     </div>
                                 </div>
                             </div>

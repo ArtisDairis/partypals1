@@ -27,7 +27,7 @@ function openCharInfo(this_elem, elem)
   for (let j = 0; j < tabcontent.length; j++) 
   {
       tabcontent[j].hidden = true;
-      document.getElementById("ch_down_" + (j+1)).classList.replace("fa-chevron-up", "fa-chevron-down");
+      document.getElementById("ch_down_" + (elem)).classList.replace("fa-chevron-up", "fa-chevron-down");
 
   }
 
