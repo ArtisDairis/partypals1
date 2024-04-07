@@ -237,6 +237,46 @@ body
     transform: translateX(200%);
 }
 
+/* Modal Container */
+#modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure modal appears above other content */
+}
+
+/* Modal Content Container */
+#modal .container-fluid {
+    width: 80%; /* Adjust the width as needed */
+    max-width: 600px; /* Maximum width for modal */
+    background-color: #fff; /* White background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Drop shadow effect */
+}
+
+/* Modal Heading */
+#modal h2 {
+    margin-top: 0;
+    color: #333; /* Heading color */
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #666; /* Close button color */
+}
+
+
 .footer 
 {
     position: fixed;
@@ -300,7 +340,7 @@ body
                 <p>izmanto savu e-pastu un paroli</p>
                 <input type="email" id="e_mail_auth" placeholder="E-pasts" value="artisdairis@gmail.com">
                 <input type="password" id="pass_auth" placeholder="Parole" value="partypals2023">
-                <a href="#">Aizmirsi savu paroli?</a>
+                <p onclick="openModal()" class="" style="cursor: pointer;">Aizmirsi savu paroli?</p>
                 <button id="auth_btn">Autorizēties</button>
             </form>
         </div>
@@ -319,7 +359,36 @@ body
             </div>
         </div>
     </div>
+
+    <div id="modal" hidden>
+        <div class="container-fluid bg-light rounded">
+            <div class="row">
+                <div class="col">
+                    <h2>Aizmirsu paroli!</h2>
+                </div>
+                <div class="col">
+                    <i class="fa-solid fa-xmark mt-2 me-3 float-end" onclick="closeModal()" style="font-size: larger; cursor: pointer;"></i>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col">
+                    <input type="text" class="float-end rounded" placeholder="Lietotājvārds">
+                </div>
+                <div class="col">
+                    <input type="text" class="rounded" placeholder="E-pasts">
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col d-flex justify-content-center">
+                    <button class="btn bg-success text-light">Apstiprināt</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
+
+
 
     <?php
         include "./php/show_footer.php";
