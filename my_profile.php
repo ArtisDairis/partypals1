@@ -64,14 +64,12 @@
     cursor: pointer;
 }
 
-/* Style the tab */
 .tab {
   overflow: hidden;
   border: 1px solid #ccc;
   background-color: #f1f1f1;
 }
 
-/* Style the buttons that are used to open the tab content */
 .tab button {
   background-color: inherit;
   float: left;
@@ -82,19 +80,16 @@
   transition: 0.3s;
 }
 
-/* Change background color of buttons on hover */
 .tab button:hover 
 {
   background-color: #ddd;
 }
 
-/* Create an active/current tablink class */
 .tab button.active 
 {
   background-color: #ccc;
 }
 
-/* Style the tab content */
 .tabcontent {
   display: none;
   padding: 6px 12px;
@@ -104,10 +99,9 @@
 
 .tabcontent 
 {
-  animation: fadeEffect 1s; /* Fading effect takes 1 second */
+  animation: fadeEffect 1s;
 }
 
-/* Go from zero to full opacity */
 @keyframes fadeEffect 
 {
   from {opacity: 0;}
@@ -162,7 +156,6 @@
     
     if ($result->num_rows > 0) 
     {
-        // Fetch the row
         $row = $result->fetch_assoc();
 
         echo'
@@ -220,7 +213,8 @@
 
                         <div class="input-group mb-3 mt-3">
                             <span class="input-group-text bg-dark text-light" id="basic-addon1"><b><i class="fa-solid fa-phone"></i></b></span>
-                            <input type="text" class="form-control bg-dark text-light" placeholder="Tālrunis: +371" aria-label="Username" aria-describedby="basic-addon1">
+                            <input type="text" class="form-control bg-dark text-light" placeholder="Tālrunis: +371" aria-label="Username" aria-describedby="basic-addon1" 
+                            value="'.$row['phone_number'].'">
                         </div>
                     </div> 
                     <div class="col">

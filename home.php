@@ -63,6 +63,7 @@ body
 .about_us_text
 {
     font-size: 1vw;
+    cursor: context-menu;
 }
 .num
 {
@@ -85,7 +86,7 @@ body
 }
 .sub_btn
 {
-    font-size: 2vw;
+    font-size: 1.5vw;
 }
 #for_us
 {
@@ -173,6 +174,9 @@ body
                             <div class="col-12 rounded-3">
                                 <h1 class="index_text text-start text-white" style="font-size: 4vw;">PartyPals</h1>
                                 <p class="index_text text-start text-white" style="font-size: 1.5vw">ir uzņēmums, kas specializējas svētku organizēšanā, piedāvājot unikālus un aizraujošus animatoru pakalpojumus. Mūsu komanda ir pilna ar radošiem talantiem, kuri ir gatavi padarīt jūsu pasākumu neaizmirstamu un dot iespēju izjust īsto prieka sajūtu.</p>
+                            </div>
+                            <div class="col-2">
+                                <button type="button" class="sub_btn btn btn-success"><a href="order" class="text-reset text-decoration-none">Pieteikt</a></button>
                             </div>
                         </div>
                     </div>
@@ -290,10 +294,10 @@ body
                 </div>
                 <div class="overlay-text">
                     <div class="col">
-                        <p class="sub_text h1 text-start text-light">Vai vēlaties pieteikt pasākumu?</p>
+                        <p class="sub_text h1 text-start text-light">Ja vēlaties izbaudīt savus svētkus pilnērtīgi aicinat mūsu profesionāļus pie sevis!</p>
                     </div>
                     <div class="col">
-                        <button type="button" class="sub_btn btn btn-success"><a href="order" class="text-reset text-decoration-none">Pieteikt</a></button>
+                        
                     </div>
                 </div>
             </div>

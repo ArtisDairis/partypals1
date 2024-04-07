@@ -143,7 +143,7 @@
                                         </div>
                                     </div>
                                     <div class="col">
-                                            <button class="btn rounded nav_bg text-light"><i class=" ps-1 pt-1 pe-1 pb-1 fa-solid fa-repeat"></i></button>
+                                            <button class="btn rounded nav_bg text-light" onclick="reloadData()"><i class=" ps-1 pt-1 pe-1 pb-1 fa-solid fa-repeat"></i></button>
                                     </div>
                                 </div>
                             </div>

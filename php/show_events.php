@@ -1,5 +1,5 @@
 <?php
-include "../connection.php";
+include "connection.php";
  
 $column = isset($_POST['column']) ? $_POST['column'] : '';
 $asc_desc = isset($_POST['asc_desc']) ? $_POST['asc_desc'] : '';

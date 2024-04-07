@@ -77,101 +77,235 @@
         include "./php/show_anim_reg.php";
     ?>
 
-    <div class="container-fluid position-relative p-0 mt-3" style="z-index: 1;">
-        <div class="row bg-dark position-relative" style="height: 350px;">
-            <div class="col position-relative">
-                <video id="video-bg" autoplay muted loop id="myVideo" style="position: absolute; z-index: 3; width: 100%; height: 350px;">
-                    <source src="./css/galerija/pils_svetki.mp4" type="video/mp4">
-                </video>
-                <b class="h1 ms-2 text-center text-light bg-dark rounded" style="z-index: 5; position: absolute;left: 44.7%;bottom: 50%;">Pilsētas svētki</b>
-                <button class="btn btn-success ms-2 mt-5" style="z-index: 5; position: absolute; bottom: 40%; left: 48%;">Lasīt vairāk!</button>
+<div class="container-fluid mt-4">
+    <div class="row">
+        <div class="col bg-dark ms-4 me-2">
+            <video id="video-bg" class="rounded" autoplay muted loop id="myVideo" style="position: absolute; margin-top: -80px; z-index: 2; max-width: 900px; height: 380px;">
+                <source src="./css/galerija/pils_svetki.mp4" type="video/mp4">
+            </video>
+            <div class="container-fluid text-light pt-3 pb-3">
+                <div class="row">
+                    <div class="col">
+                        <b class="h1 ms-2 mt-2 text-light bg-dark rounded" style="z-index: 10; max-width: 600px;">Pilsētas svētki</b>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        Nekad nav par vēlu aicināt mūsu animtorus uz pilsētas svētkiem. Tieši mūsu talanti spēj padarīt neaizmirstamus svētkus un brīnišķīgas atmiņas par kopā būšanu. 
+                    </div>
+                    <div class="col d-flex justify-content-end">
+                        <ul>
+                            <li>Pozitīvas atsauksmes</li>
+                            <li>Liela animatoru izvēle</li>
+                            <li>Prot piesaistīt cilvēkus</li>
+                            <li>Laba izklaide bērniem</li>
+                        </ul>
+                        <button class="btn btn-success mb-3 ms-2" style="z-index: 5;">Pasūtīt!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col bg-dark ms-2 me-4">
+            <video id="video-bg" class="rounded" autoplay muted loop id="myVideo" style="position: absolute; margin-top: -80px; z-index: 2; max-width: 900px; height: 380px;">
+                <source src="./css/galerija/bd_man.mp4" type="video/mp4">
+            </video>
+            <div class="container-fluid text-light pb-3">
+                <div class="row">
+                    <div class="col">
+                        <b class="h1 ms-2 text-center text-light bg-dark rounded" style="z-index: 5; max-width: 600px;">Pieaugušo dzimšanas diena</b>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure odio nisi autem repellendus delectus libero facere exercitationem, molestiae quisquam repellat reiciendis vitae quasi, dolor, fugiat mollitia esse! Vel, enim molestiae.
+                    </div>
+                    <div class="col d-flex justify-content-end">
+                        <ul>
+                            <li>Pozitīvas atsauksmes</li>
+                            <li>Liela animatoru izvēle</li>
+                            <li>Prot piesaistīt cilvēkus</li>
+                            <li>Laba izklaide bērniem</li>
+                        </ul>
+                        <button class="btn btn-success mb-3 ms-2" style="z-index: 5;">Pasūtīt!</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+</div>
 
-    <div class="container-fluid position-relative p-0 mt-3" style="z-index: 1;">
-        <div class="row bg-dark position-relative" style="height: 350px;">
-            <div class="col position-relative">
-                <video id="video-bg" autoplay muted loop id="myVideo" style="position: absolute; z-index: 3; width: 100%; height: 350px;">
-                    <source src="./css/galerija/bd_man.mp4" type="video/mp4">
-                </video>
-                <b class="h1 ms-2 text-center text-light bg-dark rounded" style="z-index: 5; position: absolute;left: 38%; bottom: 50%;">Pieaugušo dzimšanas diena</b>
-                <button class="btn btn-success ms-2 mt-5" style="z-index: 5; position: absolute; bottom: 40%; left: 48%;">Lasīt vairāk!</button>
+<div class="container-fluid mt-4">
+    <div class="row">
+        <div class="col bg-dark ms-4 me-2">
+            <video id="video-bg" class="rounded" autoplay muted loop id="myVideo" style="position: absolute; margin-top: -80px; z-index: 2; max-width: 900px; height: 380px;">
+                <source src="./css/galerija/kids_bd.mp4" type="video/mp4">
+            </video>
+            <div class="container-fluid text-light pt-3 pb-3">
+                <div class="row">
+                    <div class="col">
+                        <b class="h1 ms-2 mt-2 text-light bg-dark rounded" style="z-index: 10; width: 600px;">Bērna dzimšanas diena</b>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        Nekad nav par vēlu aicināt mūsu animtorus uz pilsētas svētkiem. Tieši mūsu talanti spēj padarīt neaizmirstamus svētkus un brīnišķīgas atmiņas par kopā būšanu. 
+                    </div>
+                    <div class="col d-flex justify-content-end">
+                        <ul>
+                            <li>Pozitīvas atsauksmes</li>
+                            <li>Liela animatoru izvēle</li>
+                            <li>Prot piesaistīt cilvēkus</li>
+                            <li>Laba izklaide bērniem</li>
+                        </ul>
+                        <button class="btn btn-success mb-3 ms-2" style="z-index: 5;">Pasūtīt!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col bg-dark ms-2 me-4">
+            <video id="video-bg" class="rounded" autoplay muted loop id="myVideo" style="position: absolute; margin-top: -80px; z-index: 2; max-width: 900px; height: 380px;">
+                <source src="./css/galerija/corporate.mp4" type="video/mp4">
+            </video>
+            <div class="container-fluid text-light pb-3">
+                <div class="row">
+                    <div class="col">
+                        <b class="h1 ms-2 text-center text-light bg-dark rounded" style="z-index: 5; width: 600px;">Korporatīvi</b>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure odio nisi autem repellendus delectus libero facere exercitationem, molestiae quisquam repellat reiciendis vitae quasi, dolor, fugiat mollitia esse! Vel, enim molestiae.
+                    </div>
+                    <div class="col d-flex justify-content-end">
+                        <ul>
+                            <li>Pozitīvas atsauksmes</li>
+                            <li>Liela animatoru izvēle</li>
+                            <li>Prot piesaistīt cilvēkus</li>
+                            <li>Laba izklaide bērniem</li>
+                        </ul>
+                        <button class="btn btn-success mb-3 ms-2" style="z-index: 5;">Pasūtīt!</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+</div>
 
-    <div class="container-fluid position-relative p-0 mt-3" style="z-index: 1;">
-        <div class="row bg-dark position-relative" style="height: 350px;">
-            <div class="col position-relative">
-                <video id="video-bg" autoplay muted loop id="myVideo" style="position: absolute; z-index: 3; width: 100%; height: 350px;">
-                    <source src="./css/galerija/kids_bd.mp4" type="video/mp4">
-                </video>
-                <b class="h1 ms-2 text-center text-light bg-dark rounded" style="z-index: 5; position: absolute;left: 40%; bottom: 50%;">Bērna dzimšanas diena</b>
-                <button class="btn btn-success ms-2 mt-5" style="z-index: 5; position: absolute; bottom: 40%; left: 48%;">Lasīt vairāk!</button>
+<div class="container-fluid mt-4">
+    <div class="row">
+        <div class="col bg-dark ms-4 me-2">
+            <video id="video-bg" class="rounded" autoplay muted loop id="myVideo" style="position: absolute; margin-top: -80px; z-index: 2; max-width: 900px; height: 380px;">
+                <source src="./css/galerija/weddings.mp4" type="video/mp4">
+            </video>
+            <div class="container-fluid text-light pt-3 pb-3">
+                <div class="row">
+                    <div class="col">
+                        <b class="h1 ms-2 mt-2 text-light bg-dark rounded" style="z-index: 10; width: 600px;">Kāzas</b>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        Nekad nav par vēlu aicināt mūsu animtorus uz pilsētas svētkiem. Tieši mūsu talanti spēj padarīt neaizmirstamus svētkus un brīnišķīgas atmiņas par kopā būšanu. 
+                    </div>
+                    <div class="col d-flex justify-content-end">
+                        <ul>
+                            <li>Pozitīvas atsauksmes</li>
+                            <li>Liela animatoru izvēle</li>
+                            <li>Prot piesaistīt cilvēkus</li>
+                            <li>Laba izklaide bērniem</li>
+                        </ul>
+                        <button class="btn btn-success mb-3 ms-2" style="z-index: 5;">Pasūtīt!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col bg-dark ms-2 me-4">
+            <video id="video-bg" class="rounded" autoplay muted loop id="myVideo" style="position: absolute; margin-top: -80px; z-index: 2; max-width: 900px; height: 380px;">
+                <source src="./css/galerija/kids_party.mp4" type="video/mp4">
+            </video>
+            <div class="container-fluid text-light pb-3">
+                <div class="row">
+                    <div class="col">
+                        <b class="h1 ms-2 text-center text-light bg-dark rounded" style="z-index: 5; width: 600px;">Pasākumi bērniem</b>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure odio nisi autem repellendus delectus libero facere exercitationem, molestiae quisquam repellat reiciendis vitae quasi, dolor, fugiat mollitia esse! Vel, enim molestiae.
+                    </div>
+                    <div class="col d-flex justify-content-end">
+                        <ul>
+                            <li>Pozitīvas atsauksmes</li>
+                            <li>Liela animatoru izvēle</li>
+                            <li>Prot piesaistīt cilvēkus</li>
+                            <li>Laba izklaide bērniem</li>
+                        </ul>
+                        <button class="btn btn-success mb-3 ms-2" style="z-index: 5;">Pasūtīt!</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+</div>
 
-    <div class="container-fluid position-relative p-0 mt-3" style="z-index: 1;">
-        <div class="row bg-dark position-relative" style="height: 350px;">
-            <div class="col position-relative">
-                <video id="video-bg" autoplay muted loop id="myVideo" style="position: absolute; z-index: 3; width: 100%; height: 350px;">
-                    <source src="./css/galerija/corporate.mp4" type="video/mp4">
-                </video>
-                <b class="h1 ms-2 text-center text-light bg-dark rounded" style="z-index: 5; position: absolute;left: 45.6%; bottom: 50%;">Korporatīvi</b>
-                <button class="btn btn-success ms-2 mt-5" style="z-index: 5; position: absolute; bottom: 40%; left: 48%;">Lasīt vairāk!</button>
+<div class="container-fluid mt-4">
+    <div class="row">
+        <div class="col bg-dark ms-4 me-2">
+            <video id="video-bg" class="rounded" autoplay muted loop id="myVideo" style="position: absolute; margin-top: -80px; z-index: 2; max-width: 900px; height: 380px;">
+                <source src="./css/galerija/school_party.mp4" type="video/mp4">
+            </video>
+            <div class="container-fluid text-light pt-3 pb-3">
+                <div class="row">
+                    <div class="col">
+                        <b class="h1 ms-2 mt-2 text-light bg-dark rounded" style="z-index: 10; width: 600px;">Skolu pasākumi</b>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        Nekad nav par vēlu aicināt mūsu animtorus uz pilsētas svētkiem. Tieši mūsu talanti spēj padarīt neaizmirstamus svētkus un brīnišķīgas atmiņas par kopā būšanu. 
+                    </div>
+                    <div class="col d-flex justify-content-end">
+                        <ul>
+                            <li>Pozitīvas atsauksmes</li>
+                            <li>Liela animatoru izvēle</li>
+                            <li>Prot piesaistīt cilvēkus</li>
+                            <li>Laba izklaide bērniem</li>
+                        </ul>
+                        <button class="btn btn-success mb-3 ms-2" style="z-index: 5;">Pasūtīt!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col bg-dark ms-2 me-4">
+            <video id="video-bg" class="rounded" autoplay muted loop id="myVideo" style="position: absolute; margin-top: -80px; z-index: 2; max-width: 900px; height: 380px;">
+                <source src="./css/galerija/jubilejs.mp4" type="video/mp4">
+            </video>
+            <div class="container-fluid text-light pb-3">
+                <div class="row">
+                    <div class="col">
+                        <b class="h1 ms-2 text-center text-light bg-dark rounded" style="z-index: 5; width: 600px;">Jubilejas</b>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure odio nisi autem repellendus delectus libero facere exercitationem, molestiae quisquam repellat reiciendis vitae quasi, dolor, fugiat mollitia esse! Vel, enim molestiae.
+                    </div>
+                    <div class="col d-flex justify-content-end">
+                        <ul>
+                            <li>Pozitīvas atsauksmes</li>
+                            <li>Liela animatoru izvēle</li>
+                            <li>Prot piesaistīt cilvēkus</li>
+                            <li>Laba izklaide bērniem</li>
+                        </ul>
+                        <button class="btn btn-success mb-3 ms-2" style="z-index: 5;">Pasūtīt!</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+</div>
 
-    <div class="container-fluid position-relative p-0 mt-3" style="z-index: 1;">
-        <div class="row bg-dark position-relative" style="height: 350px;">
-            <div class="col position-relative">
-                <video id="video-bg" autoplay muted loop id="myVideo" style="position: absolute; z-index: 3; width: 100%; height: 350px;">
-                    <source src="./css/galerija/weddings.mp4" type="video/mp4">
-                </video>
-                <b class="h1 ms-2 text-center text-light bg-dark rounded" style="z-index: 5; position: absolute;left: 48%; bottom: 50%;">Kāzas</b>
-                <button class="btn btn-success ms-2 mt-5" style="z-index: 5; position: absolute; bottom: 40%; left: 48%;">Lasīt vairāk!</button>
-            </div>
-        </div>
-    </div>
-
-    <div class="container-fluid position-relative p-0 mt-3" style="z-index: 1;">
-        <div class="row bg-dark position-relative" style="height: 350px;">
-            <div class="col position-relative">
-                <video id="video-bg" autoplay muted loop id="myVideo" style="position: absolute; z-index: 3; width: 100%; height: 350px;">
-                    <source src="./css/galerija/kids_party.mp4" type="video/mp4">
-                </video>
-                <b class="h1 ms-2 text-center text-light bg-dark rounded" style="z-index: 5; position: absolute;left: 42%; bottom: 50%;">Pasākumi bērniem</b>
-                <button class="btn btn-success ms-2 mt-5" style="z-index: 5; position: absolute; bottom: 40%; left: 48%;">Lasīt vairāk!</button>
-            </div>
-        </div>
-    </div>
-
-    <div class="container-fluid position-relative p-0 mt-3" style="z-index: 1;">
-        <div class="row bg-dark position-relative" style="height: 350px;">
-            <div class="col position-relative">
-                <video id="video-bg" autoplay muted loop id="myVideo" style="position: absolute; z-index: 3; width: 100%; height: 350px;">
-                    <source src="./css/galerija/school_party.mp4" type="video/mp4">
-                </video>
-                <b class="h1 ms-2 text-center text-light bg-dark rounded" style="z-index: 5; position: absolute;left: 43.5%; bottom: 50%;">Skolu pasākumi</b>
-                <button class="btn btn-success ms-2 mt-5" style="z-index: 5; position: absolute; bottom: 40%; left: 48%;">Lasīt vairāk!</button>
-            </div>
-        </div>
-    </div>
-
-    <div class="container-fluid position-relative p-0 mt-3 mb-5" style="z-index: 1;">
-        <div class="row bg-dark position-relative" style="height: 350px;">
-            <div class="col position-relative">
-                <video id="video-bg" autoplay muted loop id="myVideo" style="position: absolute; z-index: 3; width: 100%; height: 350px;">
-                    <source src="./css/galerija/jubilejs.mp4" type="video/mp4">
-                </video>
-                <b class="h1 ms-2 text-center text-light bg-dark rounded" style="z-index: 5; position: absolute;left: 46.5%; bottom: 50%;">Jubilejas</b>
-                <button class="btn btn-success ms-2 mt-5" style="z-index: 5; position: absolute; bottom: 40%; left: 48%;">Lasīt vairāk!</button>
-            </div>
-        </div>
-    </div>
+    <br><br><br><br><br><br><br>
 
     <?php
         include "./php/show_footer.php";

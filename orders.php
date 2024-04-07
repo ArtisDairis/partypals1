@@ -54,6 +54,21 @@
 {
     cursor: pointer;
 }
+
+.character-count 
+{
+    position: relative;
+    margin-top: -22px;
+    margin-right: 15px;
+    float: right;
+}
+
+.character-count span 
+{
+    color: #888;
+    cursor: context-menu;
+}
+
 </style>
 
 
@@ -114,7 +129,7 @@
                                             <div class="row">
                                                 <div class="col">
                                                     <select class="form-control border-dark rounded" id="filter_status" onchange="filter_status()">
-                                                        <option value=""></option>
+                                                        <option value="">Izvēlaties statusu</option>
                                                         <option value="Apstiprināts">Apstiprināts</option>
                                                         <option value="Noraidīts">Noraidīts</option>
                                                         <option value="Atcelts">Atcelts</option>
@@ -143,7 +158,7 @@
                                         </div>
                                     </div>
                                     <div class="col">
-                                            <button class="btn rounded nav_bg text-light"><i class=" ps-1 pt-1 pe-1 pb-1 fa-solid fa-repeat"></i></button>
+                                            <button class="btn rounded nav_bg text-light" onclick="reloadData()"><i class=" ps-1 pt-1 pe-1 pb-1 fa-solid fa-repeat"></i></button>
                                     </div>
                                 </div>
                             </div>
@@ -154,29 +169,29 @@
         </div>
         <div class="row mt-4">
             <div class="col-1"></div>
-            <div class="col rounded" style="background-color: #4F4F4F;">
+            <div class="col rounded me-3" style="background-color: #4F4F4F;">
                 <div class="container-fluid align-center mt-3 pt-2 pb-2 bg-dark" style="border-radius: 25px;">
                     <div class="row">
-                        <div class="col-2" style="width: 200px;">
+                        <div class="col-2 text-center" style="width: 200px;">
                             <span class="table_col" onclick="sortDataBy('event_name', 'b1')">Pasākuma nosaukums  <i id="b1" class="fa-solid fa-caret-down"></i></span>
                         </div>
-                        <div class="col">
+                        <div class="col text-center">
                             <span class="table_col" onclick="sortDataBy('event_time_start', 'b2')">Pasākuma sākums  <i id="b2" class="fa-solid fa-caret-down"></i></span>
                         </div>
-                        <div class="col">
+                        <div class="col text-center">
                             <span class="table_col" onclick="sortDataBy('event_time_end', 'b3')">Pasākuma beigas  <i id="b3" class="fa-solid fa-caret-down"></i></span>
                         </div>
-                        <div class="col">
+                        <div class="col text-center">
                             <span class="table_col" onclick="sortDataBy('event_date', 'b4')">Pasākuma datums  <i id="b4" class="fa-solid fa-caret-down"></i></span>
                         </div>
-                        <div class="col">
+                        <div class="col text-center">
                             <span class="table_col" onclick="sortDataBy('adress', 'b5')">Pasākuma adrese  <i id="b5" class="fa-solid fa-caret-down"></i></span>
                         </div>
-                        <div class="col"></div>
-                        <div class="col">
+                        <div class="col text-center">
                             <span class="ms-3 table_col" onclick="sortDataBy('status', 'b6')">Statuss  <i id="b6" class="fa-solid fa-caret-down"></i></span>
                         </div>
                         <div class="col"></div>
+                        <div class="col-1"></div>
                     </div>
                 </div>
                 <div id="show_data">

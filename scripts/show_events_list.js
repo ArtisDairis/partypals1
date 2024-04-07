@@ -10,3 +10,15 @@ window.onload = function()
         }
     });
 }
+function reloadData() 
+{
+    $.ajax({
+        type: "get",
+        url: "./php/show_events.php",
+        dataType: "text",
+        success: function(response) 
+        {
+            $("#show_data1").html(response);
+        }
+    });    
+}

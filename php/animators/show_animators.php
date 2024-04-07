@@ -12,17 +12,21 @@ $params = array();
 $types = '';
 
 // Add conditions based on user inputs
-if (!empty($anims_full_name)) {
+if (!empty($anims_full_name)) 
+{
     $searched_value = $_POST['s_value'];
     $split_value = explode(" ", $searched_value);
     $first_name = $split_value[0];
     $last_name = end($split_value);
-    if (count($split_value) > 1) {
+    if (count($split_value) > 1) 
+    {
         $sql .= " AND (INSTR(`name`, ?) AND INSTR(`surname`, ?))";
         $types .= 'ss';
         $params[] = &$first_name;
         $params[] = &$last_name;
-    } else {
+    } 
+    else 
+    {
         $sql .= " AND (INSTR(`name`, ?) OR INSTR(`surname`, ?))";
         $types .= 'ss';
         $params[] = &$first_name;
@@ -64,33 +68,35 @@ if (!empty($theme)) {
         $split_theme = explode(",", $theme);
         $worker_ids = array(); // Store worker_ids in an array
 
-        for ($i = 0; $i < count($split_theme); $i++) {
+        for ($i = 0; $i < count($split_theme); $i++) 
+        {
             $sql_theme = "SELECT `worker_id` FROM `characters` WHERE FIND_IN_SET(".$conn->real_escape_string($split_theme[$i]).", theme)";
             $result_theme = $conn->query($sql_theme);
 
             // Fetch worker_ids and add them to the array
-            while ($row_theme = $result_theme->fetch_assoc()) {
+            while ($row_theme = $result_theme->fetch_assoc()) 
+            {
                 $worker_ids[] = $row_theme['worker_id'];
             }
         }
-
-        // If there are worker_ids, construct the SQL query
-        if (!empty($worker_ids)) {
+        if (!empty($worker_ids)) 
+        {
             $sql .= " AND `id` IN (" . implode(",", $worker_ids) . ")";
         }
-    } else {
-        // For single theme, directly construct the SQL query
+    } 
+    else 
+    {
         $sql_theme = "SELECT `worker_id` FROM `characters` WHERE FIND_IN_SET(".$conn->real_escape_string($theme).", theme)";
         $result_theme = $conn->query($sql_theme);
 
-        // Fetch worker_ids and construct the SQL query
         $worker_ids = array();
-        while ($row_theme = $result_theme->fetch_assoc()) {
+        while ($row_theme = $result_theme->fetch_assoc()) 
+        {
             $worker_ids[] = $row_theme['worker_id'];
         }
 
-        // If there are worker_ids, construct the SQL query
-        if (!empty($worker_ids)) {
+        if (!empty($worker_ids)) 
+        {
             $sql .= " AND `id` IN (" . implode(",", $worker_ids) . ")";
         }
     }
@@ -99,16 +105,19 @@ if (!empty($theme)) {
 
 // Prepare and bind parameters
 $stmt = $conn->prepare($sql);
-if (!$stmt) {
+if (!$stmt) 
+{
     die("Error preparing statement: " . $conn->error);
 }
-if (!empty($types)) {
+if (!empty($types)) 
+{
     $bind_params = array_merge(array($types), $params);
     call_user_func_array(array($stmt, 'bind_param'), $bind_params);
 }
 
 // Execute statement
-if (!$stmt->execute()) {
+if (!$stmt->execute()) 
+{
     die("Error executing statement: " . $stmt->error);
 }
 
@@ -118,10 +127,18 @@ $data = array();
 
 if ($result->num_rows > 0) 
 {
+    echo '<div class="container-fluid">';
+    echo '<div class="row">';
+
+    $count = 0;
     while ($row = $result->fetch_assoc()) 
     {
         if($row['worker'])
         {
+            // Check if 2 columns are filled, if not, open a new column
+            if($count % 2 == 0)
+                echo '<div class="col-md-6">';
+
             ?>
             <div class="container-fluid bg-dark mt-2 mb-2 pb-3 rounded-2">
                 <div id='darb<?php echo $row['id'];?>' class='row'>
@@ -129,23 +146,23 @@ if ($result->num_rows > 0)
                         <img class='rounded-3' src='css/img/user_img/<?php echo $row['photo'];?>' alt='Oooops...' style='width: 200px; height: 200px;'>
                     </div>
                     <div class='col mt-3'>
-                        <div class='container-fluid'>
+                        <div class='container-fluid' style="">
                             <div class='row'>
-                                <div class='col-4 mb-2'>
-                                    <span class='h3 me-5'><?php echo $row['name']." ".$row['surname']; ?></span>
+                                <div class='col-4 mb-2' style="margin-left: 100px;">
+                                    <span class='h3'><?php echo $row['name']." ".$row['surname']; ?></span>
                                 </div>
                             </div>
                         </div>
                         <div class='container-fluid'>
                             <div class='row'>
                                 <div class='col'>
-                                    <div id='Apraksts<?php echo $row['id'];?>' style='display: block;'>
+                                    <div id='Apraksts<?php echo $row['id'];?>' style='display: block;margin-left: 100px;'>
                                         <span><?php echo $row['about_me']; ?></span>
                                     </div>
                                 </div>
-                                <div class='col'>
-                                    <div id='Apraksts_<?php echo $row['id'];?>' style='display: block;'>
-                                    <?php
+                                <div class='col-3' style='width: 100px;'>
+                                    <div id='Apraksts_<?php echo $row['id'];?>' class="me-2" style='display: flex; justify-content: space-between; flex-wrap: wrap;'>
+                                        <?php
                                         $days = ['P','O','T','C','Pk','S','Sv'];
                                         $days_nums = explode(",", $row['work_days']);
                                         sort($days_nums);
@@ -154,11 +171,11 @@ if ($result->num_rows > 0)
                                             if(in_array(strval($index + 1), $days_nums)) 
                                             {
                                                 ?>
-                                                    <span class="me-2 border ps-1 pt-1 pe-1 pb-1"><?php echo $day?></span>  
+                                                <span class="border ps-1 pe-1 pb-1 mb-1" style="word-wrap: break-word;"><?php echo $day?></span>
                                                 <?php                             
                                             }
                                         }     
-                                    ?>      
+                                        ?>      
                                     </div>
                                 </div>
                             </div>
@@ -212,7 +229,7 @@ if ($result->num_rows > 0)
                                             <div class="col-3">
                                                 <img class='rounded-3' src='css/img/char_img/<?php echo $row_char['char_photo'];?>' alt='Oooops...' style='width: 200px; height: 200px;'>
                                             </div>
-                                            <div class="col">
+                                            <div class="col" style="margin-left: 55px;">
                                                 <span><?php echo $row_char['about_char'] ?></span>
                                             </div>
                                         </div>
@@ -227,12 +244,23 @@ if ($result->num_rows > 0)
                 
             </div>
             <?php
-        }
-    }
+
+    if($count % 2 != 0)
+        echo '</div>';
+
+    $count++;
 }
+}
+
+    if($count % 2 != 0)
+        echo '</div>';
+
+    echo '</div>';
+    echo '</div>';
+    }
 else 
 {
-    echo "No animators found.";
+echo "No animators found.";
 }
 $stmt->close();
 $conn->close();
