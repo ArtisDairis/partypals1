@@ -25,7 +25,7 @@ if(isset($_POST['theme']) && !empty($_POST['theme']))
                     <i class="ms-2 fa-solid fa-circle-info"></i>
                 </div>
                 <div class="col-3">
-                    <i class="btn text-light fa-solid fa-plus"></i>
+                    <i class="btn text-light fa-solid fa-plus" onclick="addToList(<?php echo htmlspecialchars($row['id']); ?>)"></i>
                 </div>
             </div>
             <?php

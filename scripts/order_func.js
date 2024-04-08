@@ -120,6 +120,25 @@ function loadActiveAnim()
     });
 }
 
+function addToList(anim_id)
+{
+    $.ajax(
+    {
+        type: "post",
+        url: "",
+        data: 
+        {
+            animator_id: anim_id
+        },
+        dataType: "",
+        success: function (response) 
+        {
+            
+        }
+    });
+}
+
+// date picker
 const datepicker = document.querySelector(".datepicker");
 const dateInput = document.querySelector(".date-input");
 const yearInput = datepicker.querySelector(".year-input");
