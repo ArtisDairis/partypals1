@@ -2,7 +2,7 @@
 {
     emailjs.init(
     {
-        publicKey: "EOzJ7zTKUk_je9AQj",
+        publicKey: "_85BUx3upvIWu6DTM",
     });
 })();
 
@@ -31,8 +31,8 @@ $(document).ready(function()
             success: function(response) 
             {
                 console.log(response);
-                document.getElementById('fp_user_info').hidden = true;
-                document.getElementById('fp_pas_code').hidden = false;
+                document.getElementById('modal_1').hidden = true;
+                document.getElementById('modal_2').hidden = false;
 
                 animatori = response.animatori;
                 users = response.users;
@@ -63,16 +63,16 @@ $(document).ready(function()
 {
     $('#accept_code').click(function()
     {
-        let n1 = document.getElementById("n1").value;
-        let n2 = document.getElementById("n2").value;
-        let n3 = document.getElementById("n3").value;
-        let n4 = document.getElementById("n4").value;
+        let n1 = document.getElementById("input1").value;
+        let n2 = document.getElementById("input2").value;
+        let n3 = document.getElementById("input3").value;
+        let n4 = document.getElementById("input4").value;
         let resultN = n1+""+n2+""+n3+""+n4;
 
         if(resultN === resultCode)
         {
-            document.getElementById('fp_pas_code').hidden = true;
-            document.getElementById('fp_new_pass').hidden = false;
+            document.getElementById('modal_2').hidden = true;
+            document.getElementById('modal_3').hidden = false;
         }
     })
 })
@@ -108,7 +108,7 @@ $(document).ready(function()
                 success: function(response) 
                 {
                     console.log(response);
-                    window.location.replace("http://localhost/kursa_darbs/index.php");
+                    window.location.replace("https://partypals.webexteam.eu/");
                 },
                 error: function(xhr, status, error) 
                 {
@@ -128,9 +128,9 @@ $(document).ready(function()
 
 function chageHidden()
 {
-    document.getElementById('fp_user_info').hidden = false;
-    document.getElementById('fp_pas_code').hidden = true;
-    document.getElementById('fp_new_pass').hidden = true;
+    // document.getElementById('fp_user_info').hidden = false;
+    // document.getElementById('fp_pas_code').hidden = true;
+    // document.getElementById('fp_new_pass').hidden = true;
 }
 function sendMail(user,mail,code)
 {
@@ -142,7 +142,7 @@ function sendMail(user,mail,code)
         message : code
     }
 
-    emailjs.send("service_8col8pl","template_qxarzuq",parms).then(
+    emailjs.send("service_ner374x","template_4cbjwzr",parms).then(
     {
 
     })

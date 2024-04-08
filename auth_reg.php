@@ -13,6 +13,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 </head>
 <style>
@@ -276,6 +278,75 @@ body
     color: #666; /* Close button color */
 }
 
+#myProgress 
+{
+    width: 100%;
+}
+#myBar 
+{
+    height: 10px;
+    background-color: #7C18FB;
+}
+
+/* forgot pass code form */
+.form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 300px;
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+  }
+
+  .title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: black; /* Change title color to black */
+  }
+
+  .message {
+    color: #a3a3a3;
+    font-size: 14px;
+    margin-top: 4px;
+    text-align: center;
+    color: black; /* Change message color to black */
+  }
+
+  .inputs {
+    margin-top: 10px;
+    display: flex;
+  }
+
+  .inputs input {
+    width: 32px;
+    height: 32px;
+    text-align: center;
+    border: none;
+    border-bottom: 1.5px solid #d2d2d2;
+    margin: 0 10px;
+    font-size: 16px;
+    border-color: #ff0000; /* Change border color to red */
+  }
+
+  .inputs input:focus {
+    border-bottom: 1.5px solid royalblue;
+    outline: none;
+  }
+
+  .action {
+    margin-top: 24px;
+    padding: 12px 24px;
+    border-radius: 8px;
+    border: none;
+    background-color: royalblue;
+    color: white;
+    cursor: pointer;
+    align-self: flex-end;
+  }
+/* --------------------- */
 
 .footer 
 {
@@ -370,19 +441,72 @@ body
                     <i class="fa-solid fa-xmark mt-2 me-3 float-end" onclick="closeModal()" style="font-size: larger; cursor: pointer;"></i>
                 </div>
             </div>
-            <div class="row mt-3">
-                <div class="col">
-                    <input type="text" class="float-end rounded" placeholder="Lietotājvārds">
+            <div id="modal_1">
+                <div class="row">
+                    <div class="col-2"></div>
+                    <div class="col">
+                        <div id="myProgress" class="bg-secondary rounded">
+                            <div id="myBar" class="rounded"></div>
+                        </div>
+                    </div>
+                    <div class="col-2"></div>
                 </div>
-                <div class="col">
-                    <input type="text" class="rounded" placeholder="E-pasts">
+                <div class="row mt-3">
+                    <div class="col"></div>
+                    <div class="col d-flex justify-content-center align-items-center">
+                        <div>
+                            <input type="text" id="username1" class="rounded" placeholder="Lietotājvārds">
+                            <br>
+                            <input type="text" id="e_mail1" class="rounded mt-2" placeholder="E-pasts">
+                        </div>
+                    </div>
+                    <div class="col"></div>
+                </div>
+
+                <div class="row mt-2">
+                    <div class="col d-flex justify-content-center">
+                        <button id="send_code" type="button" class="btn bg-success text-light">Apstiprināt</button>
+                    </div>
                 </div>
             </div>
-            <div class="row mt-2">
-                <div class="col d-flex justify-content-center">
-                    <button class="btn bg-success text-light">Apstiprināt</button>
+            <div id="modal_2" hidden>
+                <div class="row">
+                    <div class="col"> 
+                        <div class="title text-center">Vienreizējais kods!</div> 
+                        <p class="message">Mēs aizsūtījām kodu uz jūsu e-pastu!</p> 
+                    </div>
                 </div>
-            </div>
+                <div class="row">
+                    <div class="col"><input id="input1" class="form-control text-center" type="text" maxlength="1" onkeyup="moveToNextInput(this, 'input2')"></div>
+                    <div class="col"><input id="input2" class="form-control text-center" type="text" maxlength="1" onkeyup="moveToNextInput(this, 'input3')"></div>
+                    <div class="col"><input id="input3" class="form-control text-center" type="text" maxlength="1" onkeyup="moveToNextInput(this, 'input4')"></div>
+                    <div class="col"><input id="input4" class="form-control text-center" type="text" maxlength="1"></div>
+                </div>
+                <div class="row">
+                    <div class="col"><button class="btn bg-success action float-end" id="accept_code">Apstiprināt</button></div>
+                </div>
+            </div> 
+            <div id="modal_3" hidden>
+                <div class="row">
+                    <div class="col">
+                        <h3>Paroles maiņa</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col d-flex justify-content-center align-items-center">
+                        <div>
+                            <input type="password" class="rounded" id="newPass1" placeholder="Jaunā parole" required>
+                            <br>
+                            <input type="password" class="rounded mt-2" id="newPass2" placeholder="Paroles atkārtojums" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col d-flex justify-content-center mt-2">
+                        <button class="btn bg-success text-light" id="accept_pass">Pabeigt</button>
+                    </div>
+                </div>
+            </div>   
         </div>
     </div>
 
@@ -397,4 +521,5 @@ body
 <script src="scripts/jquery-3.7.1.min.js"></script>
 <script src="scripts/sign_in.js"></script>
 <script src="scripts/anim_register.js"></script>
+<script src="scripts/forgot_pas.js"></script>
 </html>

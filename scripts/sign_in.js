@@ -99,3 +99,18 @@ function closeModal()
 {
     document.getElementById('modal').hidden = true;
 }
+
+function moveToNextInput(currentInput, nextInputId)    
+{
+    let maxLength = parseInt(currentInput.getAttribute('maxlength'));
+    let currentLength = currentInput.value.length;
+
+    if (currentLength >= maxLength) 
+    {
+        let nextInput = document.getElementById(nextInputId);
+        if (nextInput) 
+        {
+            nextInput.focus();
+        }
+    }
+}

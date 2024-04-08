@@ -8,8 +8,7 @@ $("#log_out").click(function()
         dataType: "text",
         success: function (response) 
         {
-            
-            location.reload();
+            window.location.replace("home");
             console.log('Logout successful');
         },
         error: function(xhr, status, error) 

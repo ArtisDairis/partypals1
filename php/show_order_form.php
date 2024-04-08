@@ -112,30 +112,38 @@
                         <br>
                         <div class="input-group" style="margin-top: 7px;">
                             <div class="form-control">
-                                <select name="" id="" class="rounded text-center" style="width: 60px; border: 0;">
+                                Sākums: 
+                                <select id="time_start_h" class="rounded text-center" style="width: 60px; border: 0;">
                                     <?php
-                                        for($i=1; $i<=24;$i++)
+                                        for($i=0; $i<=23;$i++)
                                         {
                                             if($i<10)
+                                            {
                                                 echo "<option value=".$i.">0".$i."</option>";
+                                            }
                                             else
+                                            {
                                                 echo "<option value=".$i.">".$i."</option>";
+                                            }
                                         }
                                     ?>
                                 </select>
                                 <span>:</span>
-                                <select name="" id="" class="rounded text-center" style="width: 60px; border: 0;">
+                                <select id="time_start_m" class="rounded text-center" style="width: 60px; border: 0;">
                                     <?php
-                                        for($i=1; $i<=24;$i++)
+                                        for($i=0; $i<=59;$i++)
                                         {
                                             if($i<10)
+                                            {
                                                 echo "<option value=".$i.">0".$i."</option>";
+                                            }
                                             else
+                                            {
                                                 echo "<option value=".$i.">".$i."</option>";
+                                            }
                                         }
                                     ?>
                                 </select>
-                                <input type="time" name="" id="">
                             </div>
                             
                             <div class="input-group-append">
@@ -143,10 +151,55 @@
                             </div>
                         </div>
                         <br>
-                        <input class="mb-2  rounded is-" placeholder="Pasākuma sākums" type="text" id="event_time_start">
-
                         <div class="input-group">
-                            <input class="mb-2 form-control rounded is-" placeholder="Pasākuma beigas" type="text" id="event_time_end">
+                            <div class="form-control">
+                                Beigas: 
+                                <select id="time_end_h" class="rounded text-center" style="width: 60px; border: 0;">
+                                    <?php
+                                        for($i=0; $i<=23;$i++)
+                                        {
+                                            if($i<10)
+                                            {
+                                                echo "<option value=".$i.">0".$i."</option>";
+                                            }
+                                            else
+                                            {
+                                                if($i == 23)
+                                                {
+                                                    echo "<option value=".$i." selected>".$i."</option>";
+                                                }
+                                                else
+                                                {
+                                                    echo "<option value=".$i.">".$i."</option>";
+                                                }
+                                            }
+                                        }
+                                    ?>
+                                </select>
+                                <span>:</span>
+                                <select id="time_end_m" class="rounded text-center" style="width: 60px; border: 0;">
+                                    <?php
+                                        for($i=0; $i<=59;$i++)
+                                        {
+                                            if($i<10)
+                                            {
+                                                echo "<option value=".$i.">0".$i."</option>";
+                                            }
+                                            else
+                                            {
+                                                if($i == 59)
+                                                {
+                                                    echo "<option value=".$i." selected>".$i."</option>";
+                                                }
+                                                else
+                                                {
+                                                    echo "<option value=".$i.">".$i."</option>";
+                                                }
+                                            }
+                                        }
+                                    ?>
+                                </select>
+                            </div>
                             <div class="input-group-append">
                                 <i class="input-group-text bg-dark text-light border-0 fa-solid fa-clock" style="font-size: 24px;"></i>
                             </div>
@@ -170,7 +223,7 @@
                                     </div>
                                     <div class="col mt-1" style="display: flex; align-items:center;">
                                         <div class="ps-5 ms-4 input-group rounded" style="position: relative;">
-                                            <input type="text" class="rounded me-2" placeholder="Meklēt pēc vārda" name="" id="">
+                                            <input type="text" class="rounded me-2" placeholder="Meklēt pēc vārda" id="search_anim_names">
                                             <div class="input-group-btn">
                                                 <button class="bg-success text-light rounded"><i class="fa-solid fa-magnifying-glass"></i></button>
                                             </div>

@@ -48,8 +48,8 @@ function goTo(elem, this_elem)
         e_name = $('#event_name').val();
         e_theme = $('#event_theme').val();
         e_date = $('#event_date').val();
-        e_time_start = $('#event_time_start').val();
-        e_time_end = $('#event_time_end').val();
+        e_time_start = $('#time_start_h').val() + ":" + $('#time_start_m').val();
+        e_time_end = $('#time_end_h').val() + ":" + $('#time_end_m').val();
     }
 
     if(this_elem == "order_anim")
