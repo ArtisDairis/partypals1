@@ -239,34 +239,7 @@
         </div>
     </div>
     <div id="char_info" class="container" style="position:absolute; left:1500px; top:95px; width: 400px;" hidden>
-        <div class="row">
-            <div class="col bg-dark text-light rounded">
-                <div class="container-fluid">
-                    <div class="row mt-1">
-                        <div class="col-1"></div>
-                        <div class="col text-center">
-                            <span class="h3">Tēla apraksts</span>
-                        </div>
-                        <div class="col-2">
-                            <i class="btn text-light fa-solid fa-xmark"></i>
-                        </div>
-                    </div>
-                    <div class="row mt-2">
-                        <div class="col">
-                            <img src="./css/img/char_img/clown.png" alt="" style="width: 150px;">
-                        </div>
-                        <div class="col text-center">
-                            <span class="h5">Klauns</span>
-                        </div>
-                    </div>
-                    <div class="row mt-3 pb-3">
-                        <div class="col text-center">
-                            <span>Apraksts numur 1.</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
     </div>
     <?php
         include "./php/show_footer.php";

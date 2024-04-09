@@ -40,7 +40,7 @@
                 <div class="row mt-3">
                     <div class="col-1"></div>
                     <div class="col">
-                        <select class="mb-2 form-control is-" id="event_theme">
+                        <select class="mb-2 form-control " id="event_theme">
                             <option value="">Tēmas</option>
                             <?php
                                 $sql_theme = "SELECT * FROM theme";
@@ -56,7 +56,7 @@
                             ?>
                         </select>
                         <br>
-                        <input class="mb-2 form-control is-" placeholder="Pasākuma nosaukums" type="text" id="event_name">
+                        <input class="mb-2 form-control " placeholder="Pasākuma nosaukums" type="text" id="event_name">
                     </div>
                     <div class="col">
                         <div class="">
@@ -237,20 +237,10 @@
                                                 <div class="col">
                                                     <span class="h5">Esošais saraksts</span>
                                                 </div>
-                                                <div class="col-2">
-                                                    <span class="h5"><i class="btn text-light fa-solid fa-caret-down"></i></span>
-                                                </div>
                                             </div>
+                                            <input type="hidden" id="event_anim">
                                             <div id="anim_list1" class="container-fluid" style="overflow-y: auto; overflow-x: hidden; max-height:250px;">
-                                                <div class="row pt-1 pb-1 mt-1 mb-1 ms-3 me-3 bg-dark rounded">
-                                                    <div class="col">
-                                                        <span>Super-man</span>
-                                                        <i class="ms-2 fa-solid fa-circle-info"></i>
-                                                    </div>
-                                                    <div class="col-3">
-                                                        <i class="btn text-light fa-solid fa-minus"></i>
-                                                    </div>
-                                                </div>
+                                                
                                             </div>
                                         </div>
                                     </div>

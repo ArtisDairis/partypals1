@@ -22,10 +22,10 @@ if(isset($_POST['theme']) && !empty($_POST['theme']))
             <div class="row mb-2 border rounded ms-1 me-1" style="height: 40px;">
                 <div class="col pt-1 ps-4">
                     <span><?php echo htmlspecialchars($row['char_name']); ?></span>
-                    <i class="ms-2 fa-solid fa-circle-info"></i>
+                    <i class="ms-2 fa-solid fa-circle-info" onclick="showInfoAnim(<?php echo htmlspecialchars($row['id']); ?>)"></i>
                 </div>
                 <div class="col-3">
-                    <i class="btn text-light fa-solid fa-plus" onclick="addToList(<?php echo htmlspecialchars($row['id']); ?>)"></i>
+                    <i class="btn text-light fa-solid fa-plus" onclick="addAnimsList(<?php echo htmlspecialchars($row['id']); ?>, this)"></i>
                 </div>
             </div>
             <?php
