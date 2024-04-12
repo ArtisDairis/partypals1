@@ -79,15 +79,12 @@ function goTo(elem, this_elem)
         u_adress = $('#u_adress').val();
         u_about_e = $('#u_about_e').val();
 
-        // Validate user's private info
-        if (!u_name || !u_surname || !u_e_mail || !u_phone_num || !u_adress || !u_about_e) 
+        if (!check_u_name() || !check_u_surname() || !check_u_e_mail() || !check_u_phone_num() || !check_u_adress() || !check_u_about_e())
         {
-            alert("Please fill in all private information.");
-            proceed = false; // Validation failed
+            proceed = false;
         }
     }
 
-    // Proceed to the next step only if validation passes
     if (proceed) 
     {
         if (elem == "order_event") 
@@ -109,10 +106,62 @@ function goTo(elem, this_elem)
         {
             move(parseInt(width_proc[0]), 100);
             document.getElementById("all_info").hidden = false;
+            
+            const themes = ['Pilsētas svētki','Pieaugušo dzimšanas diena','Bērna dzimšanas diena','Korporatīvi','Kāzas','Pasākumi bērniem','Skolu pasākumi','Jubilejas'];
+
+            $('#order_theme').text(themes[(e_theme-1)]);
+            $('#order_e_name').text(e_name);
+            $('#order_e_date').text(e_date);
+            $('#order_e_time_start').text(e_time_start);
+            $('#order_e_time_end').text(e_time_end);
+            $.ajax(
+                {
+                type: "post",
+                url: "./php/get_char_names.php",
+                data: {
+                    e_anims: e_anims
+                },
+                dataType: "json",
+                success: function (response) 
+                {
+                    var animators = response.join(", ");
+                    $('#order_anims').text(animators);
+                },
+                error: function(xhr, status, error) 
+                {
+                    console.error(xhr.responseText);
+                }
+            });
+            $('#order_u_full_name').text(u_name + " " + u_surname);
+            $('#order_u_phone_num').text(u_phone_num);
+            $('#order_u_e_mail').text(u_e_mail);
+            $('#order_adress').text(u_adress);
+            $('#order_about_e').text(u_about_e);
         }
 
         document.getElementById(this_elem).hidden = true;
         document.getElementById(elem).hidden = false;
+    }
+}
+
+function submitOrder()
+{
+    if(check_e_name() && check_e_theme() && check_e_date() && check_u_name() && check_u_surname() && check_u_e_mail() && check_u_phone_num() && check_u_adress() && check_u_about_e() && e_anims)
+    {
+        $.ajax(
+        {
+            type: "post",
+            url: "",
+            data: 
+            {
+
+            },
+            dataType: "text",
+            success: function (response) 
+            {
+                
+            }
+        });
     }
 }
 
@@ -157,8 +206,9 @@ function check_e_theme()
 function check_e_date()
 {
     let event_date_input = $('#event_date');
+    let regexp = /^[.0-9]+$/g
 
-    if(event_date_input.val() != "")
+    if(event_date_input.val() != "" && regexp.test(event_date_input.val()))
     {
         event_date_input.addClass('is-valid');
         event_date_input.removeClass('is-invalid');
@@ -172,6 +222,119 @@ function check_e_date()
     }
 }
 
+function check_u_name()
+{
+    let user_name_input = $('#u_name');
+    let regexp = /[a-zA-Z]/g;
+
+    if(user_name_input.val() != "" && regexp.test(user_name_input.val()))
+    {
+        user_name_input.addClass('is-valid');
+        user_name_input.removeClass('is-invalid');
+        return true;
+    }
+    else
+    {
+        user_name_input.removeClass('is-valid');
+        user_name_input.addClass('is-invalid');
+        return true;
+    }
+}
+
+function check_u_surname() 
+{
+    let user_surname_input = $('#u_surname');
+    let regexp = /[a-zA-Z]/g;
+
+    if(user_surname_input.val() != "" && regexp.test(user_surname_input.val()))
+    {
+        user_surname_input.addClass('is-valid');
+        user_surname_input.removeClass('is-invalid');
+        return true;
+    }
+    else
+    {
+        user_surname_input.removeClass('is-valid');
+        user_surname_input.addClass('is-invalid');
+        return false;
+    }    
+}
+
+function check_u_e_mail() 
+{
+    let user_e_mail_input = $('#u_e_mail');
+    let regexp = /[.@]/g;
+
+    if(user_e_mail_input.val() != "" && regexp.test(user_e_mail_input.val()))
+    {
+        user_e_mail_input.addClass('is-valid');
+        user_e_mail_input.removeClass('is-invalid');
+        return true;
+    }
+    else
+    {
+        user_e_mail_input.removeClass('is-valid');
+        user_e_mail_input.addClass('is-invalid');
+        return false;
+    }    
+}
+
+function check_u_phone_num() 
+{
+    let user_phone_num_input = $('#u_phone_num');
+    let regexp = /^[+0-9]+$/g;
+
+    if(user_phone_num_input.val() != "" && regexp.test(user_phone_num_input.val()))
+    {
+        user_phone_num_input.addClass('is-valid');
+        user_phone_num_input.removeClass('is-invalid');
+        return true;
+    }
+    else
+    {
+        user_phone_num_input.removeClass('is-valid');
+        user_phone_num_input.addClass('is-invalid');
+        return false;
+    }    
+}
+
+function check_u_adress()
+{
+    let user_adress_input = $('#u_adress');
+    let regexp = /^[,.'"a-zA-Z0-9]+$/g;
+
+    if(user_adress_input.val() != "" && regexp.test(user_adress_input.val()))
+    {
+        user_adress_input.addClass('is-valid');
+        user_adress_input.removeClass('is-invalid');
+        return true;
+    }
+    else
+    {
+        user_adress_input.removeClass('is-valid');
+        user_adress_input.addClass('is-invalid');
+        return false;
+    }     
+}
+
+function check_u_about_e()
+{
+    let user_about_e_input = $('#u_about_e');
+    let regexp = /^[,.'"a-zA-Z0-9]+$/g;
+
+    if(user_about_e_input.val() != "" && regexp.test(user_about_e_input.val()))
+    {
+        user_about_e_input.addClass('is-valid');
+        user_about_e_input.removeClass('is-invalid');
+        return true;
+    }
+    else
+    {
+        user_about_e_input.removeClass('is-valid');
+        user_about_e_input.addClass('is-invalid');
+        return false;
+    }    
+}
 // ----------
 
 function loadActiveAnim() 
@@ -249,6 +412,23 @@ function addAnimsList(anim_id, elem)
         $('#event_anim').val(newValue);
         console.log($('#event_anim').val());
     }
+}
+
+function removeFromList(anim_id) 
+{
+    $('#anim_list1').find('#anim_' + anim_id).remove();
+    document.getElementById('addbtn' + anim_id).classList.replace('fa-minus', 'fa-plus');
+    let currentValue = $('#event_anim').val();
+    let values = currentValue.split(',');
+    let index = values.indexOf(anim_id.toString());
+    if (index !== -1) 
+    {
+        values.splice(index, 1);
+    }
+    let newValue = values.join(',');
+            
+    $('#event_anim').val(newValue);
+    console.log($('#event_anim').val());
 }
 
 function showInfoAnim(anim_id)

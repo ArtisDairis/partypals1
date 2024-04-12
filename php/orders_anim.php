@@ -25,7 +25,7 @@ if(isset($_POST['theme']) && !empty($_POST['theme']))
                     <i class="ms-2 fa-solid fa-circle-info" onclick="showInfoAnim(<?php echo htmlspecialchars($row['id']); ?>)"></i>
                 </div>
                 <div class="col-3">
-                    <i class="btn text-light fa-solid fa-plus" onclick="addAnimsList(<?php echo htmlspecialchars($row['id']); ?>, this)"></i>
+                    <i id="addbtn<?php echo htmlspecialchars($row['id']); ?>" class="btn text-light fa-solid fa-plus" onclick="addAnimsList(<?php echo htmlspecialchars($row['id']); ?>, this)"></i>
                 </div>
             </div>
             <?php

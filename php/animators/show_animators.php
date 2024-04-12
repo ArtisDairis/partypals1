@@ -229,8 +229,9 @@ if ($result->num_rows > 0)
                                             <div class="col-3">
                                                 <img class='rounded-3' src='css/img/char_img/<?php echo $row_char['char_photo'];?>' alt='Oooops...' style='width: 200px; height: 200px;'>
                                             </div>
-                                            <div class="col" style="margin-left: 55px;">
+                                            <div class="col d-flex flex-column justify-content-between" style="margin-left: 55px;">
                                                 <span><?php echo $row_char['about_char'] ?></span>
+                                                <button class="btn btn-success align-self-end" onclick="" style="z-index: 15;">Pasūtīt</button>
                                             </div>
                                         </div>
                                     </div>

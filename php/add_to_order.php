@@ -16,6 +16,6 @@ $row_anims = $result_anims->fetch_assoc();
         <i class="ms-2 fa-solid fa-circle-info" onclick="showInfoAnim(<?php echo htmlspecialchars($row_anims['id']); ?>)"></i>
     </div>
     <div class="col-3">
-        <i class="btn text-light fa-solid fa-minus"></i>
+        <i class="btn text-light fa-solid fa-minus" onclick="removeFromList(<?php echo htmlspecialchars($row_anims['id']); ?>)"></i>
     </div>
 </div>

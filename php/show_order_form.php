@@ -263,95 +263,103 @@
                         <div class="col-1"></div>
     </div>
     <div id="order_private_info" class="row" hidden>
-                        <div class="col-1"></div>
-                        <div class="col mt-3">
-                            <div class="container-fluid">
-                                <div class="row">
-                                    <div class="col" style="display: flex; align-items:center;">
-                                        <div class="rounded-circle me-2" style="background-color:#7C18FB; width: 30px; height: 30px; position:relative;"></div><b class="h1 mt-1">Personālā informācija</b>
-                                    </div>
-                                </div>
-                                <div class="row mt-2">
-                                    <div class="col">
-                                        <input type="text" class="rounded float-start" style="height: 40px;" placeholder="Vārds" id="u_name">
-                                        <input type="text" class="rounded float-end" style="height: 40px;" placeholder="Uzvārds" id="u_surname">
-                                        <input type="text" class="form-control mt-5" placeholder="Ē-pasts" id="u_e_mail">
-                                    </div>
-                                    <div class="col">
-                                        <input type="text" class="form-control" placeholder="Telefona num." id="u_phone_num">
-                                        <input type="text" class="form-control" style="margin-top: 10px;" placeholder="Adrese" id="u_adress">
-                                    </div>
-                                </div>
-                                <div class="row mt-2">
-                                    <div class="col">
-                                        <textarea class="form-control" placeholder="Pāsākuma apraksts/Vēlmes" id="u_about_e" rows="6"></textarea>
-                                    </div>
-                                </div>
-                                <div class="row mt-3">
-                                    <div class="col ms-5">
-                                        <button type="button" onclick="goTo(`order_anim`,`order_private_info`)" class="btn text-light float-start" style="background: linear-gradient(180deg, #9644FF 0%, #7C18FB 100%); width: 100px;"><i class="fa-solid fa-arrow-left" style="font-size: 38px;"></i></button>
-                                    </div>
-                                    <div class="col me-5 text-end">
-                                        <button type="button" onclick="goTo(`order_info`,`order_private_info`)" class="btn text-light float-end" style="background: linear-gradient(180deg, #9644FF 0%, #7C18FB 100%); width: 100px;"><i class="fa-solid fa-arrow-right" style="font-size: 38px;"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-1"></div>
-    </div>
-    <div id="order_info" class="row" hidden>
-                    <div class="col-1"></div>
-                    <div class="col mt-3">
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col" style="display: flex; align-items:center;">
-                                    <div class="rounded-circle me-2" style="background-color:#7C18FB; width: 30px; height: 30px; position:relative;"></div><b class="h1 mt-1">Viss ir pareizi?</b>
-                                </div>
-                            </div>
-                            <div class="row mt-2 rounded" style="background-color:#343a40;">
-                                <div class="col ps-4 pt-3 pb-3">
-                                    <span class="h5">Pasākums</span>
-                                    <br>
-                                    <span>Tēma: </span>
-                                    <br>
-                                    <span>Pasākuma nosaukums: </span>
-                                    <br>
-                                    <span>Norises datums: </span>
-                                    <br>
-                                    <span>Pasākuma sākums: </span>
-                                    <br>
-                                    <span>Pasākuma beigas: </span>
-                                    <br><br>
-                                    <span class="h5">Animatori</span>
-                                    <br>
-                                    <span>Super-Man, Spider-Man, Klauns</span>
-                                </div>
-                                <div class="col pe-4 pt-3 pb-3">
-                                    <span class="h5">Personālā informācija</span>
-                                    <br>
-                                    <span>Vārds/Uzvārds: </span>
-                                    <br>
-                                    <span>Telefons: </span>
-                                    <br>
-                                    <span>Ē-pasts: </span>
-                                    <br>
-                                    <span>Adrese: </span>
-                                    <br>
-                                    <span>Pasākuma apraksts: </span>
-                                    <br>
-                                    <span>Apraksts...</span>
-                                </div>
-                            </div>
-                            <div class="row mt-3">
-                                <div class="col ms-5">
-                                    <button type="button" onclick="goTo(`order_private_info`,`order_info`)" class="btn text-light float-start" style="background: linear-gradient(180deg, #9644FF 0%, #7C18FB 100%); width: 100px;"><i class="fa-solid fa-arrow-left" style="font-size: 38px;"></i></button>
-                                </div>
-                                <div class="col me-5 text-end">
-                                    <button type="submit" class="btn text-light float-end" style="background: linear-gradient(180deg, #9644FF 0%, #7C18FB 100%); width: 100px;"><i class="fa-solid fa-check" style="font-size: 38px;"></i></button>
-                                </div>
-                            </div>
+        <div class="col-1"></div>
+        <div class="col mt-3">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col" style="display: flex; align-items:center;">
+                        <div class="rounded-circle me-2" style="background-color:#7C18FB; width: 30px; height: 30px; position:relative;"></div><b class="h1 mt-1">Personālā informācija</b>
                         </div>
                     </div>
-                    <div class="col-1"></div>
+                <div class="row mt-2">
+                    <div class="col">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col">
+                                    <input type="text" class="rounded form-control"  placeholder="Vārds" id="u_name">
+                                </div>
+                                <div class="col">
+                                    <input type="text" class="rounded form-control"  placeholder="Uzvārds" id="u_surname">
+                                </div>
+                            </div>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Ē-pasts" style="margin-top: 10px;" id="u_e_mail">
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="Telefona num." id="u_phone_num">
+                        <input type="text" class="form-control" style="margin-top: 10px;" placeholder="Adrese" id="u_adress">
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col">
+                        <textarea class="form-control" placeholder="Pāsākuma apraksts/Vēlmes" id="u_about_e" rows="6"></textarea>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col ms-5">
+                        <button type="button" onclick="goTo(`order_anim`,`order_private_info`)" class="btn text-light float-start" style="background: linear-gradient(180deg, #9644FF 0%, #7C18FB 100%); width: 100px;"><i class="fa-solid fa-arrow-left" style="font-size: 38px;"></i></button>
+                    </div>
+                    <div class="col me-5 text-end">
+                        <button type="button" onclick="goTo(`order_info`,`order_private_info`)" class="btn text-light float-end" style="background: linear-gradient(180deg, #9644FF 0%, #7C18FB 100%); width: 100px;"><i class="fa-solid fa-arrow-right" style="font-size: 38px;"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-1"></div>
+    </div>
+    <div id="order_info" class="row" hidden>
+        <div class="col-1"></div>
+        <div class="col mt-3">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col" style="display: flex; align-items:center;">
+                        <div class="rounded-circle me-2" style="background-color:#7C18FB; width: 30px; height: 30px; position:relative;"></div><b class="h1 mt-1">Viss ir pareizi?</b>
+                    </div>
+                </div>
+                <div class="row mt-2 rounded" style="background-color:#343a40;">
+                    <div class="col ps-4 pt-3 pb-3">
+                        <span class="h5">Pasākums</span>
+                        <br>
+                        <span>Tēma: </span><span id="order_theme"></span>
+                        <br>
+                        <span>Pasākuma nosaukums: </span><span id="order_e_name"></span>
+                        <br>
+                        <span>Norises datums: </span><span id="order_e_date"></span>
+                        <br>
+                        <span>Pasākuma sākums: </span><span id="order_e_time_start"></span>
+                        <br>
+                        <span>Pasākuma beigas: </span><span id="order_e_time_end"></span>
+                        <br><br>
+                        <span class="h5">Animatori</span>
+                        <br>
+                        <span id="order_anims"></span>
+                    </div>
+                    <div class="col pe-4 pt-3 pb-3">
+                        <span class="h5">Personālā informācija</span>
+                        <br>
+                        <span>Vārds/Uzvārds: </span><span id="order_u_full_name"></span>
+                        <br>
+                        <span>Telefons: </span><span id="order_u_phone_num"></span>
+                        <br>
+                        <span>Ē-pasts: </span><span id="order_u_e_mail"></span>
+                        <br>
+                        <span>Adrese: </span><span id="order_adress"></span>
+                        <br>
+                        <span>Pasākuma apraksts: </span>
+                        <br>
+                        <span id="order_about_e"></span>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col ms-5">
+                        <button type="button" onclick="goTo(`order_private_info`,`order_info`)" class="btn text-light float-start" style="background: linear-gradient(180deg, #9644FF 0%, #7C18FB 100%); width: 100px;"><i class="fa-solid fa-arrow-left" style="font-size: 38px;"></i></button>
+                    </div>
+                    <div class="col me-5 text-end">
+                        <button type="button" class="btn text-light float-end" style="background: linear-gradient(180deg, #9644FF 0%, #7C18FB 100%); width: 100px;" onclick="submitOrder()"><i class="fa-solid fa-check" style="font-size: 38px;"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-1"></div>
     </div>
 </div>
