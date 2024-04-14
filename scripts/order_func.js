@@ -1,3 +1,11 @@
+(function()
+{
+    emailjs.init(
+    {
+        publicKey: "_85BUx3upvIWu6DTM",
+    });
+})();
+
 window.onload = function()
 {
     document.getElementById('myBar').style.width = 30+"%";
@@ -151,15 +159,35 @@ function submitOrder()
         $.ajax(
         {
             type: "post",
-            url: "",
+            url: "./php/pieteikt_ievade.php",
             data: 
             {
-
+                event_name: e_name,
+                inp_date: e_date,
+                event_time_start: e_time_start,
+                event_time_end: e_time_end,
+                selectedAnimators: e_anims.split(","),
+                name: u_name,
+                surname: u_surname,
+                address: u_adress,
+                e_mail: u_e_mail,
+                about_event: u_about_e,
+                phone_number: u_phone_num,
+                selAnimLength: e_anims.split(",").length
             },
             dataType: "text",
             success: function (response) 
             {
-                
+                console.log(response);
+                sendMail(u_name, u_surname, e_name, u_e_mail, u_adress, u_phone_num)
+                .then(function() 
+                {
+                    window.location.replace("http://partypals.webexteam.eu/home");
+                })
+                .catch(function(error) 
+                {
+                    console.error('Error sending email:', error);
+                });
             }
         });
     }
@@ -168,7 +196,7 @@ function submitOrder()
 // Validation
 function check_e_name() 
 {
-    let regexp = /^[a-zA-Z0-9]+$/;
+    let regexp = /^[a-zA-ZāčēģīķļņšūžĀČĒĢĪĶĻŅŠŪŽ\s]+$/;
     let event_name_input = $('#event_name');
 
     if (regexp.test(event_name_input.val())) 
@@ -225,7 +253,7 @@ function check_e_date()
 function check_u_name()
 {
     let user_name_input = $('#u_name');
-    let regexp = /[a-zA-Z]/g;
+    let regexp = /^[a-zA-ZāčēģīķļņšūžĀČĒĢĪĶĻŅŠŪŽ\s]+$/;
 
     if(user_name_input.val() != "" && regexp.test(user_name_input.val()))
     {
@@ -244,7 +272,7 @@ function check_u_name()
 function check_u_surname() 
 {
     let user_surname_input = $('#u_surname');
-    let regexp = /[a-zA-Z]/g;
+    let regexp = /^[a-zA-ZāčēģīķļņšūžĀČĒĢĪĶĻŅŠŪŽ\s]+$/;
 
     if(user_surname_input.val() != "" && regexp.test(user_surname_input.val()))
     {
@@ -301,7 +329,7 @@ function check_u_phone_num()
 function check_u_adress()
 {
     let user_adress_input = $('#u_adress');
-    let regexp = /^[,.'"a-zA-Z0-9]+$/g;
+    let regexp = /^[.,'"a-zA-ZāčēģīķļņšūžĀČĒĢĪĶĻŅŠŪŽ0-9\s]+$/;
 
     if(user_adress_input.val() != "" && regexp.test(user_adress_input.val()))
     {
@@ -320,7 +348,7 @@ function check_u_adress()
 function check_u_about_e()
 {
     let user_about_e_input = $('#u_about_e');
-    let regexp = /^[,.'"a-zA-Z0-9]+$/g;
+    let regexp = /^[.,'"a-zA-ZāčēģīķļņšūžĀČĒĢĪĶĻŅŠŪŽ0-9\s]+$/;
 
     if(user_about_e_input.val() != "" && regexp.test(user_about_e_input.val()))
     {
@@ -458,6 +486,23 @@ function showInfoAnim(anim_id)
 function close_about()
 {
     document.getElementById('char_info').hidden = true;
+}
+
+function sendMail(name, surname, event_name, e_mail, address, phone_number) 
+{
+    let parms = 
+    {
+        name: name,
+        surname: surname,
+        event_name: event_name,
+        e_mail: e_mail,
+        subject: "Pasūtījums \"" + event_name + "\" ir saņemts",
+        date: new Date(),
+        address: address,
+        phone_number: phone_number
+    };
+
+    return emailjs.send("service_ner374x", "template_qq2jz8w", parms);
 }
 
 // date picker
