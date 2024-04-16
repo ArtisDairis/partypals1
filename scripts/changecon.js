@@ -1,4 +1,73 @@
+// upload image
+function loadImage(input) 
+{
+    const image = document.getElementById('profile_image');
+    const file = input.files[0];
+    const fileName = file.name;
+    let photo_Value = $('#photoValue');
 
+    const imageDirectory = "css/img/user_img";
+    const randomParam = Math.random();
+
+    if (file) 
+    {
+        const formData = new FormData();
+        formData.append('photo', file);
+
+        $.ajax(
+            {
+            url: "./php/upload_img.php",
+            type: 'POST',
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function(data) 
+            {
+                console.log(data);
+                const photoValue = `${imageDirectory}/${fileName}?${randomParam}`;
+                image.src = `${photoValue}`;
+                photo_Value.val(fileName);
+            },
+            error: function(xhr, status, error) 
+            {
+                console.error('Error:', error);
+            }
+        });
+    }
+}
+
+// other functions
+function update_info() 
+{
+    let boolWorker = $('#anim_is_worker').prop('checked');
+
+    $.ajax(
+    {
+        type: "post",
+        url: "./php/animators/upload_info_profile.php",
+        data: 
+        {
+            username: $('#anim_username').val(),
+            password: $('#anim_password').val(),
+            name: $('#anim_name').val(),
+            surname: $('#anim_surname').val(),
+            phone_num: $('#anim_phone_num').val(),
+            e_mail: $('#anim_e_mail').val(),
+            about_me: $('#anim_about').val(),
+            photo: $('#photoValue').val(),
+            worker: boolWorker ? 1 : 0
+        },
+        dataType: "text",
+        success: function (response) 
+        {
+            console.log(response);    
+        },
+        error: function (xhr)
+        {
+            console.error(xhr);
+        }
+    });    
+}
 function changeContainer(ename)
 {
     let container_e = document.getElementById(ename);

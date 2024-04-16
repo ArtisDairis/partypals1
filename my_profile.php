@@ -170,7 +170,6 @@
             <span class="btn text-light ps-3" onclick="changeContainer(`profile`)">Profils</span>
             <span class="btn text-light ps-3" onclick="changeContainer(`character`)">Lomas</span>
             <span class="btn text-light ps-3" onclick="changeContainer(`work_days`)">Darba dienas</span>
-            <span class="btn text-light ps-3" onclick="changeContainer(`about`)">Apraksts</span>
         </div>
     </div>
 </div>
@@ -178,13 +177,12 @@
 <div class="container mt-3 text-light bg-dark rounded-3" id="profile">
     <div class="row">
         <div class="col-3 ms-4 mt-4 me-4 mb-4">
-            <img class="rounded-2 mx-auto d-block" src="css/img/user_img/'.$row['photo'].'" alt="OOOOO" style="max-width: 300px;">
+            <input type="text" id="photoValue" value="'.$row['photo'].'" hidden>
+            <img id="profile_image" class="rounded-2 mx-auto d-block" src="css/img/user_img/'.$row['photo'].'" alt="OOOOO" style="max-width: 300px;">
             <div class="row text-center mt-2 mb-2">
                 <div class="col">
-                    <button type="button" class="btn btn-light text-dark">Pievienot bildi</button>
-                </div>
-                <div class="col">
-                    <button type="button" class="btn btn-danger">Dzēst bildi</button>
+                    <label for="upload" class="btn btn-light text-dark">Maint bildi</label>
+                    <input type="file" id="upload" onchange="loadImage(this)" hidden>
                 </div>
             </div>
         </div>
@@ -195,82 +193,93 @@
                     <div class="col">
                         <div class="input-group mb-3">
                             <span class="input-group-text bg-dark text-light" id="basic-addon1"><b>@</b></span>
-                            <input type="text" class="form-control bg-dark text-light" placeholder="Lietotājvārds" aria-label="Username" aria-describedby="basic-addon1"
+                            <input id="anim_username" type="text" class="form-control bg-dark text-light" placeholder="Lietotājvārds" aria-label="Username" aria-describedby="basic-addon1"
                             value="'.$row['username'].'">
                         </div>
 
                         <div class="input-group mb-3">
                             <span class="input-group-text bg-dark text-light" id="basic-addon1"><b><i class="fa-solid fa-lock"></i></b></span>
-                            <input type="password" class="form-control bg-dark text-light" placeholder="Parole" aria-label="Password" aria-describedby="basic-addon1"
+                            <input id="anim_password" type="password" class="form-control bg-dark text-light" placeholder="Parole" aria-label="Password" aria-describedby="basic-addon1"
                             value="'.$row['password'].'">
                         </div>
 
                         <div class="input-group mb-3">
                             <span class="input-group-text bg-dark text-light" id="basic-addon1"><b><i class="fa-solid fa-square-envelope"></i></b></span>
-                            <input type="text" class="form-control bg-dark text-light" placeholder="E-pasts" aria-label="e_mail" aria-describedby="basic-addon1"
+                            <input id="anim_e_mail" type="text" class="form-control bg-dark text-light" placeholder="E-pasts" aria-label="e_mail" aria-describedby="basic-addon1"
                             value="'.$row['e_mail'].'">
                         </div>
 
                         <div class="input-group mb-3 mt-3">
                             <span class="input-group-text bg-dark text-light" id="basic-addon1"><b><i class="fa-solid fa-phone"></i></b></span>
-                            <input type="text" class="form-control bg-dark text-light" placeholder="Tālrunis: +371" aria-label="Username" aria-describedby="basic-addon1" 
+                            <input id="anim_phone_num" type="text" class="form-control bg-dark text-light" placeholder="Tālrunis: +371" aria-label="Username" aria-describedby="basic-addon1" 
                             value="'.$row['phone_number'].'">
                         </div>
                     </div> 
                     <div class="col">
-                        
-                        <input class="form-control bg-dark text-light mb-3" type="text" name="" placeholder="Vārds" value="'.$row['name'].'">
+                        <input id="anim_name" class="form-control bg-dark text-light mb-3" type="text" placeholder="Vārds" value="'.$row['name'].'">
 
-                        <input class="form-control bg-dark text-light mb-3" type="text" name="" placeholder="Uzvārds" value="'.$row['surname'].'">
-                    ';
-                    $day = substr($row['age'], 8, 2);
-                    $month = substr($row['age'], 5, 2);
-                    $year = substr($row['age'], 0, 4);                   
-                    
-                    echo '
-                    <div class="input-group mb-3">
-                        <span class="input-group-text bg-dark text-light" id="basic-addon1"><b>Dz. datums</b></span>
-                        <select class="form-control bg-dark text-light" name="day" id="day" style="max-width: 60px;">';
-                    
-                    for($i = 1; $i <= 31; $i++) {
-                        $selected = ($i == $day) ? 'selected' : '';
-                        if($i < 10) {
-                            echo "<option value='d$i' $selected>0$i</option>";
-                        } else {
-                            echo "<option value='d$i' $selected>$i</option>";
-                        }
-                    }
-                    
-                    echo '
-                        </select>
-                        <span class="input-group-text bg-dark text-light" id="basic-addon1">.</span>
-                        <select class="form-control bg-dark text-light" name="month" id="month" style="max-width: 60px;">';
-                    
-                    for($i = 1; $i <= 12; $i++) {
-                        $selected = ($i == $month) ? 'selected' : '';
-                        if($i < 10) {
-                            echo "<option value='m$i' $selected>0$i</option>";
-                        } else {
-                            echo "<option value='m$i' $selected>$i</option>";
-                        }
-                    }
-                    
-                    echo '
-                        </select>
-                        <span class="input-group-text bg-dark text-light" id="basic-addon1">.</span>
-                        <select class="form-control bg-dark text-light" name="year" id="year" style="max-width: 80px; border-radius: 0 5px 5px 0;">';
-                    
-                    for($i = date("Y") - 80; $i <= date("Y"); $i++) {
-                        $selected = ($i == $year) ? 'selected' : '';
-                        echo "<option value='y$i' $selected>$i</option>";
-                    }
-                    
-                    echo '
-                        </select>
-                        </div>
-
-                        <button type="button" class="btn btn-success text-end float-end">Apstiprināt</button>
+                        <input id="anim_surname" class="form-control bg-dark text-light mb-3" type="text" placeholder="Uzvārds" value="'.$row['surname'].'">
+                        ';
+                        $day = substr($row['age'], 8, 2);
+                        $month = substr($row['age'], 5, 2);
+                        $year = substr($row['age'], 0, 4);                   
+                        echo '
+                            <div class="input-group mb-3">
+                                <span class="input-group-text bg-dark text-light" id="basic-addon1"><b>Dz. datums</b></span>
+                                <select class="form-control bg-dark text-light" name="day" id="day" style="max-width: 60px;">';
+                            
+                            for($i = 1; $i <= 31; $i++) 
+                            {
+                                $selected = ($i == $day) ? 'selected' : '';
+                                if($i < 10) {
+                                    echo "<option value='d$i' $selected>0$i</option>";
+                                } else {
+                                    echo "<option value='d$i' $selected>$i</option>";
+                                }
+                            }              
+                            echo '
+                                </select>
+                                <span class="input-group-text bg-dark text-light" id="basic-addon1">.</span>
+                                <select class="form-control bg-dark text-light" name="month" id="month" style="max-width: 60px;">';
+                            
+                            for($i = 1; $i <= 12; $i++) 
+                            {
+                                $selected = ($i == $month) ? 'selected' : '';
+                                if($i < 10) {
+                                    echo "<option value='m$i' $selected>0$i</option>";
+                                } else {
+                                    echo "<option value='m$i' $selected>$i</option>";
+                                }
+                            }
+                            echo '
+                                </select>
+                                <span class="input-group-text bg-dark text-light" id="basic-addon1">.</span>
+                                <select class="form-control bg-dark text-light" name="year" id="year" style="max-width: 80px; border-radius: 0 5px 5px 0;">';
+                            
+                            for($i = date("Y") - 80; $i <= date("Y"); $i++) 
+                            {
+                                $selected = ($i == $year) ? 'selected' : '';
+                                echo "<option value='y$i' $selected>$i</option>";
+                            } 
+                            echo '
+                            </select>
+                            </div>
+                        <label for="anim_is_worker">Vai šobrīd strādājat?</label>
+                        <input type="checkbox" id="anim_is_worker"';
+                            if($row['worker'] == 1)
+                                echo 'checked>';
+                            else
+                                echo '>';
+                        echo'
                     </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <textarea class="cursor_open form-control bg-dark text-light me-3" id="anim_about" rows="3" placeholder="Mans vārds...">'.$row['about_me'].'</textarea>
+                </div>
+                <div class="col-3 me-4 mt-5">
+                    <button type="button" class="btn btn-success text-end float-end" onclick="update_info()">Apstiprināt</button>
                 </div>
             </div>
         </div>
@@ -582,25 +591,6 @@
                     </div>
                 </div>
 
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="container mt-3 text-light bg-dark rounded-3" id="about" hidden>
-    <div class="row">
-        <div class="col">
-            <div class="container">
-                <div class="row">
-                    <div class="col-4 mt-3 mb-3">
-                        <p class="h3">Apraksts</p>
-                        <span>šis teksts būs rādīts, kad lietotāji ieies lapā "Animatori".</span>
-                        <button class="btn btn-success text-light mt-4">Apstiprināt</button>
-                    </div>
-                    <div class="col mt-3 mb-3">
-                        <textarea class="cursor_open form-control bg-dark text-light me-3" name="" id="" cols="" rows="5" placeholder="Mans vārds..."></textarea>
-                    </div>
                 </div>
             </div>
         </div>

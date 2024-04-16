@@ -146,7 +146,7 @@ if ($result->num_rows > 0)
                         <img class='rounded-3' src='css/img/user_img/<?php echo $row['photo'];?>' alt='Oooops...' style='width: 200px; height: 200px;'>
                     </div>
                     <div class='col mt-3'>
-                        <div class='container-fluid' style="">
+                        <div class='container-fluid'>
                             <div class='row'>
                                 <div class='col-4 mb-2' style="margin-left: 100px;">
                                     <span class='h3'><?php echo $row['name']." ".$row['surname']; ?></span>
