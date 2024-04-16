@@ -43,6 +43,8 @@
                         <select class="mb-2 form-control " id="event_theme">
                             <option value="">Tēmas</option>
                             <?php
+                                $get_selected_theme = $_GET['theme_id'];
+
                                 $sql_theme = "SELECT * FROM theme";
                                 $result_theme = $conn->query($sql_theme);
 
@@ -50,7 +52,10 @@
                                 {
                                     while($row_theme = $result_theme->fetch_assoc())
                                     {
-                                        echo "<option value=\"".$row_theme['id']."\">".$row_theme['name']."</option>";
+                                        if($get_selected_theme == $row_theme['id'])
+                                            echo "<option value=\"".$row_theme['id']."\" selected>".$row_theme['name']."</option>";
+                                        else
+                                            echo "<option value=\"".$row_theme['id']."\">".$row_theme['name']."</option>";
                                     }
                                 }
                             ?>

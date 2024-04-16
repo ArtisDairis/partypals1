@@ -100,7 +100,7 @@
                             <li>Prot piesaistīt cilvēkus</li>
                             <li>Laba izklaide bērniem</li>
                         </ul>
-                        <button class="btn btn-success mb-3 ms-2" style="z-index: 5;">Pasūtīt!</button>
+                        <button class="btn btn-success mb-3 ms-2" style="z-index: 5;" onclick="add_sel_theme(1)">Pasūtīt!</button>
                     </div>
                 </div>
             </div>
@@ -109,7 +109,7 @@
             <video id="video-bg" class="rounded" autoplay muted loop id="myVideo" style="position: absolute; margin-top: -80px; z-index: 2; max-width: 900px; height: 380px;">
                 <source src="./css/galerija/bd_man.mp4" type="video/mp4">
             </video>
-            <div class="container-fluid text-light pb-3">
+            <div class="container-fluid text-light pt-3 pb-3">
                 <div class="row">
                     <div class="col">
                         <b class="h1 ms-2 text-center text-light bg-dark rounded" style="z-index: 5; max-width: 600px;">Pieaugušo dzimšanas diena</b>
@@ -126,7 +126,7 @@
                             <li>Prot piesaistīt cilvēkus</li>
                             <li>Laba izklaide bērniem</li>
                         </ul>
-                        <button class="btn btn-success mb-3 ms-2" style="z-index: 5;">Pasūtīt!</button>
+                        <button class="btn btn-success mb-3 ms-2" style="z-index: 5;" onclick="add_sel_theme(2)">Pasūtīt!</button>
                     </div>
                 </div>
             </div>
@@ -157,7 +157,7 @@
                             <li>Prot piesaistīt cilvēkus</li>
                             <li>Laba izklaide bērniem</li>
                         </ul>
-                        <button class="btn btn-success mb-3 ms-2" style="z-index: 5;">Pasūtīt!</button>
+                        <button class="btn btn-success mb-3 ms-2" style="z-index: 5;" onclick="add_sel_theme(3)">Pasūtīt!</button>
                     </div>
                 </div>
             </div>
@@ -166,7 +166,7 @@
             <video id="video-bg" class="rounded" autoplay muted loop id="myVideo" style="position: absolute; margin-top: -80px; z-index: 2; max-width: 900px; height: 380px;">
                 <source src="./css/galerija/corporate.mp4" type="video/mp4">
             </video>
-            <div class="container-fluid text-light pb-3">
+            <div class="container-fluid text-light pt-3 pb-3">
                 <div class="row">
                     <div class="col">
                         <b class="h1 ms-2 text-center text-light bg-dark rounded" style="z-index: 5; width: 600px;">Korporatīvi</b>
@@ -183,7 +183,7 @@
                             <li>Prot piesaistīt cilvēkus</li>
                             <li>Laba izklaide bērniem</li>
                         </ul>
-                        <button class="btn btn-success mb-3 ms-2" style="z-index: 5;">Pasūtīt!</button>
+                        <button class="btn btn-success mb-3 ms-2" style="z-index: 5;" onclick="add_sel_theme(4)">Pasūtīt!</button>
                     </div>
                 </div>
             </div>
@@ -214,7 +214,7 @@
                             <li>Prot piesaistīt cilvēkus</li>
                             <li>Laba izklaide bērniem</li>
                         </ul>
-                        <button class="btn btn-success mb-3 ms-2" style="z-index: 5;">Pasūtīt!</button>
+                        <button class="btn btn-success mb-3 ms-2" style="z-index: 5;" onclick="add_sel_theme(5)">Pasūtīt!</button>
                     </div>
                 </div>
             </div>
@@ -223,7 +223,7 @@
             <video id="video-bg" class="rounded" autoplay muted loop id="myVideo" style="position: absolute; margin-top: -80px; z-index: 2; max-width: 900px; height: 380px;">
                 <source src="./css/galerija/kids_party.mp4" type="video/mp4">
             </video>
-            <div class="container-fluid text-light pb-3">
+            <div class="container-fluid text-light pt-3 pb-3">
                 <div class="row">
                     <div class="col">
                         <b class="h1 ms-2 text-center text-light bg-dark rounded" style="z-index: 5; width: 600px;">Pasākumi bērniem</b>
@@ -240,7 +240,7 @@
                             <li>Prot piesaistīt cilvēkus</li>
                             <li>Laba izklaide bērniem</li>
                         </ul>
-                        <button class="btn btn-success mb-3 ms-2" style="z-index: 5;">Pasūtīt!</button>
+                        <button class="btn btn-success mb-3 ms-2" style="z-index: 5;" onclick="add_sel_theme(6)">Pasūtīt!</button>
                     </div>
                 </div>
             </div>
@@ -271,7 +271,7 @@
                             <li>Prot piesaistīt cilvēkus</li>
                             <li>Laba izklaide bērniem</li>
                         </ul>
-                        <button class="btn btn-success mb-3 ms-2" style="z-index: 5;">Pasūtīt!</button>
+                        <button class="btn btn-success mb-3 ms-2" style="z-index: 5;" onclick="add_sel_theme(7)">Pasūtīt!</button>
                     </div>
                 </div>
             </div>
@@ -280,7 +280,7 @@
             <video id="video-bg" class="rounded" autoplay muted loop id="myVideo" style="position: absolute; margin-top: -80px; z-index: 2; max-width: 900px; height: 380px;">
                 <source src="./css/galerija/jubilejs.mp4" type="video/mp4">
             </video>
-            <div class="container-fluid text-light pb-3">
+            <div class="container-fluid text-light pt-3 pb-3">
                 <div class="row">
                     <div class="col">
                         <b class="h1 ms-2 text-center text-light bg-dark rounded" style="z-index: 5; width: 600px;">Jubilejas</b>
@@ -297,7 +297,7 @@
                             <li>Prot piesaistīt cilvēkus</li>
                             <li>Laba izklaide bērniem</li>
                         </ul>
-                        <button class="btn btn-success mb-3 ms-2" style="z-index: 5;">Pasūtīt!</button>
+                        <button class="btn btn-success mb-3 ms-2" style="z-index: 5;" onclick="add_sel_theme(8)">Pasūtīt!</button>
                     </div>
                 </div>
             </div>
@@ -316,4 +316,5 @@
 <script src="scripts/jquery-3.7.1.min.js"></script>
 <script src='scripts/log_out.js'></script>
 <script src="scripts/anim_register.js"></script>
+<script src="scripts/selected_theme.js"></script>
 </html>
