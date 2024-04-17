@@ -1,21 +1,37 @@
 // upload image
-function loadImage(input) 
+function loadImage(input, type) 
 {
-    const image = document.getElementById('profile_image');
+    let image;
+    let photo_Value;
+    let imageDirectory;
+    let bool;
+
+    if (type === 'user') 
+    {
+        image = document.getElementById('profile_image');
+        imageDirectory = "css/img/user_img";
+        photo_Value = $('#photoValue');
+        bool = true;
+    } else if (type === 'character') 
+    {
+        image = document.getElementById('char_image');
+        imageDirectory = "css/img/char_img";
+        photo_Value = $('#photoValue1');
+        bool = false;
+    }
+
     const file = input.files[0];
     const fileName = file.name;
-    let photo_Value = $('#photoValue');
-
-    const imageDirectory = "css/img/user_img";
     const randomParam = Math.random();
 
     if (file) 
     {
         const formData = new FormData();
         formData.append('photo', file);
+        formData.append('bool', bool);
 
         $.ajax(
-            {
+        {
             url: "./php/upload_img.php",
             type: 'POST',
             data: formData,
@@ -23,9 +39,10 @@ function loadImage(input)
             contentType: false,
             success: function(data) 
             {
-                console.log(data);
+                console.log("Response:", data);
+
                 const photoValue = `${imageDirectory}/${fileName}?${randomParam}`;
-                image.src = `${photoValue}`;
+                image.src = photoValue;
                 photo_Value.val(fileName);
             },
             error: function(xhr, status, error) 
@@ -35,7 +52,6 @@ function loadImage(input)
         });
     }
 }
-
 // other functions
 function update_info() 
 {
@@ -68,11 +84,34 @@ function update_info()
         }
     });    
 }
+function addCharacter() 
+{
+    $.ajax(
+    {
+        type: "post",
+        url: "./php/animators/add_characters.php",
+        data: 
+        {
+            char_name: $('#char_name').val(),
+            about_char: $('#about_char').val(),
+            char_photo: $('#photoValue1').val()
+        },
+        dataType: "text",
+        success: function (response) 
+        {
+            console.log(response);
+        },
+        error: function (xhr)
+        {
+            console.error(xhr);
+        }
+    });    
+}
 function changeContainer(ename)
 {
     let container_e = document.getElementById(ename);
 
-    const elements = ['profile', 'character', 'work_days', 'about'];
+    const elements = ['profile', 'character', 'work_days'];
 
     for(let i=0; i<elements.length; i++)
     {

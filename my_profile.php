@@ -182,7 +182,7 @@
             <div class="row text-center mt-2 mb-2">
                 <div class="col">
                     <label for="upload" class="btn btn-light text-dark">Maint bildi</label>
-                    <input type="file" id="upload" onchange="loadImage(this)" hidden>
+                    <input type="file" id="upload" onchange="loadImage(this, \'user\')" hidden>
                 </div>
             </div>
         </div>
@@ -299,28 +299,29 @@
                 <div class="container mt-2">
                     <div class="row">
                         <div class="col-3 ms-4 mt-4 me-4 mb-4">
-                            <img class="rounded-2 mx-auto d-block" src="css/img/empty.gif" alt="OOOOO" style="max-width: 250px;">
+                            <input type="text" id="photoValue1" hidden>
+                            <img id="char_image" class="rounded-2 mx-auto d-block" src="css/img/empty.gif" alt="OOOOO" style="max-width: 250px;">
                             <div class="row text-center mt-2 mb-2">
                                 <div class="col">
-                                    <button type="button" class="btn btn-light text-dark">Pievienot bildi</button>
-                                </div>
-                                <div class="col">
-                                    <button type="button" class="btn btn-danger">Dzēst bildi</button>
+                                    <label for="upload1" class="btn btn-light text-dark">Maint bildi</label>
+                                    <input type="file" id="upload1" onchange="loadImage(this, \'character\')" hidden>
                                 </div>
                             </div>
                         </div>
                         <div class="col-2 mt-4">
                             <div class="input-group mb-3 mt-2 position-relative">
-                                <input type="text" class="cursor_open form-control bg-dark text-light pe-2" placeholder="Lomas nosaukums" aria-label="Character name" aria-describedby="basic-addon1" style="border: 0;">
+                                <input type="text" class="cursor_open form-control bg-dark text-light pe-2" id="char_name" placeholder="Lomas nosaukums" aria-label="Character name" aria-describedby="basic-addon1" style="border: 0;">
                                 <span class="cursor input-group-text bg-dark text-light position-absolute top-50 start-100 translate-middle-y" id="basic-addon1" style="border: 0; opacity: 0;"><b><i class="fa-solid fa-pen"></i></b></span>
                             </div>
                         </div>
                         <div class="col mt-4 ms-3 me-3">
                             <span class="h3">Apraksts</span><span> par lomu</span>
                             <div class="input-group mb-3 mt-2 position-relative">
-                                <textarea class="cursor_open form-control bg-dark text-light me-3" name="" id="" cols="" rows=""></textarea>
+                                <textarea class="cursor_open form-control bg-dark text-light me-3" id="about_char"></textarea>
                                 <span class="cursor input-group-text bg-dark text-light position-absolute top-50 start-100 translate-middle-y" id="basic-addon1" style="border: 0; opacity: 0;"><b><i class="fa-solid fa-pen"></i></b></span>
                             </div>
+
+                            <button type="button" class="btn btn-success mt-5 text-light float-end" onclick="addCharacter()">Apstiprināt</button>
                         </div>
                     </div>
                 </div>
