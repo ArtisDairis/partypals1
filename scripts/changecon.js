@@ -99,6 +99,8 @@ function addCharacter()
         dataType: "text",
         success: function (response) 
         {
+            load_theme();
+            load_char_about();
             console.log(response);
         },
         error: function (xhr)
@@ -346,6 +348,36 @@ function btndAddRem(elem, day_id)
 window.onload = function()
 {
     showUpdated();
+    load_theme();
+    load_char_about();
+}
+
+function load_theme()
+{
+    $.ajax(
+    {
+        type: "GET",
+        url: "./php/animators/show_char_theme.php",
+        dataType: "text",
+        success: function (response) 
+        {
+            $('#characer_themes').html(response);
+        }
+    });
+}
+
+function load_char_about() 
+{   
+    $.ajax(
+    {
+        type: "GET",
+        url: "./php/animators/show_about_chars.php",
+        dataType: "text",
+        success: function (response) 
+        {
+            $('#characters_about').html(response);
+        }
+    }); 
 }
 
 function showUpdated()
