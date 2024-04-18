@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     for($i = 0; $i < $selAnimLength; $i++)
     {
         $event_name = $_POST['event_name'];
-        $inp_date = $_POST['inp_date'];
+        $inp_date = date('Y-m-d', strtotime($_POST['inp_date']));
         $event_time_start = $_POST['event_time_start'];
         $event_time_end = $_POST['event_time_end'];
         $name = $_POST['name'];
@@ -19,9 +19,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
         $e_mail = $_POST['e_mail'];
         $about_event = $_POST['about_event'];
         $phone_number = $_POST['phone_number'];
-        $is_global = $_POST['is_global'];
-
         $selectedAnimators = $_POST['selectedAnimators'][$i];
+
+        $status = "Saņemts";
         
         $sql_anim = "SELECT `username` FROM animators WHERE `id` = ?";
         $stmt_anim = $conn->prepare($sql_anim);
@@ -35,10 +35,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
             {
                 $animator_username = $row['username'];
 
-                $sql = "INSERT INTO `events` (`event_name`, `name`, `surname`, `phone_number`, `e_mail`, `adress`, `event_time_start`, `event_time_end`, `event_date`, `about_event`, `animators_id`, `is_global`)
+                $sql = "INSERT INTO `events` (`event_name`, `name`, `surname`, `phone_number`, `e_mail`, `adress`, `event_time_start`, `event_time_end`, `event_date`, `about_event`, `animators_id`, `status`)
                         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
                 $stmt = $conn->prepare($sql);
-                $stmt->bind_param("ssssssssssss", $event_name, $name, $surname, $phone_number, $e_mail, $address, $event_time_start, $event_time_end, $inp_date, $about_event, $animator_username, $is_global);
+                $stmt->bind_param("ssssssssssss", $event_name, $name, $surname, $phone_number, $e_mail, $address, $event_time_start, $event_time_end, $inp_date, $about_event, $animator_username, $status);
     
                 if ($stmt->execute()) 
                 {
