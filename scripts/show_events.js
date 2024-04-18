@@ -89,7 +89,7 @@ function deleteEvent(id)
 {
     $.ajax({
         type: "post",
-        url: "./php/animators/show_events_info.php",
+        url: "./php/animators/delete_from_events.php",
         data: 
         {
             event_id: id
@@ -98,6 +98,7 @@ function deleteEvent(id)
         success: function (response) 
         {
             console.log(response);    
+            reloadData();
         }
     });
 }

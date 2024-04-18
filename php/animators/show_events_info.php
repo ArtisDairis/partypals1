@@ -1,7 +1,6 @@
 <?php
 include "../connection.php";
 
-// Check if email cookie is set
 if(isset($_COOKIE['e_mail'])) 
 {
     $email = $_COOKIE['e_mail'];
@@ -17,7 +16,7 @@ if(isset($_COOKIE['e_mail']))
         $row = $result_username->fetch_assoc();
         $username = $row['username'];
 
-        $sql_sel_events = "SELECT * FROM `events` WHERE `animators_id` = ?";
+        $sql_sel_events = "SELECT * FROM `events` WHERE `animators_id` = ? ORDER BY `event_date` DESC";
         
         if (!empty($_POST['column']) && !empty($_POST['asc_desc'])) 
         {
