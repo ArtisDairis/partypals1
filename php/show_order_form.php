@@ -11,15 +11,15 @@
             </div>
             <div class="mt-2">
                 <span>
-                        <a href="" class="text-light" style="text-decoration: none;">Tēmas izvēle</a>
+                        <span class="btn text-light" style="text-decoration: none; cursor: pointer;" onclick="goToFromLink(`order_event`)">Tēmas izvēle</span>
                     <span id="anim" hidden> 
-                        / <a href="" class="text-light" style="text-decoration: none;">Animatoru izvēle</a> 
+                        / <span class="btn text-light" style="text-decoration: none; cursor: pointer;" onclick="goToFromLink(`order_anim`)">Animatoru izvēle</span> 
                     </span>
                     <span id="private_info" hidden>
-                        / <a href="" class="text-light" style="text-decoration: none;">Personāla informācija</a> 
+                        / <span class="btn text-light" style="text-decoration: none; cursor: pointer;" onclick="goToFromLink(`order_private_info`)">Personāla informācija</span> 
                     </span>
                     <span id="all_info" hidden>
-                        / <a href="" class="text-light" style="text-decoration: none;">Vai viss pareizi?</a>
+                        / <span class="btn text-light" style="text-decoration: none; cursor: pointer;" onclick="goToFromLink(`order_info`)">Vai viss pareizi?</span>
                     </span>
                 </span>
             </div>

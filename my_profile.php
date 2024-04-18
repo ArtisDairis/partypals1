@@ -167,7 +167,7 @@
         </div>
         <div class="col"></div>
         <div class="navigation col-4 bg-dark rounded-3 pt-3 pb-3 text-center">
-            <span class="btn text-light ps-3" onclick="changeContainer(`profile`)">Profils</span>
+            <span class="btn text-light ps-3" onclick="changeContainer(`profile`)">Konts</span>
             <span class="btn text-light ps-3" onclick="changeContainer(`character`)">Lomas</span>
             <span class="btn text-light ps-3" onclick="changeContainer(`work_days`)">Darba dienas</span>
         </div>
@@ -189,7 +189,7 @@
         <div class="col">
             <div class="container mt-3">
                 <div class="row">
-                    <p class="h2">Profila dati</p>
+                    <p class="h2">Konta dati</p>
                     <div class="col">
                         <div class="input-group mb-3">
                             <span class="input-group-text bg-dark text-light" id="basic-addon1"><b>@</b></span>
@@ -219,51 +219,7 @@
                         <input id="anim_name" class="form-control bg-dark text-light mb-3" type="text" placeholder="Vārds" value="'.$row['name'].'">
 
                         <input id="anim_surname" class="form-control bg-dark text-light mb-3" type="text" placeholder="Uzvārds" value="'.$row['surname'].'">
-                        ';
-                        $day = substr($row['age'], 8, 2);
-                        $month = substr($row['age'], 5, 2);
-                        $year = substr($row['age'], 0, 4);                   
-                        echo '
-                            <div class="input-group mb-3">
-                                <span class="input-group-text bg-dark text-light" id="basic-addon1"><b>Dz. datums</b></span>
-                                <select class="form-control bg-dark text-light" name="day" id="day" style="max-width: 60px;">';
-                            
-                            for($i = 1; $i <= 31; $i++) 
-                            {
-                                $selected = ($i == $day) ? 'selected' : '';
-                                if($i < 10) {
-                                    echo "<option value='d$i' $selected>0$i</option>";
-                                } else {
-                                    echo "<option value='d$i' $selected>$i</option>";
-                                }
-                            }              
-                            echo '
-                                </select>
-                                <span class="input-group-text bg-dark text-light" id="basic-addon1">.</span>
-                                <select class="form-control bg-dark text-light" name="month" id="month" style="max-width: 60px;">';
-                            
-                            for($i = 1; $i <= 12; $i++) 
-                            {
-                                $selected = ($i == $month) ? 'selected' : '';
-                                if($i < 10) {
-                                    echo "<option value='m$i' $selected>0$i</option>";
-                                } else {
-                                    echo "<option value='m$i' $selected>$i</option>";
-                                }
-                            }
-                            echo '
-                                </select>
-                                <span class="input-group-text bg-dark text-light" id="basic-addon1">.</span>
-                                <select class="form-control bg-dark text-light" name="year" id="year" style="max-width: 80px; border-radius: 0 5px 5px 0;">';
-                            
-                            for($i = date("Y") - 80; $i <= date("Y"); $i++) 
-                            {
-                                $selected = ($i == $year) ? 'selected' : '';
-                                echo "<option value='y$i' $selected>$i</option>";
-                            } 
-                            echo '
-                            </select>
-                            </div>
+
                         <label for="anim_is_worker">Vai šobrīd strādājat?</label>
                         <input type="checkbox" id="anim_is_worker"';
                             if($row['worker'] == 1)

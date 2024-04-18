@@ -471,6 +471,19 @@ $(window).on('load', function()
     }
 })
 
+function goToFromLink(elem) 
+{
+    const divArray = ['order_event','order_anim','order_private_info','order_info'];
+
+    for(let i = 0; i < 4; i++)
+    {
+        if(elem == divArray[i])
+            document.getElementById(divArray[i]).hidden = false;
+        else
+            document.getElementById(divArray[i]).hidden = true;
+    }
+}
+
 function removeFromList(anim_id) 
 {
     $('#anim_list1').find('#anim_' + anim_id).remove();

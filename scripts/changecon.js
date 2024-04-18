@@ -55,7 +55,8 @@ function loadImage(input, type)
 // other functions
 function update_info() 
 {
-    let boolWorker = $('#anim_is_worker').prop('checked');
+    let boolWorker = $('#anim_is_worker').is(':checked');
+    let workerValue = boolWorker ? 1 : 0;
 
     $.ajax(
     {
@@ -71,7 +72,7 @@ function update_info()
             e_mail: $('#anim_e_mail').val(),
             about_me: $('#anim_about').val(),
             photo: $('#photoValue').val(),
-            worker: boolWorker ? 1 : 0
+            worker: workerValue
         },
         dataType: "text",
         success: function (response) 

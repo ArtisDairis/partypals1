@@ -4,10 +4,13 @@
     $e_mail = $_COOKIE['e_mail'];
     $is_worker = $_COOKIE['is_worker'];
 
-    if($_POST['worker'] == 1)
-        $worker = true;
-    else
-        $worker = false;
+    if (isset($_POST['worker'])) 
+    {
+        $worker = intval($_POST['worker']);
+    } else 
+    {
+        $worker = 0;
+    }
 
     $sql = "UPDATE `animators` SET 
     `username`='". $_POST['username'] ."',
@@ -26,6 +29,7 @@
     if ($conn->query($sql) === TRUE) 
     {
         echo "Record updated successfully";
+        echo "<br> $worker";
         header("http://localhost/Bootstrap5/kursa_darbs/my_profile");
         exit();
     } 
