@@ -228,9 +228,9 @@
                                     </div>
                                     <div class="col mt-1" style="display: flex; align-items:center;">
                                         <div class="ps-5 ms-4 input-group rounded" style="position: relative;">
-                                            <input type="text" class="rounded me-2" placeholder="Meklēt pēc vārda" id="search_anim_names">
+                                            <input type="text" class="rounded me-2" placeholder="Meklēt pēc vārda" oninput="cancelSearch()" id="search_anim_names">
                                             <div class="input-group-btn">
-                                                <button class="bg-success text-light rounded"><i class="fa-solid fa-magnifying-glass"></i></button>
+                                                <button type="button" class="bg-success text-light rounded" onclick="searchAnims()"><i class="fa-solid fa-magnifying-glass"></i></button>
                                             </div>
                                         </div>
                                     </div>
@@ -276,22 +276,39 @@
                         <div class="rounded-circle me-2" style="background-color:#7C18FB; width: 30px; height: 30px; position:relative;"></div><b class="h1 mt-1">Personālā informācija</b>
                         </div>
                     </div>
+                <?php
+                include "connection.php";
+
+                if(isset($_COOKIE['is_worker']))
+                {
+                    if($_COOKIE['is_worker'] == 1)
+                    {
+                        $sql_info = "SELECT * FROM `animators` WHERE `id` = ".$_COOKIE['id'];
+                    }
+                    else
+                    {
+                        $sql_info = "SELECT * FROM `users` WHERE `id` = ".$_COOKIE['id'];
+                    }
+                    $result_info = $conn->query($sql_info);
+                    $row_info = $result_info->fetch_assoc();
+                }
+                ?>
                 <div class="row mt-2">
                     <div class="col">
                         <div class="container-fluid">
                             <div class="row">
                                 <div class="col">
-                                    <input type="text" class="rounded form-control"  placeholder="Vārds" id="u_name">
+                                    <input type="text" class="rounded form-control" value="<?php echo $row_info['name']; ?>" placeholder="Vārds" id="u_name">
                                 </div>
                                 <div class="col">
-                                    <input type="text" class="rounded form-control"  placeholder="Uzvārds" id="u_surname">
+                                    <input type="text" class="rounded form-control" value="<?php echo $row_info['surname']; ?>" placeholder="Uzvārds" id="u_surname">
                                 </div>
                             </div>
                         </div>
-                        <input type="text" class="form-control" placeholder="Ē-pasts" style="margin-top: 10px;" id="u_e_mail">
+                        <input type="text" class="form-control" value="<?php echo $row_info['e_mail']; ?>" placeholder="Ē-pasts" style="margin-top: 10px;" id="u_e_mail">
                     </div>
                     <div class="col">
-                        <input type="text" class="form-control" placeholder="Telefona num." id="u_phone_num">
+                        <input type="text" class="form-control" value="<?php echo $row_info['phone_number']; ?>" placeholder="Telefona num." id="u_phone_num">
                         <input type="text" class="form-control" style="margin-top: 10px;" placeholder="Adrese" id="u_adress">
                     </div>
                 </div>

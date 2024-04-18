@@ -388,6 +388,53 @@ function loadActiveAnim()
     });
 }
 
+function cancelSearch() 
+{
+    if($('#search_anim_names').val() == "")
+    {
+        loadActiveAnim();
+    }
+}
+
+function searchAnims() 
+{
+    let anim_name = $('#search_anim_names').val(); 
+
+    if(anim_name != "" && test_anim_names())
+    {
+        $.ajax(
+        {
+            type: "post",
+            url: "./php/orders_anim.php",
+            data:
+            {
+                anim_name: anim_name,
+                theme: e_theme
+            },
+            dataType: "text",
+            success: function (response) 
+            {
+                $('#anim_list2').html('');
+                $('#anim_list2').prepend(response);
+            },
+            error: function(xhr)
+            {
+                console.error(xhr);
+            } 
+        });
+    }
+}
+
+function test_anim_names()
+{
+    let regexp = /^[0-9a-zA-ZāčēģīķļņšūžĀČĒĢĪĶĻŅŠŪŽ]+$/;
+    let anim_name = $('#search_anim_names').val(); 
+    if(regexp.test(anim_name))
+        return true;
+    else
+        return false;
+}
+
 function addAnimsList(anim_id, elem) 
 {
     if (elem.classList.contains('fa-plus')) 

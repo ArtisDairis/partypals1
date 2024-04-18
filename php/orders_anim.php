@@ -1,22 +1,31 @@
 <?php
 include "connection.php";
 
-if(isset($_POST['theme']) && !empty($_POST['theme'])) 
+if (isset($_POST['theme']) && !empty($_POST['theme'])) 
 {
     $theme = $conn->real_escape_string($_POST['theme']);
 
-    $sql = "SELECT * FROM `characters` WHERE find_in_set(?, theme)";
-    $stmt = $conn->prepare($sql);
-
-    $stmt->bind_param("s", $theme);
+    if (isset($_POST['anim_name'])) 
+    {
+        $anim_name = '%' . $_POST['anim_name'] . '%';
+        $sql = "SELECT * FROM `characters` WHERE find_in_set(?, theme) AND `char_name` LIKE ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("ss", $theme, $anim_name);
+    } 
+    else 
+    {
+        $sql = "SELECT * FROM `characters` WHERE find_in_set(?, theme)";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("s", $theme);
+    }
 
     $stmt->execute();
 
     $result = $stmt->get_result();
 
-    if($result->num_rows > 0) 
+    if ($result->num_rows > 0) 
     {
-        while($row = $result->fetch_assoc()) 
+        while ($row = $result->fetch_assoc()) 
         {
             ?>
             <div class="row mb-2 border rounded ms-1 me-1" style="height: 40px;">
