@@ -53,15 +53,25 @@ function loadImage(input, type)
     }
 }
 // other functions
-function update_info() 
+function update_info(bool) 
 {
-    let boolWorker = $('#anim_is_worker').is(':checked');
+    let boolWorker;
     let workerValue = boolWorker ? 1 : 0;
+    let url;
+    if(bool == "true")
+    {
+        boolWorker = $('#anim_is_worker').is(':checked');
+        url = "./php/animators/upload_info_profile.php";
+    }
+    else
+    {
+        url = "./php/users_file/update_users_info.php";
+    }
 
     $.ajax(
     {
         type: "post",
-        url: "./php/animators/upload_info_profile.php",
+        url: url,
         data: 
         {
             username: $('#anim_username').val(),

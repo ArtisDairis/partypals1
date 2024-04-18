@@ -65,9 +65,12 @@ if (isset($_COOKIE['e_mail']) && isset($_COOKIE['is_worker']) && $_COOKIE['is_wo
 else 
 if (isset($_COOKIE['e_mail']) && isset($_COOKIE['is_worker']) && $_COOKIE['is_worker'] == 0)
 {
-    $username = $_COOKIE['e_mail'];
+    $e_mail = $_COOKIE['e_mail'];
+    $sql = "SELECT photo, username FROM `users` WHERE e_mail = '$e_mail'";
+    $result = $conn->query($sql);
+    $row = $result->fetch_assoc();
 
-    // User is logged in and he is not worker
+    $userPhoto = isset($row['photo']) ? $row['photo'] : '';
     echo '
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
