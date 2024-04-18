@@ -129,21 +129,3 @@ function search_theme(elem)
     });
     console.log(themeValue);
 }
-
-$(document).ready(function ()
-{
-    $.ajax(
-    {
-        type: "get",
-        url: "./php/animators/show_animators.php",
-        dataType: "text",
-        success: function (response) 
-        {
-            $('#anim_list_show').html(response);
-        },
-        error: function (xhr)
-        {
-            console.error(xhr);
-        }
-    });
-});

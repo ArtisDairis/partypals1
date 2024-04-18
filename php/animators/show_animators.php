@@ -231,7 +231,7 @@ if ($result->num_rows > 0)
                                             </div>
                                             <div class="col d-flex flex-column justify-content-between" style="margin-left: 55px;">
                                                 <span><?php echo $row_char['about_char'] ?></span>
-                                                <button class="btn btn-success align-self-end" onclick="" style="z-index: 15;">Pasūtīt</button>
+                                                <button class="btn btn-success align-self-end" onclick="add_sel_info(<?php echo $row_char['id']; ?>)" style="z-index: 15;">Pasūtīt</button>
                                             </div>
                                         </div>
                                     </div>

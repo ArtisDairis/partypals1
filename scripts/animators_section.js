@@ -45,3 +45,25 @@ function openCharInfo(this_elem, elem)
   }
 }
 
+$(document).ready(function ()
+{
+    $.ajax(
+    {
+        type: "get",
+        url: "./php/animators/show_animators.php",
+        dataType: "text",
+        success: function (response) 
+        {
+            $('#anim_list_show').html(response);
+        },
+        error: function (xhr)
+        {
+            console.error(xhr);
+        }
+    });
+});
+
+function add_sel_info(character_id)
+{
+    window.location.replace("http://localhost/Bootstrap5/kursa_darbs/order?char_id="+character_id);
+}

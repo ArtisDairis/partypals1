@@ -96,8 +96,8 @@
                     <div class="col d-flex justify-content-end">
                         <ul>
                             <li>Pozitīvas atsauksmes</li>
-                            <li>Liela animatoru izvēle</li>
-                            <li>Prot piesaistīt cilvēkus</li>
+                            <li>Interaktīvas izklaides</li>
+                            <li>Dzīvās izpildes un pārsteigumi</li>
                             <li>Laba izklaide bērniem</li>
                         </ul>
                         <button class="btn btn-success mb-3 ms-2" style="z-index: 5;" onclick="add_sel_theme(1)">Pasūtīt!</button>
@@ -117,14 +117,14 @@
                 </div>
                 <div class="row">
                     <div class="col">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure odio nisi autem repellendus delectus libero facere exercitationem, molestiae quisquam repellat reiciendis vitae quasi, dolor, fugiat mollitia esse! Vel, enim molestiae.
+                        Mūsu animatori nodrošina radošu un aizraujošu izklaides pieredzi visiem jūsu viesiem. Aiciniet mūsu animatorus uz savu dzimšanas dienas svinību, un mēs nodrošināsim, ka katrs dalībnieks būs ar smaidu sejā un labām atmiņām sirdī.
                     </div>
                     <div class="col d-flex justify-content-end">
                         <ul>
-                            <li>Pozitīvas atsauksmes</li>
-                            <li>Liela animatoru izvēle</li>
-                            <li>Prot piesaistīt cilvēkus</li>
-                            <li>Laba izklaide bērniem</li>
+                            <li>Labas atsauksmes</li>
+                            <li>Tematiskas ballītes</li>
+                            <li>Interaktīvas aktivitātes</li>
+                            <li>Profesionālisms un kvalitāte</li>
                         </ul>
                         <button class="btn btn-success mb-3 ms-2" style="z-index: 5;" onclick="add_sel_theme(2)">Pasūtīt!</button>
                     </div>
@@ -148,14 +148,14 @@
                 </div>
                 <div class="row">
                     <div class="col">
-                        Nekad nav par vēlu aicināt mūsu animtorus uz pilsētas svētkiem. Tieši mūsu talanti spēj padarīt neaizmirstamus svētkus un brīnišķīgas atmiņas par kopā būšanu. 
+                        Tieši mūsu animatori padarīs jūsu svētkus par neaizmirstamu piedzīvojumu, kas atstās pozitīvas atmiņas gan bērnam, gan viņa draugiem un ģimenei.
                     </div>
                     <div class="col d-flex justify-content-end">
                         <ul>
                             <li>Pozitīvas atsauksmes</li>
-                            <li>Liela animatoru izvēle</li>
-                            <li>Prot piesaistīt cilvēkus</li>
-                            <li>Laba izklaide bērniem</li>
+                            <li>Tēmu ballītes</li>
+                            <li>Burvju un izrāžu priekšnesumi</li>
+                            <li>Izklaides un spēles</li>
                         </ul>
                         <button class="btn btn-success mb-3 ms-2" style="z-index: 5;" onclick="add_sel_theme(3)">Pasūtīt!</button>
                     </div>
@@ -174,14 +174,14 @@
                 </div>
                 <div class="row">
                     <div class="col">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure odio nisi autem repellendus delectus libero facere exercitationem, molestiae quisquam repellat reiciendis vitae quasi, dolor, fugiat mollitia esse! Vel, enim molestiae.
+                        Mūsu animatori ir šeit, lai palīdzētu jums veidot neaizmirstamus korporatīvos pasākumus, kas stiprinās komandas garu un veicinās uzņēmuma veiksmi. Tieši mūsu animatori padarīs jūsu pasākumu neaizmirstamu.
                     </div>
                     <div class="col d-flex justify-content-end">
                         <ul>
-                            <li>Pozitīvas atsauksmes</li>
-                            <li>Liela animatoru izvēle</li>
-                            <li>Prot piesaistīt cilvēkus</li>
-                            <li>Laba izklaide bērniem</li>
+                            <li>Korporatīvie pasākumi ar tematiku</li>
+                            <li>Izklaides un atpūtas iespējas</li>
+                            <li>Profesionālie priekšnesumi un lekcijas</li>
+                            <li>Team Building aktivitātes</li>
                         </ul>
                         <button class="btn btn-success mb-3 ms-2" style="z-index: 5;" onclick="add_sel_theme(4)">Pasūtīt!</button>
                     </div>
@@ -205,14 +205,14 @@
                 </div>
                 <div class="row">
                     <div class="col">
-                        Nekad nav par vēlu aicināt mūsu animtorus uz pilsētas svētkiem. Tieši mūsu talanti spēj padarīt neaizmirstamus svētkus un brīnišķīgas atmiņas par kopā būšanu. 
+                        Tieši mūsu animatori būs tie, kuri padarīs jūsu kāzas par neaizmirstamu un burvīgu notikumu! Mūsu animatori ir šeit, lai nodrošinātu, ka jūsu lielā diena ir pilna ar prieku, smiekliem un padarītu romantiski pārbagātu atmosfēru.
                     </div>
                     <div class="col d-flex justify-content-end">
                         <ul>
-                            <li>Pozitīvas atsauksmes</li>
-                            <li>Liela animatoru izvēle</li>
-                            <li>Prot piesaistīt cilvēkus</li>
-                            <li>Laba izklaide bērniem</li>
+                            <li>Personīgais animācijas pakalpojums</li>
+                            <li>Tematiskās kāzas</li>
+                            <li>Profesionāli mūziķi un izpildītāji</li>
+                            <li>Atmiņu fotogrāfēšana un video filmēšana</li>
                         </ul>
                         <button class="btn btn-success mb-3 ms-2" style="z-index: 5;" onclick="add_sel_theme(5)">Pasūtīt!</button>
                     </div>
@@ -231,14 +231,14 @@
                 </div>
                 <div class="row">
                     <div class="col">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure odio nisi autem repellendus delectus libero facere exercitationem, molestiae quisquam repellat reiciendis vitae quasi, dolor, fugiat mollitia esse! Vel, enim molestiae.
+                        Mūsu speciālisti bērnu izklaides jomā nodrošinās, ka jūsu pasākums kļūst par burvīgu piedzīvojumu, kas paliks bērnu atmiņās uz ilgu laiku.
                     </div>
                     <div class="col d-flex justify-content-end">
                         <ul>
-                            <li>Pozitīvas atsauksmes</li>
-                            <li>Liela animatoru izvēle</li>
-                            <li>Prot piesaistīt cilvēkus</li>
-                            <li>Laba izklaide bērniem</li>
+                            <li>Interaktīvas spēles un aktivitātes</li>
+                            <li>Darbnīcas un radošās aktivitātes</li>
+                            <li>Burvju šovi un uzstāšanās</li>
+                            <li>Pasākumu tematizācija</li>
                         </ul>
                         <button class="btn btn-success mb-3 ms-2" style="z-index: 5;" onclick="add_sel_theme(6)">Pasūtīt!</button>
                     </div>
@@ -262,14 +262,14 @@
                 </div>
                 <div class="row">
                     <div class="col">
-                        Nekad nav par vēlu aicināt mūsu animtorus uz pilsētas svētkiem. Tieši mūsu talanti spēj padarīt neaizmirstamus svētkus un brīnišķīgas atmiņas par kopā būšanu. 
+                        PartyPals animatori piedāvā aizraujošus un izglītojošus pasākumus, kas ir ideāli piemēroti skolām! Mūsu komanda ir pieredzējusi darbā ar bērniem un jauniešiem, un mēs esam gatavi nodrošināt jūsu skolas pasākumu ar neaizmirstamu piedzīvojumu. 
                     </div>
                     <div class="col d-flex justify-content-end">
                         <ul>
-                            <li>Pozitīvas atsauksmes</li>
-                            <li>Liela animatoru izvēle</li>
-                            <li>Prot piesaistīt cilvēkus</li>
-                            <li>Laba izklaide bērniem</li>
+                            <li>Izglītojošas aktivitātes un lekcijas</li>
+                            <li>Kultūras un sporta pasākumi</li>
+                            <li>Darbnīcas un projektu veidošana</li>
+                            <li>Kopienu iesaiste un sadarbība</li>
                         </ul>
                         <button class="btn btn-success mb-3 ms-2" style="z-index: 5;" onclick="add_sel_theme(7)">Pasūtīt!</button>
                     </div>
@@ -288,14 +288,14 @@
                 </div>
                 <div class="row">
                     <div class="col">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure odio nisi autem repellendus delectus libero facere exercitationem, molestiae quisquam repellat reiciendis vitae quasi, dolor, fugiat mollitia esse! Vel, enim molestiae.
+                        PartyPals animatori ir jūsu ideālais partneris, lai padarītu jebkuru jubileju par neaizmirstamu! Mēs saprotam, ka jubilejas ir vērtīgs un svarīgs brīdis dzīvē, tāpēc mēs esam gatavi palīdzēt jums to svinēt ar stilu un organizēt svētku gaisotni.
                     </div>
                     <div class="col d-flex justify-content-end">
                         <ul>
-                            <li>Pozitīvas atsauksmes</li>
-                            <li>Liela animatoru izvēle</li>
-                            <li>Prot piesaistīt cilvēkus</li>
-                            <li>Laba izklaide bērniem</li>
+                            <li>Personificēta plānošana</li>
+                            <li>Tematiski dekori un dizains</li>
+                            <li>Izklaides un priekšnesumi</li>
+                            <li>Laba izklaide jebkura vecuma jubilāriem</li>
                         </ul>
                         <button class="btn btn-success mb-3 ms-2" style="z-index: 5;" onclick="add_sel_theme(8)">Pasūtīt!</button>
                     </div>

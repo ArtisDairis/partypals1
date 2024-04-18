@@ -396,7 +396,8 @@ function addAnimsList(anim_id, elem)
         {
             type: "post",
             url: "./php/add_to_order.php",
-            data: {
+            data: 
+            {
                 first: true,
                 anim_id: anim_id
             },
@@ -441,6 +442,34 @@ function addAnimsList(anim_id, elem)
         console.log($('#event_anim').val());
     }
 }
+
+$(window).on('load', function()
+{
+    const urlParams = new URLSearchParams(window.location.search);
+    const charId = urlParams.get('char_id');
+
+    if (charId) 
+    {
+        $.ajax(
+        {
+            type: "post",
+            url: "./php/add_to_order.php",
+            data: 
+            {
+                anim_id: charId
+            },
+            dataType: "text",
+            success: function(response) 
+            {
+                $('#anim_list1').prepend(response);
+            },
+            error: function(xhr, status, error) 
+            {
+                console.error('Error:', error);
+            }
+        });
+    }
+})
 
 function removeFromList(anim_id) 
 {
