@@ -99,7 +99,7 @@
     ?>
 
     <div class="container mt-5">
-    <p class="h1 text-center text-light"><b>PartyPals kompānija</b></p>
+        <p class="h1 text-center text-light"><b>PartyPals kompānija</b></p>
         <div class="row mt-5 pe-5">
             <div class="left_text col mt-5 text-start text-dark bg-light">
                 <p class="header h1">PartyPals uzņēmums</p>

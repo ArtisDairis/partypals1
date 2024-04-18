@@ -41,7 +41,7 @@ $('#auth_btn').click(function(event)
     $.ajax(
     {
         type: "post",
-        url: "php/auth.php",
+        url: "./php/auth.php",
         data: {
             e_mail: e_mail,
             pass: pass
@@ -49,6 +49,7 @@ $('#auth_btn').click(function(event)
         dataType: "text",
         success: function (response) 
         {
+            console.log(response);
             window.location.replace("home");
         },
         error: function(xhr, status, error) 

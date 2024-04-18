@@ -118,6 +118,52 @@ if (isset($_COOKIE['e_mail']) && isset($_COOKIE['is_worker']) && $_COOKIE['is_wo
         </nav>
         ';
 }
+else if (isset($_COOKIE['e_mail']) && isset($_COOKIE['is_worker']) && $_COOKIE['is_worker'] == 2)
+{
+    // User is not logged in
+    echo '
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a href="home" class="navbar-brand mb-0 h1">
+                    <img class="d-inline-block align-center" src="css/img/header/PartyPalsIco.png" alt="Oooops.." width="30" height="30">
+                    PartyPals
+                </a>
+                <button type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" class="navbar-toggler" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a href="animators" class="nav-link disable">Animatori</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a href="events" class="nav-link disable">Pasākumi</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a href="about_us" class="nav-link disable">Par mums</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="dropdown">
+                    <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle text-light" data-bs-toggle="dropdown" aria-expanded="false">
+                        '.$_COOKIE['e_mail'].'
+                    </a>
+                    <ul class="dropdown-menu text-small bg-dark text-light" style="">
+                        <li>
+                            <a class="dropdown-item bg-dark text-light" href="tables">Tabulas</a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider bg-dark text-light">
+                        </li>
+                        <li>
+                            <a class="dropdown-item bg-dark text-light" id="log_out" href="home">Iziet</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    ';
+}
 else
 {
     // User is not logged in
