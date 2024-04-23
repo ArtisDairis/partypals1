@@ -167,7 +167,7 @@
                 </div>
             </div>
         </div>
-        <div class="row mt-4">
+        <div class="row mt-4" style="height: 400px;">
             <div class="col-1"></div>
             <div class="col rounded me-3" style="background-color: #4F4F4F;">
                 <div class="container-fluid align-center mt-3 pt-2 pb-2 bg-dark" style="border-radius: 25px;">
@@ -194,7 +194,7 @@
                         <div class="col-1"></div>
                     </div>
                 </div>
-                <div id="show_data">
+                <div id="show_data" style="height: 450px;">
 
                 </div>
             </div>

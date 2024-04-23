@@ -348,7 +348,7 @@ function check_u_adress()
 function check_u_about_e()
 {
     let user_about_e_input = $('#u_about_e');
-    let regexp = /^[.,'"a-zA-ZāčēģīķļņšūžĀČĒĢĪĶĻŅŠŪŽ0-9\s]+$/;
+    let regexp = /^[.,!?'"a-zA-ZāčēģīķļņšūžĀČĒĢĪĶĻŅŠŪŽ0-9\s]+$/;
 
     if(user_about_e_input.val() != "" && regexp.test(user_about_e_input.val()))
     {
