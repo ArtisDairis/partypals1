@@ -125,7 +125,7 @@
                             <div class="container-fluid">
                                 <div class="row text-black pt-3">
                                     <div class="ms-4 col-8">
-                                        <input type="text" id="search_val" class="ms-2 mt-1 ms-2 rounded" placeholder="Meklēt">
+                                        <input type="text" id="search_val" class="ms-2 mt-1 ms-2 rounded" oninput="refreshList()" placeholder="Meklēt">
                                     </div>
                                     <div class="col-1">
                                         <button type="button" class="btn btn-success" id="search_btn" onclick="search_anims()"><i class="fas fa-search"></i></button>
@@ -140,7 +140,7 @@
                 </nav>
             </div>
 
-
+            <input type="hidden" id="theme_input_value">
             <div class="col align-end text-light rounded-3 me-5">
                 <div class="container" id="anim_list_show" style="overflow-y: auto; height: 680px;">
                     

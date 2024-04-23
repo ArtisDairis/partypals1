@@ -64,7 +64,7 @@ $(document).ready(function()
                 sendMail(name, surname, event_name, e_mail, address, phone_number)
                     .then(function()
                     {
-                        goTo(); // Redirect only after email has been sent
+                        goTo();
                     })
                     .catch(function(error) 
                     {

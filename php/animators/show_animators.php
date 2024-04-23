@@ -34,7 +34,6 @@ if (!empty($anims_full_name))
     }
 }
 
-
 if (!empty($days)) 
 {
     if (strpos($days, ',') !== false) 
@@ -102,7 +101,6 @@ if (!empty($theme)) {
     }
 }
 
-
 // Prepare and bind parameters
 $stmt = $conn->prepare($sql);
 if (!$stmt) 
@@ -135,7 +133,6 @@ if ($result->num_rows > 0)
     {
         if($row['worker'])
         {
-            // Check if 2 columns are filled, if not, open a new column
             if($count % 2 == 0)
                 echo '<div class="col-md-6">';
 
@@ -196,7 +193,7 @@ if ($result->num_rows > 0)
                         ?>
                         <div class="row mt-2">
                             <div class="col">
-                                <div class="none pt-2 pb-2 border rounded" onclick="openCharInfo(this,`<?php echo $row_char['id'] ?>`);">
+                                <div class="mydivs none pt-2 pb-2 border rounded" onclick="openCharInfo(this,`<?php echo $row_char['id'] ?>`);">
                                     <div class="container-fluid">
                                         <div class="row">
                                             <div class="col-3">
@@ -231,7 +228,7 @@ if ($result->num_rows > 0)
                                             </div>
                                             <div class="col d-flex flex-column justify-content-between" style="margin-left: 55px;">
                                                 <span><?php echo $row_char['about_char'] ?></span>
-                                                <button class="btn btn-success align-self-end" onclick="add_sel_info(<?php echo $row_char['id']; ?>)" style="z-index: 15;">Pasūtīt</button>
+                                                <button id="btn_<?php echo $row_char['id']; ?>" class="btn btn_take btn-success align-self-end" onclick="add_sel_info(<?php echo $row_char['id']; ?>)" style="z-index: 15;" <?php echo ($themeValue == "all" || $themeValue == "") ? 'disabled' : ''; ?>>Pasūtīt</button>
                                             </div>
                                         </div>
                                     </div>

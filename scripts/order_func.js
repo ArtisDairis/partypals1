@@ -606,6 +606,7 @@ const prevBtn = datepicker.querySelector(".prev");
 const dates = datepicker.querySelector(".dates");
 
 let selectedDate = new Date();
+selectedDate.setDate(selectedDate.getDate() + 1);
 let year = selectedDate.getFullYear();
 let month = selectedDate.getMonth();
 
@@ -713,8 +714,7 @@ const displayDates = () =>
 const createButton = (text, isDisabled = false, type = 0) => 
 {
     const currentDate = new Date();
-
-    let comparisonDate = new Date(year, month + type, text);
+    const comparisonDate = new Date(year, month + type, text);
 
     const isToday =
         currentDate.getDate() === text &&
@@ -722,15 +722,17 @@ const createButton = (text, isDisabled = false, type = 0) =>
         currentDate.getMonth() === month;
 
     const selected = selectedDate.getTime() === comparisonDate.getTime();
+    const isPastDate = comparisonDate < currentDate;
 
     const button = document.createElement("button");
     button.textContent = text;
-    button.disabled = isDisabled;
+    button.disabled = isDisabled || isPastDate;
     button.type = "button";
     button.classList.toggle("today", isToday);
     button.classList.toggle("selected", selected);
     return button;
 };
+
 
 displayDates();
 

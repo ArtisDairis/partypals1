@@ -138,13 +138,16 @@
                                     <?php
                                         for($i=0; $i<=59;$i++)
                                         {
-                                            if($i<10)
+                                            if($i%5==0)
                                             {
-                                                echo "<option value=".$i.">0".$i."</option>";
-                                            }
-                                            else
-                                            {
-                                                echo "<option value=".$i.">".$i."</option>";
+                                                if($i<10)
+                                                {
+                                                    echo "<option value=".$i.">0".$i."</option>";
+                                                }
+                                                else
+                                                {
+                                                    echo "<option value=".$i.">".$i."</option>";
+                                                }
                                             }
                                         }
                                     ?>
@@ -186,15 +189,11 @@
                                     <?php
                                         for($i=0; $i<=59;$i++)
                                         {
-                                            if($i<10)
+                                            if($i%5==0)
                                             {
-                                                echo "<option value=".$i.">0".$i."</option>";
-                                            }
-                                            else
-                                            {
-                                                if($i == 59)
+                                                if($i<10)
                                                 {
-                                                    echo "<option value=".$i." selected>".$i."</option>";
+                                                    echo "<option value=".$i.">0".$i."</option>";
                                                 }
                                                 else
                                                 {
@@ -238,11 +237,12 @@
                                 <div class="row">
                                     <div class="col text-light">
                                         <div class="container rounded pb-1" style="background: linear-gradient(180deg, #9644FF 0%, #7C18FB 100%); width: 300px; height: 300px;">
-                                            <div class="row pt-2 pb-1">
+                                            <!-- <div class="row pt-2 pb-1">
                                                 <div class="col">
                                                     <span class="h5">Esošais saraksts</span>
                                                 </div>
-                                            </div>
+                                            </div> -->
+                                            <br>
                                             <input type="hidden" id="event_anim">
                                             <div id="anim_list1" class="container-fluid" style="overflow-y: auto; overflow-x: hidden; max-height:250px;">
                                                 
@@ -298,17 +298,33 @@
                         <div class="container-fluid">
                             <div class="row">
                                 <div class="col">
-                                    <input type="text" class="rounded form-control" value="<?php echo $row_info['name']; ?>" placeholder="Vārds" id="u_name">
+                                    <input type="text" class="rounded form-control"
+                                        <?php 
+                                            if(isset($row_info['name'])) 
+                                                echo "value=\"". $row_info['name'] ."\""; 
+                                        ?> placeholder="Vārds" id="u_name">
                                 </div>
                                 <div class="col">
-                                    <input type="text" class="rounded form-control" value="<?php echo $row_info['surname']; ?>" placeholder="Uzvārds" id="u_surname">
+                                    <input type="text" class="rounded form-control"
+                                        <?php 
+                                            if(isset($row_info['surname']))
+                                                echo "value=\"". $row_info['surname'] ."\"";  
+                                        ?> placeholder="Uzvārds" id="u_surname">
                                 </div>
                             </div>
                         </div>
-                        <input type="text" class="form-control" value="<?php echo $row_info['e_mail']; ?>" placeholder="Ē-pasts" style="margin-top: 10px;" id="u_e_mail">
+                        <input type="text" class="form-control"
+                            <?php
+                                if(isset($row_info['e_mail']))
+                                    echo "value=\"". $row_info['e_mail'] ."\""; 
+                            ?> placeholder="Ē-pasts" style="margin-top: 10px;" id="u_e_mail">
                     </div>
                     <div class="col">
-                        <input type="text" class="form-control" value="<?php echo $row_info['phone_number']; ?>" placeholder="Telefona num." id="u_phone_num">
+                        <input type="text" class="form-control"
+                            <?php 
+                                if(isset($row_info['phone_number']))
+                                    echo "value=\"". $row_info['phone_number'] ."\""; 
+                            ?> placeholder="Telefona num." id="u_phone_num">
                         <input type="text" class="form-control" style="margin-top: 10px;" placeholder="Adrese" id="u_adress">
                     </div>
                 </div>
