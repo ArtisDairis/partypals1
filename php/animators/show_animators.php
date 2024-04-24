@@ -6,6 +6,8 @@ $anims_full_name = $_POST['s_value'] ?? null;
 $days = $_POST['days'] ?? null;
 $theme = $_POST['theme_id'] ?? null; // 1
 
+$themeValue = isset($themeValue) ? $themeValue : "";
+
 // Initialize SQL query and parameters
 $sql = "SELECT * FROM animators WHERE 1";
 $params = array();

@@ -19,7 +19,8 @@ if ($result_about_char)
                         <div class="container">
                             <div class="row">
                                 <div class="col">
-                                    <span class="h3">'.$row_about_char['char_name'].'</span>
+                                    <i class="fa-solid fa-pen me-2" style="padding-top: -10px;"></i>
+                                    <input id="edit_name" type="text" class="h3 border-0" value="'.$row_about_char['char_name'].'" style="background-color: #333333;" oninput="update_char_data('.$row_about_char['id'].', `char_name`)">
                                 </div>
                             </div>
                         </div>
@@ -48,7 +49,8 @@ if ($result_about_char)
                         <div class="row ms-2">
                             <span class="h5">Apraksts</span>
                             <div class="col">
-                                <span style="font-size: 14px;">'.$row_about_char['about_char'].'</span>
+                                <i class="fa-solid fa-pen me-2 float-start" style="padding-top: -10px;"></i>
+                                <textarea id="edit_about" cols="40" class="text-light border-0" style="background-color: #333333;" oninput="update_char_data('.$row_about_char['id'].', `about_char`)">'.$row_about_char['about_char'].'</textarea>
                             </div>
                         </div>
                     </div>

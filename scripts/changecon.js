@@ -356,6 +356,35 @@ function btndAddRem(elem, day_id)
     }
 }
 
+function update_char_data(id, col)
+{
+    let data_info;
+    if(col == "char_name")
+    {
+        data_info = $('#edit_name').val();
+    }
+    else
+    {
+        data_info = $('#edit_about').val();
+    }
+    $.ajax(
+    {
+        type: "post",
+        url: "./php/animators/edit_char_data.php",
+        data: 
+        {
+            id: id,
+            column: col,
+            data: data_info
+        },
+        dataType: "text",
+        success: function (response) 
+        {
+            console.log(response);
+        }
+    });
+}
+
 window.onload = function()
 {
     showUpdated();

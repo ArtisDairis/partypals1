@@ -513,72 +513,72 @@ else if($_COOKIE['is_worker'] == 0)
         $row = $result->fetch_assoc();
 
         echo'
-<div class="container mt-5 text-light">
-    <div class="row">
-        <div class="col-3 bg-dark rounded-3 pt-3 pb-2">
-            <img class="rounded-circle" src="css/img/user_img/'.$row['photo'].'" alt="OOOOO" style="width: 40px;">
-            <span class="h5 ms-3">'.$row['username'].'</span>
-        </div>
-        <div class="col"></div>
-    </div>
-</div>
-
-<div class="container mt-3 text-light bg-dark rounded-3" id="profile">
-    <div class="row">
-        <div class="col-3 ms-4 mt-4 me-4 mb-4">
-            <input type="text" id="photoValue" value="'.$row['photo'].'" hidden>
-            <img id="profile_image" class="rounded-2 mx-auto d-block" src="css/img/user_img/'.$row['photo'].'" alt="OOOOO" style="max-width: 300px;">
-            <div class="row text-center mt-2 mb-2">
-                <div class="col">
-                    <label for="upload" class="btn btn-light text-dark">Maint bildi</label>
-                    <input type="file" id="upload" onchange="loadImage(this, \'user\')" hidden>
-                </div>
+    <div class="container mt-5 text-light">
+        <div class="row">
+            <div class="col-3 bg-dark rounded-3 pt-3 pb-2">
+                <img class="rounded-circle" src="css/img/user_img/'.$row['photo'].'" alt="OOOOO" style="width: 40px;">
+                <span class="h5 ms-3">'.$row['username'].'</span>
             </div>
+            <div class="col"></div>
         </div>
-        <div class="col">
-            <div class="container mt-3">
-                <div class="row">
-                    <p class="h2">Konta dati</p>
+    </div>
+
+    <div class="container mt-3 text-light bg-dark rounded-3" id="profile">
+        <div class="row">
+            <div class="col-3 ms-4 mt-4 me-4 mb-4">
+                <input type="text" id="photoValue" value="'.$row['photo'].'" hidden>
+                <img id="profile_image" class="rounded-2 mx-auto d-block" src="css/img/user_img/'.$row['photo'].'" alt="OOOOO" style="max-width: 300px;">
+                <div class="row text-center mt-2 mb-2">
                     <div class="col">
-                        <div class="input-group mb-3">
-                            <span class="input-group-text bg-dark text-light" id="basic-addon1"><b>@</b></span>
-                            <input id="anim_username" type="text" class="form-control bg-dark text-light" placeholder="Lietotājvārds" aria-label="Username" aria-describedby="basic-addon1"
-                            value="'.$row['username'].'">
-                        </div>
-
-                        <div class="input-group mb-3">
-                            <span class="input-group-text bg-dark text-light" id="basic-addon1"><b><i class="fa-solid fa-lock"></i></b></span>
-                            <input id="anim_password" type="password" class="form-control bg-dark text-light" placeholder="Parole" aria-label="Password" aria-describedby="basic-addon1"
-                            value="'.$row['password'].'">
-                        </div>
-
-                        <div class="input-group mb-3">
-                            <span class="input-group-text bg-dark text-light" id="basic-addon1"><b><i class="fa-solid fa-square-envelope"></i></b></span>
-                            <input id="anim_e_mail" type="text" class="form-control bg-dark text-light" placeholder="E-pasts" aria-label="e_mail" aria-describedby="basic-addon1"
-                            value="'.$row['e_mail'].'">
-                        </div>
-                    </div> 
-                    <div class="col">
-                        <input id="anim_name" class="form-control bg-dark text-light mb-3" type="text" placeholder="Vārds" value="'.$row['name'].'">
-
-                        <input id="anim_surname" class="form-control bg-dark text-light mb-3" type="text" placeholder="Uzvārds" value="'.$row['surname'].'">
-
-                        <div class="input-group mb-3 mt-3">
-                            <span class="input-group-text bg-dark text-light" id="basic-addon1"><b><i class="fa-solid fa-phone"></i></b></span>
-                            <input id="anim_phone_num" type="text" class="form-control bg-dark text-light" placeholder="Tālrunis: +371" aria-label="Username" aria-describedby="basic-addon1" 
-                            value="'.$row['phone_number'].'">
-                        </div>
+                        <label for="upload" class="btn btn-light text-dark">Maint bildi</label>
+                        <input type="file" id="upload" onchange="loadImage(this, \'user\')" hidden>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col me-4 mt-5 mb-3">
-                    <button type="button" class="btn btn-success text-end float-end" onclick="update_info(`false`)">Apstiprināt</button>
+            <div class="col">
+                <div class="container mt-3">
+                    <div class="row">
+                        <p class="h2">Konta dati</p>
+                        <div class="col">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text bg-dark text-light" id="basic-addon1"><b>@</b></span>
+                                <input id="anim_username" type="text" class="form-control bg-dark text-light" placeholder="Lietotājvārds" aria-label="Username" aria-describedby="basic-addon1"
+                                value="'.$row['username'].'">
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <span class="input-group-text bg-dark text-light" id="basic-addon1"><b><i class="fa-solid fa-lock"></i></b></span>
+                                <input id="anim_password" type="password" class="form-control bg-dark text-light" placeholder="Parole" aria-label="Password" aria-describedby="basic-addon1"
+                                value="'.$row['password'].'">
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <span class="input-group-text bg-dark text-light" id="basic-addon1"><b><i class="fa-solid fa-square-envelope"></i></b></span>
+                                <input id="anim_e_mail" type="text" class="form-control bg-dark text-light" placeholder="E-pasts" aria-label="e_mail" aria-describedby="basic-addon1"
+                                value="'.$row['e_mail'].'">
+                            </div>
+                        </div> 
+                        <div class="col">
+                            <input id="anim_name" class="form-control bg-dark text-light mb-3" type="text" placeholder="Vārds" value="'.$row['name'].'">
+
+                            <input id="anim_surname" class="form-control bg-dark text-light mb-3" type="text" placeholder="Uzvārds" value="'.$row['surname'].'">
+
+                            <div class="input-group mb-3 mt-3">
+                                <span class="input-group-text bg-dark text-light" id="basic-addon1"><b><i class="fa-solid fa-phone"></i></b></span>
+                                <input id="anim_phone_num" type="text" class="form-control bg-dark text-light" placeholder="Tālrunis: +371" aria-label="Username" aria-describedby="basic-addon1" 
+                                value="'.$row['phone_number'].'">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col me-4 mt-5 mb-3">
+                        <button type="button" class="btn btn-success text-end float-end" onclick="update_info(`false`)">Apstiprināt</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
         ';
     }
 }
