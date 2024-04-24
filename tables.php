@@ -73,8 +73,23 @@
 
     <div class="container-fluid mt-5">
         <div class="row bg-dark text-light">
-            <div class="col">
-                asd
+            <div class="col ms-3 pt-3 pb-3">
+                <select class="rounded" id="tables" onchange="load_table(this.value)">
+                    <option value="animators">Animatori</option>
+                    <option value="animators_reg">Animatori (Pieteikumi)</option>
+                    <option value="auth">Autorizācija</option>
+                    <option value="characters">Lomas</option>
+                    <option value="events">Pasākumi</option>
+                    <option value="theme">Tēmas</option>
+                    <option value="users">Lietotāji</option>
+                </select>
+            </div>
+        </div>
+        <div class="row text-light mt-5" >
+            <div class="container fluid">
+                <div id="posted_table" class="row" >
+                    
+                </div>
             </div>
         </div>
     </div>
@@ -89,4 +104,5 @@
 <script src='scripts/log_out.js'></script>
 <script src="scripts/changecon.js"></script>
 <script src="scripts/anim_register.js"></script>
+<script src="scripts/admin.js"></script>
 </html>
