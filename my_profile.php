@@ -233,9 +233,28 @@ if($_COOKIE['is_worker'] == 1)
                 <div class="col">
                     <textarea class="cursor_open form-control bg-dark text-light me-3" id="anim_about" rows="3" placeholder="Mans vārds...">'.$row['about_me'].'</textarea>
                 </div>
-                <div class="col-3 me-4 mt-5">
-                    <button type="button" class="btn btn-success text-end float-end" onclick="update_info(`true`)">Apstiprināt</button>
+                <div class="col-3 me-4 mt-1">
+                    <button type="button" class="btn btn-danger text-end float-end" data-bs-toggle="modal" data-bs-target="#deleteModal">Dzēst kontu</button>
+                    <button type="button" class="btn mt-2 btn-success text-end float-end" onclick="update_info(`true`)">Apstiprināt</button>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal mt-5 fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalLabel">Konta dzēšana</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Jūs esat pārliecināti, ka vēlaties dzēst kontu?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Atcelt</button>
+                <button type="button" class="btn btn-danger" onclick="deleteAccount('.$row['id'].', `animators`)">Dzēst</button>
             </div>
         </div>
     </div>
@@ -572,9 +591,28 @@ else if($_COOKIE['is_worker'] == 0)
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col me-4 mt-5 mb-3">
-                        <button type="button" class="btn btn-success text-end float-end" onclick="update_info(`false`)">Apstiprināt</button>
+                    <div class="col me-4 mt-1 mb-3">
+                        <button type="button" class="btn btn-danger text-end float-end" data-bs-toggle="modal" data-bs-target="#deleteModal">Dzēst kontu</button>
+                        <button type="button" class="btn mt-2 btn-success text-end float-end" onclick="update_info(`false`)">Apstiprināt</button>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal mt-5 fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteModalLabel">Konta dzēšana</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Jūs esat pārliecināti, ka vēlaties dzēst kontu?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Atcelt</button>
+                    <button type="button" class="btn btn-danger" onclick="deleteAccount('.$row['id'].', `users`)">Dzēst</button>
                 </div>
             </div>
         </div>

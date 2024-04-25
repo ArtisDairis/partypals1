@@ -385,6 +385,25 @@ function update_char_data(id, col)
     });
 }
 
+function deleteAccount(id, table)
+{
+    $.ajax(
+    {
+        type: "post",
+        url: "./php/delete_acount.php",
+        data: 
+        {
+            id: id,
+            table_name: table
+        },
+        dataType: "text",
+        success: function (response) 
+        {
+            console.log(response);
+        }
+    });
+}
+
 window.onload = function()
 {
     showUpdated();
