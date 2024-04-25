@@ -3,7 +3,8 @@ include "../connection.php";
 
 $table_name = $_POST['table_name'];
 
-if (!preg_match('/^[a-zA-Z_]+$/', $table_name)) {
+if (!preg_match('/^[a-zA-Z_]+$/', $table_name)) 
+{
     die("Invalid table name");
 }
 
@@ -42,7 +43,8 @@ $column_labels = array(
 $sql = "SELECT * FROM $table_name";
 $result = $conn->query($sql);
 
-if ($result->num_rows > 0) {
+if ($result->num_rows > 0) 
+{
     echo '<div class="col-2 me-4 bg-dark">asd</div>';
     echo '<div class="col bg-dark">';
     echo '<div class="container-fluid" style="height: 500px; max-height: 500px; overflow-y: auto;">';
@@ -52,7 +54,6 @@ if ($result->num_rows > 0) {
     foreach ($row as $key => $value) 
     {
         $label = isset($column_labels[$key]) ? $column_labels[$key] : $key;
-        // Check if the column is "ID", and apply a custom style
         $style = ($key === 'id') ? 'style="max-width: 20px;"' : '';
         echo '<div class="col text-center"' . $style . '><span>' . htmlspecialchars($label) . '</span></div>';
     }
@@ -60,11 +61,11 @@ if ($result->num_rows > 0) {
     
     $result->data_seek(0);
     
-    // Output table data
-    while ($row = $result->fetch_assoc()) {
+    while ($row = $result->fetch_assoc()) 
+    {
         echo '<div class="row">';
-        foreach ($row as $key => $value) {
-            // Output column value
+        foreach ($row as $key => $value) 
+        {
             $style = ($key === 'id') ? 'style="max-width: 20px;"' : '';
             echo '<div class="col text-center"' . $style . '>
                     <input class="form-control border-0 text-light bg-dark" type="text" value="' . htmlspecialchars($value) .'"> 
@@ -73,9 +74,11 @@ if ($result->num_rows > 0) {
         echo '</div>';
     }
     
-    echo '</div>'; // Close container-fluid
-    echo '</div>'; // Close col bg-dark
-} else {
+    echo '</div>';
+    echo '</div>';
+} 
+else 
+{
     echo "Data not found";
 }
 
