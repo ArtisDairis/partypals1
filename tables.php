@@ -73,8 +73,8 @@
 
     <div class="container-fluid mt-5">
         <div class="row bg-dark text-light">
-            <div class="col ms-3 pt-3 pb-3">
-                <select class="rounded" id="tables" onchange="load_table(this.value)">
+            <div class="col-2 ms-3 pt-3 pb-3">
+                <select class="form-control rounded" style="font-size: 18px;" id="tables" onchange="load_table(this.value)">
                     <option value="animators">Animatori</option>
                     <option value="animators_reg">Animatori (Pieteikumi)</option>
                     <option value="auth">Autorizācija</option>
@@ -83,6 +83,13 @@
                     <option value="theme">Tēmas</option>
                     <option value="users">Lietotāji</option>
                 </select>
+            </div>
+            <div class="col-2 ms-3 pt-3 pb-3">
+                <button type="button" class="btn text-light bg-secondary" onclick="create_backup()">Izveidot rezerves kopiju</button>
+            </div>
+            <div class="col ms-3 pt-3 pb-3">
+                <label class="btn text-light bg-secondary" for="upload_bck">Atjaunot datubāzi</label>
+                <input type="file" id="upload_bck" onchange="upload_database()" hidden>
             </div>
         </div>
         <div class="row text-light mt-5" >
