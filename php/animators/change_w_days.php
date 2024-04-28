@@ -30,7 +30,7 @@ elseif ($what_do == "remove")
     
     $days_array = array_diff($days_array, array($day_id));
      
-    if (empty($days_array))//false 
+    if (empty($days_array))
     {
         $sql = "UPDATE `animators` SET `work_days` = '' WHERE `id` = ". $row_userid['id'];
     } 

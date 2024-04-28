@@ -3,7 +3,6 @@ include "../connection.php";
 
 if(isset($_FILES['sql_file']) && $_FILES['sql_file']['error'] === UPLOAD_ERR_OK) 
 {
-    // Establish database connection
     try 
     {
         $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);

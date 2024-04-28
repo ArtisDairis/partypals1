@@ -10,6 +10,7 @@ $(document).ready(function()
 {
     $('#add_to_events').click(function() 
     {
+        let event_type = $('#event_theme').val();
         let event_name = $('#event_name').val();
         let inp_date = $('#inp_date').val();
         let event_time_start = $('#event_time_start').val();
@@ -23,6 +24,7 @@ $(document).ready(function()
         let phone_number = $('#phone_number').val();
         let is_global = $('#is_global').is(':checked') ? 1 : 0;
 
+        console.log("event_type: ", event_type);
         console.log("event_name: ", event_name);
         console.log("inp_date: ", inp_date);
         console.log("event_time_start: ", event_time_start);
@@ -43,6 +45,7 @@ $(document).ready(function()
             type: 'POST',
             data: 
             {
+                event_type: event_type,
                 event_name: event_name,
                 inp_date: inp_date,
                 event_time_start: event_time_start,

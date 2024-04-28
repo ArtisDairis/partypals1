@@ -30,15 +30,15 @@
     {
         echo "Record updated successfully";
         echo "<br> $worker";
-        header("http://localhost/Bootstrap5/kursa_darbs/my_profile");
-        //https://partypals.webexteam.eu/my_profile
+        header("https://partypals.webexteam.eu/my_profile");
+        // http://localhost/Bootstrap5/kursa_darbs/my_profile
         exit();
     } 
     else 
     {
         echo "Error updating record: " . $conn->error;
-        header("http://localhost/Bootstrap5/kursa_darbs/my_profile");
-        //https://partypals.webexteam.eu/my_profile
+        header("https://partypals.webexteam.eu/my_profile");
+        // http://localhost/Bootstrap5/kursa_darbs/my_profile
         exit();
     }
 

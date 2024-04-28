@@ -14,7 +14,7 @@ function search_anims()
         success: function (response) 
         {
             $('#anim_list_show').html(response);
-            toggleButtonState(); // Call function to toggle button state after updating content
+            toggleButtonState();
         },
         error: function (xhr)
         {
@@ -35,7 +35,7 @@ function refreshList()
                 success: function (response) 
                 {
                     $('#anim_list_show').html(response);
-                    toggleButtonState(); // Call function to toggle button state after updating content
+                    toggleButtonState();
                 },
                 error: function (xhr)
                 {
@@ -48,7 +48,7 @@ function refreshList()
 let days_value = "";
 let days_array;
 
-function search_days(elem) //2
+function search_days(elem)
 {
     if (days_value.length >= 2) 
     {
@@ -90,7 +90,7 @@ function search_days(elem) //2
         success: function (response) 
         {
             $('#anim_list_show').html(response);
-            toggleButtonState(); // Call function to toggle button state after updating content
+            toggleButtonState();
         },
         error: function (xhr)
         {
@@ -116,7 +116,7 @@ function search_theme(elem)
             success: function (response) 
             {
                 $('#anim_list_show').html(response);
-                toggleButtonState(); // Call function to toggle button state after updating content
+                toggleButtonState();
             },
             error: function (xhr) 
             {
@@ -138,7 +138,7 @@ function search_theme(elem)
             success: function (response) 
             {
                 $('#anim_list_show').html(response);
-                toggleButtonState(); // Call function to toggle button state after updating content
+                toggleButtonState();
             },
             error: function (xhr) 
             {
@@ -151,25 +151,24 @@ function search_theme(elem)
 
     if (themeValue == "all" || themeValue.trim() == "") 
     {
-        $('.btn_take').prop('disabled', true); // Disable all elements with class .btn_take
+        $('.btn_take').prop('disabled', true);
     } 
     else 
     {
-        $('.btn_take').prop('disabled', false); // Enable all elements with class .btn_take
+        $('.btn_take').prop('disabled', false);
     }
     
     console.log($('#theme_input_value').val());
 }
 
-// Function to toggle button state based on theme selection
 function toggleButtonState() 
 {
     if (themeValue == "all" || themeValue == "") 
     {
-        $('.btn_take').prop('disabled', true); // Disable all elements with class .btn_take
+        $('.btn_take').prop('disabled', true);
     } 
     else 
     {
-        $('.btn_take').prop('disabled', false); // Enable all elements with class .btn_take
+        $('.btn_take').prop('disabled', false);
     }
 }

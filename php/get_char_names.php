@@ -1,7 +1,7 @@
 <?php
 include "connection.php";
 
-$anim_ids = $_POST["e_anims"]; // value is 1,3,5
+$anim_ids = $_POST["e_anims"];
 
 $anim_ids_array = explode(",", $anim_ids);
 

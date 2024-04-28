@@ -7,6 +7,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     
     $success = false;
 
+    $event_type = $_POST['event_type'];
+
+    $sql_increase_order = "UPDATE theme SET order_num = order_num + 1 WHERE id = ?";
+    $stmt_increase_order = $conn->prepare($sql_increase_order);
+    $stmt_increase_order->bind_param("i", $event_type);
+    $stmt_increase_order->execute();
+
+    $sql_event_type = "";
+
     for($i = 0; $i < $selAnimLength; $i++)
     {
         $event_name = $_POST['event_name'];

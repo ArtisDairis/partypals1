@@ -1,19 +1,16 @@
 <?php
 include "../connection.php";
 
-// Retrieve user inputs
 $anims_full_name = $_POST['s_value'] ?? null;
 $days = $_POST['days'] ?? null;
-$theme = $_POST['theme_id'] ?? null; // 1
+$theme = $_POST['theme_id'] ?? null;
 
 $themeValue = isset($themeValue) ? $themeValue : "";
 
-// Initialize SQL query and parameters
 $sql = "SELECT * FROM animators WHERE 1";
 $params = array();
 $types = '';
 
-// Add conditions based on user inputs
 if (!empty($anims_full_name)) 
 {
     $searched_value = $_POST['s_value'];
@@ -67,14 +64,13 @@ if (!empty($days))
 if (!empty($theme)) {
     if(strlen($theme) > 2) {
         $split_theme = explode(",", $theme);
-        $worker_ids = array(); // Store worker_ids in an array
+        $worker_ids = array();
 
         for ($i = 0; $i < count($split_theme); $i++) 
         {
             $sql_theme = "SELECT `worker_id` FROM `characters` WHERE FIND_IN_SET(".$conn->real_escape_string($split_theme[$i]).", theme)";
             $result_theme = $conn->query($sql_theme);
 
-            // Fetch worker_ids and add them to the array
             while ($row_theme = $result_theme->fetch_assoc()) 
             {
                 $worker_ids[] = $row_theme['worker_id'];
@@ -103,7 +99,6 @@ if (!empty($theme)) {
     }
 }
 
-// Prepare and bind parameters
 $stmt = $conn->prepare($sql);
 if (!$stmt) 
 {
@@ -115,7 +110,6 @@ if (!empty($types))
     call_user_func_array(array($stmt, 'bind_param'), $bind_params);
 }
 
-// Execute statement
 if (!$stmt->execute()) 
 {
     die("Error executing statement: " . $stmt->error);

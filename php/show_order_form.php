@@ -237,11 +237,6 @@
                                 <div class="row">
                                     <div class="col text-light">
                                         <div class="container rounded pb-1" style="background: linear-gradient(180deg, #9644FF 0%, #7C18FB 100%); width: 300px; height: 300px;">
-                                            <!-- <div class="row pt-2 pb-1">
-                                                <div class="col">
-                                                    <span class="h5">Esošais saraksts</span>
-                                                </div>
-                                            </div> -->
                                             <br>
                                             <input type="hidden" id="event_anim">
                                             <div id="anim_list1" class="container-fluid" style="overflow-y: auto; overflow-x: hidden; max-height:250px;">

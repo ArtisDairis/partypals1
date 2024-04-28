@@ -7,7 +7,7 @@ if (isset($_POST['theme']) && !empty($_POST['theme']))
 
     if (isset($_POST['anim_name'])) 
     {
-        $anim_name = '%' . $_POST['anim_name'] . '%';
+        $anim_name = $_POST['anim_name'] . '%';
         $sql = "SELECT * FROM `characters` WHERE find_in_set(?, theme) AND `char_name` LIKE ?";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("ss", $theme, $anim_name);
@@ -20,20 +20,26 @@ if (isset($_POST['theme']) && !empty($_POST['theme']))
     }
 
     $stmt->execute();
-
     $result = $stmt->get_result();
 
     if ($result->num_rows > 0) 
     {
         while ($row = $result->fetch_assoc()) 
         {
+            $sql_anim = "SELECT * FROM `animators` WHERE `id` = ?";
+            $stmt_anim = $conn->prepare($sql_anim);
+            $stmt_anim->bind_param("i", $row['worker_id']);
+            $stmt_anim->execute();
+            $result_anim = $stmt_anim->get_result();
+            $row_anim = $result_anim->fetch_assoc();
+
             ?>
             <div class="row mb-2 border rounded ms-1 me-1" style="height: 40px;">
                 <div class="col pt-1 ps-4">
-                    <span><?php echo htmlspecialchars($row['char_name']); ?></span>
+                    <span><?php echo htmlspecialchars($row['char_name']); ?> : <?php echo htmlspecialchars($row_anim['surname']); ?></span>
                     <i class="ms-2 fa-solid fa-circle-info" onclick="showInfoAnim(<?php echo htmlspecialchars($row['id']); ?>)"></i>
                 </div>
-                <div class="col-3">
+                <div class="col-2 me-2">
                     <i id="addbtn<?php echo htmlspecialchars($row['id']); ?>" class="btn text-light fa-solid fa-plus" onclick="addAnimsList(<?php echo htmlspecialchars($row['id']); ?>, this)"></i>
                 </div>
             </div>

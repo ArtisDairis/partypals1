@@ -249,33 +249,32 @@ body
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000; /* Ensure modal appears above other content */
+    z-index: 1000;
 }
 
 /* Modal Content Container */
 #modal .container-fluid {
-    width: 80%; /* Adjust the width as needed */
-    max-width: 600px; /* Maximum width for modal */
-    background-color: #fff; /* White background */
+    width: 80%;
+    max-width: 600px; 
+    background-color: #fff; 
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Drop shadow effect */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
 }
 
 /* Modal Heading */
 #modal h2 {
     margin-top: 0;
-    color: #333; /* Heading color */
+    color: #333; 
 }
 
-/* Close Button */
 .close-btn {
     position: absolute;
     top: 10px;
     right: 10px;
     cursor: pointer;
     font-size: 20px;
-    color: #666; /* Close button color */
+    color: #666; 
 }
 
 #myProgress 
@@ -288,7 +287,6 @@ body
     background-color: #7C18FB;
 }
 
-/* forgot pass code form */
 .form {
     display: flex;
     align-items: center;
@@ -304,7 +302,7 @@ body
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 10px;
-    color: black; /* Change title color to black */
+    color: black; 
   }
 
   .message {
@@ -312,7 +310,7 @@ body
     font-size: 14px;
     margin-top: 4px;
     text-align: center;
-    color: black; /* Change message color to black */
+    color: black;
   }
 
   .inputs {
@@ -328,7 +326,7 @@ body
     border-bottom: 1.5px solid #d2d2d2;
     margin: 0 10px;
     font-size: 16px;
-    border-color: #ff0000; /* Change border color to red */
+    border-color: #ff0000; 
   }
 
   .inputs input:focus {

@@ -124,14 +124,6 @@ $(document).ready(function()
     });
 });
 
-
-
-function chageHidden()
-{
-    // document.getElementById('fp_user_info').hidden = false;
-    // document.getElementById('fp_pas_code').hidden = true;
-    // document.getElementById('fp_new_pass').hidden = true;
-}
 function sendMail(username, email, resetCode) 
 {
     let message = `

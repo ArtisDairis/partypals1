@@ -8,8 +8,7 @@ $event_date = isset($_POST['event_date']) ? $_POST['event_date'] : '';
 $event_status = isset($_POST['event_status']) ? $_POST['event_status'] : '';
  
 $sql_sel_events = "SELECT * FROM `events` WHERE `e_mail` = ?";
- 
-// Add ORDER BY clause if column and asc_desc are provided
+
 if (!empty($column) && !empty($asc_desc))
 {
     $sql_sel_events .= " ORDER BY `$column` $asc_desc";

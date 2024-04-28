@@ -55,9 +55,9 @@ try {
     ob_clean();
     flush();
     readfile($file_path);
-    unlink($file_path); // Delete the file after sending
+    unlink($file_path);
 
-    exit(); // Exit script after sending the file
+    exit();
 
 } catch(PDOException $e) {
     echo "Connection failed: " . $e->getMessage();

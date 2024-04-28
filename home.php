@@ -32,6 +32,7 @@ body
     position: relative;
     box-shadow: #C9C9C9 5px 0px;
     transition: box-shadow 0.3s ease;
+    min-height: 80px;
 }
 
 #video-bg, #video-bg1

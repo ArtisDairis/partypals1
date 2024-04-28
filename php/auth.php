@@ -42,10 +42,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 
         if ($result->num_rows > 0) 
         {
-            $hashed_password = $row['password'];
-
-            // Verify the password using password_verify function
-            // if (password_verify($password, $hashed_password)) {
                 echo "Login successful!";
 
                 if($row['id'] == '1')

@@ -13,13 +13,10 @@ if($result->num_rows > 0)
 {
     $row = $result->fetch_assoc();
     $days_nums = explode(",",$row['work_days']);
-    // Sort the days array numerically
     sort($days_nums);
     
-    // Loop through the days array and display each day
     foreach($days as $index => $day) 
     {
-        // Check if the current day index exists in the $days_nums array
         if(in_array(strval($index + 1), $days_nums)) 
         {
             echo '

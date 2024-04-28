@@ -9,7 +9,7 @@
 $(document).ready(function () 
 {
     load_table('animators');
-    //create_backup()
+    create_backup()
 });
 
 function load_table(table_name)
@@ -80,7 +80,7 @@ function upload_database()
         success: function(response) 
         {
             console.log(response);
-            window.location.href = 'http://localhost/Bootstrap5/kursa_darbs/tables';
+            window.location.href = 'https://partypals.webexteam.eu/tables';
         },
         error: function(xhr) 
         {
