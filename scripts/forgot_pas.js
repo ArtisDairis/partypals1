@@ -132,18 +132,31 @@ function chageHidden()
     // document.getElementById('fp_pas_code').hidden = true;
     // document.getElementById('fp_new_pass').hidden = true;
 }
-function sendMail(user,mail,code)
+function sendMail(username, email, resetCode) 
 {
-    let parms = 
-    {
-        username : user,
-        e_mail : mail,
-        subject : "Paroles maiņa",
-        message : code
-    }
+    let message = `
+Sveicināts ${username},
 
-    emailjs.send("service_ner374x","template_4cbjwzr",parms).then(
+Saņemts Jūsu pieprasījums paroles atjaunošanai. Lai turpinātu procesu, lūdzu, izmantojiet zemāk redzamo četrciparu kodu. Ja jūs nebijāt pieprasījuši paroles maiņu, lūdzu, ignorējiet šo ziņu:
+
+Atjaunošanas kods: ${resetCode}
+
+Lūdzu, izmantojiet šo kodu, lai pabeigtu paroles atjaunošanas procesu. Ja Jums ir kādas papildus jautājumi vai nepieciešama palīdzība, nekautrējieties sazināties ar mūsu atbalsta komandu.
+
+Ar cieņu,
+PartyPals
+Atbalsta komanda: PartyPals Support`;
+
+    let params = 
+    {
+        username: username,
+        e_mail: email,
+        subject: "Paroles maiņa",
+        message: message
+    };
+
+    emailjs.send("service_ner374x", "template_4cbjwzr", params).then(() => 
     {
 
-    })
+    });
 }

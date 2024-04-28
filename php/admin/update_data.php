@@ -14,12 +14,15 @@ if (!$stmt)
     die("Error preparing statement: " . $conn->error);
 }
 
-// Assuming $value is a string and $id is an integer
 $stmt->bind_param("si", $value, $id);
 
 if (!$stmt->execute()) 
 {
     die("Error executing statement: " . $stmt->error);
+}
+else
+{
+    echo "Data updated successful!";
 }
 
 $stmt->close();

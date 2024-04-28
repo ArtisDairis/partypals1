@@ -19,7 +19,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["photo"]))
     $imageFileType = strtolower(pathinfo($uploadFile, PATHINFO_EXTENSION));
     if (in_array($imageFileType, array("jpg", "jpeg", "png", "gif"))) 
     {
-
         if (move_uploaded_file($_FILES["photo"]["tmp_name"], $uploadFile)) 
         {
             echo basename($_FILES["photo"]["name"]);
