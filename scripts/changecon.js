@@ -307,6 +307,59 @@ function btnInfo(elem, char_id)
     });
 }
 
+function deleteRole(id) 
+{
+    $.ajax(
+    {
+        type: "post",
+        url: "./php/animators/delete_char.php",
+        data: {
+            id: id
+        },
+        dataType: "text",
+        success: function (response) 
+        {
+            console.log(response);
+            window.location.href = window.location.href;
+        }
+    });
+}
+
+function uploadPhoto(input, id) 
+{
+    if (!input || !input.files || input.files.length === 0) 
+    {
+        console.error("No file selected.");
+        return;
+    }
+
+    var file = input.files[0];
+
+    var formData = new FormData();
+    formData.append('char_id', id);
+    formData.append('char_photo', file);
+
+    $.ajax(
+    {
+        type: "POST",
+        url: "./php/animators/change_photo_char.php",
+        data: formData,
+        processData: false,
+        contentType: false,
+        success: function(response) 
+        {
+            console.log(response);
+            var imgElement = document.getElementById('photoValue2');
+            var newSrc = 'css/img/char_img/' + file.name;
+            imgElement.src = newSrc;
+        },
+        error: function(xhr, status, error) 
+        {
+            console.error(xhr.responseText);
+        }
+    });
+}
+
 function btndAddRem(elem, day_id)
 {
     let days_btn = elem;
