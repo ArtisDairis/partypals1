@@ -80,3 +80,28 @@ function upload_database()
         }
     });
 }
+
+function updateData(value, column_name, table_name, id) 
+{
+    $.ajax(
+    {
+        type: "post",
+        url: "./php/admin/update_data.php",
+        data: 
+        {
+            value: value,
+            column_name: column_name,
+            table_name: table_name,
+            id: id
+        },
+        dataType: "text",
+        success: function (response) 
+        {
+            if(table_name == "animators_reg" & column_name == "recruit")
+            {
+                
+            }
+            console.log(response);    
+        }
+    });
+}
