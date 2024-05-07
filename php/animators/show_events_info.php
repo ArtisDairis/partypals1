@@ -87,7 +87,24 @@ if(isset($_COOKIE['e_mail']))
                             <button id="btn1" class="btn text-light" onclick="openAcc(this, \''.$row_events['id'].'p\')">Info <i class="ms-2 fa-solid fa-caret-down"></i></button>
                         </div>
                         <div class="col-1">
-                            <button class="btn bg-danger text-light" onclick="deleteEvent('.$row_events['id'].')"><i class="fa-solid fa-trash-can"></i></button>
+                        ';
+                        $status = $row_events['status'];
+
+                        if ($status == 'Noraidīts' || $status == 'Atcelts' || $status == 'Pabeigts') 
+                        {
+                            $buttonClass = 'btn bg-danger text-light';
+                            $onClick = "deleteEvent('".$row_events['id']."')";
+                            $disabledAttr = '';
+                        } 
+                        else 
+                        {
+
+                            $buttonClass = 'btn bg-secondary text-light';
+                            $onClick = '';
+                            $disabledAttr = 'disabled';
+                        }
+                        echo'
+                            <button class="'.$buttonClass.'" onclick="'.$onClick.'" '.$disabledAttr.'><i class="fa-solid fa-trash-can"></i></button>
                         </div>
                     </div>
                     <div id="'.$row_events['id'].'p" class="row bg-dark text-light pb-3" style="border-radius: 0 0 10px 10px;" hidden>
