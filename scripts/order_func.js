@@ -490,7 +490,7 @@ function addAnimsList(anim_id, elem)
     }
 }
 
-$(window).on('load', function()
+$(window).on('load', function() 
 {
     const urlParams = new URLSearchParams(window.location.search);
     const charId = urlParams.get('char_id');
@@ -505,10 +505,15 @@ $(window).on('load', function()
             {
                 anim_id: charId
             },
-            dataType: "text",
+            dataType: "html",
             success: function(response) 
             {
                 $('#anim_list1').prepend(response);
+
+                var animId = $('#anim_list1').find('[data-anim-id]').attr('data-anim-id');
+                console.log("anim_id:", animId);
+
+                $('#event_anim').val("need add anim username")
             },
             error: function(xhr, status, error) 
             {
@@ -516,7 +521,7 @@ $(window).on('load', function()
             }
         });
     }
-})
+});
 
 function goToFromLink(elem) 
 {

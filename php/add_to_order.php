@@ -16,9 +16,11 @@ $stmt_anim->bind_param("i", $row_anims['worker_id']);
 $stmt_anim->execute();
 $result_anim = $stmt_anim->get_result();
 $row_anim = $result_anim->fetch_assoc();
+
+$anim_id = $row_anim['id'];
 ?>
 
-<div id="anim_<?php echo htmlspecialchars($row_anims['id']); ?>" class="row pt-1 pb-1 mt-1 mb-1 ms-3 me-3 bg-dark rounded">
+<div id="anim_<?php echo htmlspecialchars($row_anims['id']); ?>" class="row pt-1 pb-1 mt-1 mb-1 ms-3 me-3 bg-dark rounded" data-anim-id="<?php echo htmlspecialchars($anim_id); ?>">
     <div class="col">
         <span><?php echo htmlspecialchars($row_anims['char_name']) ?> : <?php echo htmlspecialchars($row_anim['surname']) ?></span>
         <i class="ms-2 fa-solid fa-circle-info" onclick="showInfoAnim(<?php echo htmlspecialchars($row_anims['id']); ?>)"></i>
