@@ -16,7 +16,8 @@ if ($result_username->num_rows > 0)
 
     $recruit = $row['recruit'];
 
-    if ($recruit == "Pienemts") {
+    if ($recruit == "Pienemts") 
+    {
         $sql_insert = "INSERT INTO `animators`(`username`, `password`, `name`, `surname`, `phone_number`, `e_mail`, `about_me`, `photo`, `worker`) VALUES (?, ?, ?, ?, ?, ?, ?, 'user.png', '0')";
         $stmt_insert = $conn->prepare($sql_insert);
         $stmt_insert->bind_param("sssssss", $row['username'], $pass, $row['name'], $row['surname'], $row['phone_number'], $row['e_mail'], $row['about_me']);

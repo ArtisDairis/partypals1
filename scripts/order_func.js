@@ -522,12 +522,28 @@ function goToFromLink(elem)
 {
     const divArray = ['order_event','order_anim','order_private_info','order_info'];
 
-    for(let i = 0; i < 4; i++)
+    e_name = $('#event_name').val();
+    e_theme = $('#event_theme').val();
+    e_date = $('#event_date').val();
+    e_time_start = $('#time_start_h').val() + ":" + $('#time_start_m').val();
+    e_time_end = $('#time_end_h').val() + ":" + $('#time_end_m').val();
+    u_name = $('#u_name').val();
+    u_surname = $('#u_surname').val();
+    u_e_mail = $('#u_e_mail').val();
+    u_phone_num = $('#u_phone_num').val();
+    u_adress = $('#u_adress').val();
+    u_about_e = $('#u_about_e').val();
+    e_anims = $('#event_anim').val();
+
+    if(check_e_name() && check_e_theme() && check_e_date() && check_u_name() && check_u_surname() && check_u_e_mail() && check_u_phone_num() && check_u_adress() && check_u_about_e() && e_anims)
     {
-        if(elem == divArray[i])
-            document.getElementById(divArray[i]).hidden = false;
-        else
-            document.getElementById(divArray[i]).hidden = true;
+        for(let i = 0; i < 4; i++)
+        {
+            if(elem == divArray[i])
+                document.getElementById(divArray[i]).hidden = false;
+            else
+                document.getElementById(divArray[i]).hidden = true;
+        }
     }
 }
 

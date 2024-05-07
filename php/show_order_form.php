@@ -124,7 +124,7 @@
                                         {
                                             if($i<10)
                                             {
-                                                echo "<option value=".$i.">0".$i."</option>";
+                                                echo "<option value=0".$i.">0".$i."</option>";
                                             }
                                             else
                                             {
@@ -142,7 +142,7 @@
                                             {
                                                 if($i<10)
                                                 {
-                                                    echo "<option value=".$i.">0".$i."</option>";
+                                                    echo "<option value=0".$i.">0".$i."</option>";
                                                 }
                                                 else
                                                 {
@@ -168,7 +168,7 @@
                                         {
                                             if($i<10)
                                             {
-                                                echo "<option value=".$i.">0".$i."</option>";
+                                                echo "<option value=0".$i.">0".$i."</option>";
                                             }
                                             else
                                             {
@@ -193,7 +193,7 @@
                                             {
                                                 if($i<10)
                                                 {
-                                                    echo "<option value=".$i.">0".$i."</option>";
+                                                    echo "<option value=0".$i.">0".$i."</option>";
                                                 }
                                                 else
                                                 {
