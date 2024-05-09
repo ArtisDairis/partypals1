@@ -97,6 +97,7 @@ function update_info(bool)
 }
 function addCharacter() 
 {
+    if($('#char_name').val() != "" && $('#about_char').val() != "" && $('#photoValue1').val() != "")
     $.ajax(
     {
         type: "post",
@@ -113,6 +114,7 @@ function addCharacter()
             load_theme();
             load_char_about();
             console.log(response);
+            window.location.href = "https://partypals.webexteam.eu/my_profile";
         },
         error: function (xhr)
         {

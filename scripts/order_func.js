@@ -163,6 +163,7 @@ function submitOrder()
             data: 
             {
                 event_name: e_name,
+                event_type: e_theme,
                 inp_date: e_date,
                 event_time_start: e_time_start,
                 event_time_end: e_time_end,

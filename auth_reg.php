@@ -407,8 +407,8 @@ body
                 <h1>Autorizēties</h1>
 
                 <p>izmanto savu e-pastu un paroli</p>
-                <input type="email" id="e_mail_auth" placeholder="E-pasts" value="artisdairis@gmail.com">
-                <input type="password" id="pass_auth" placeholder="Parole" value="partypals2023">
+                <input type="email" id="e_mail_auth" placeholder="E-pasts">
+                <input type="password" id="pass_auth" placeholder="Parole">
                 <p onclick="openModal()" class="" style="cursor: pointer;">Aizmirsi savu paroli?</p>
                 <button id="auth_btn">Autorizēties</button>
             </form>
