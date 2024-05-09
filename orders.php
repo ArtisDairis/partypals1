@@ -109,7 +109,7 @@
         <div class="row">
             <div class="col-1"></div>
             <div class="col">
-                <span class="h1 ms-3">Pasūtjumi</span>
+                <span class="h1 ms-3">Pasūtījumi</span>
                 <div class="container-fluid mt-4">
                     <div class="row">
                         <div class="col-2">
